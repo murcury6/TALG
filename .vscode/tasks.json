@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "TALG: Install or update environment",
+      "type": "process",
+      "command": "${workspaceFolder}\\.tools\\pixi\\pixi.exe",
+      "args": [
+        "install"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "TALG: Verify toolchain",
+      "type": "process",
+      "command": "${workspaceFolder}\\.tools\\pixi\\pixi.exe",
+      "args": [
+        "run",
+        "versions"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "TALG: Open R session information",
+      "type": "process",
+      "command": "${workspaceFolder}\\.tools\\pixi\\pixi.exe",
+      "args": [
+        "run",
+        "r-session"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

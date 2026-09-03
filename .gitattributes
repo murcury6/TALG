@@ -1,0 +1,22 @@
+# Keep source, configuration, and research documents consistent across systems.
+* text=auto
+
+*.java text eol=lf
+*.py text eol=lf
+*.R text eol=lf
+*.qmd text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.csv text eol=lf
+
+# Treat common research artifacts as binary.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.parquet binary
+*.xlsx binary

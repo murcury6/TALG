@@ -1,0 +1,29 @@
+# Reproducible local environments and downloaded tools
+.pixi/
+.tools/
+.venv/
+renv/library/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python and R generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.Rhistory
+.RData
+.Ruserdata
+
+# Notebook and report intermediates
+.ipynb_checkpoints/
+_freeze/
+_site/
+
+# IDE and operating-system files
+.idea/
+.DS_Store
+Thumbs.db

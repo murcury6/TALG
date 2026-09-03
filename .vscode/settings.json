@@ -1,0 +1,58 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}\\.pixi\\envs\\default\\python.exe",
+  "python.terminal.activateEnvironment": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [
+    "tests/python"
+  ],
+  "python.analysis.typeCheckingMode": "basic",
+  "java.jdt.ls.java.home": "${workspaceFolder}\\.pixi\\envs\\default\\Library\\lib\\jvm",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-21",
+      "path": "${workspaceFolder}\\.pixi\\envs\\default\\Library\\lib\\jvm",
+      "default": true
+    }
+  ],
+  "maven.executable.path": "${workspaceFolder}\\.pixi\\envs\\default\\Library\\bin\\mvn.cmd",
+  "r.rpath.windows": "${workspaceFolder}\\.pixi\\envs\\default\\Scripts\\R.exe",
+  "r.rterm.windows": "${workspaceFolder}\\.pixi\\envs\\default\\Scripts\\R.exe",
+  "r.alwaysUseActiveTerminal": true,
+  "quarto.path": "${workspaceFolder}\\.pixi\\envs\\default\\Library\\bin\\quarto.cmd",
+  "terminal.integrated.profiles.windows": {
+    "TALG (Pixi)": {
+      "source": "PowerShell",
+      "args": [
+        "-NoExit",
+        "-Command",
+        "& '${workspaceFolder}\\.tools\\pixi\\pixi.exe' shell-hook --shell powershell | Out-String | Invoke-Expression"
+      ]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "TALG (Pixi)",
+  "files.exclude": {
+    "**/.pixi": true,
+    "**/.tools": true
+  },
+  "search.exclude": {
+    "**/.pixi": true,
+    "**/.tools": true
+  },
+  "files.watcherExclude": {
+    "**/.pixi/**": true,
+    "**/.tools/**": true
+  },
+  "editor.formatOnSave": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "[r]": {
+    "editor.formatOnSave": false
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  }
+}

@@ -1,0 +1,62 @@
+[workspace]
+name = "talg-research"
+version = "0.1.0"
+description = "Reproducible Java, Python, and R environment for the TALG research project"
+channels = ["conda-forge"]
+platforms = ["win-64"]
+
+[dependencies]
+# Runtime and build backbone
+openjdk = "21.*"
+maven = "3.9.*"
+python = "3.12.*"
+r-base = "4.5.*"
+quarto = ">=1.7,<2"
+
+# Shared data and numerical stack
+numpy = ">=2,<3"
+pandas = ">=2.2,<3"
+scipy = ">=1.14,<2"
+pyarrow = ">=19,<26"
+duckdb = ">=1.2,<2"
+
+# Python statistics, research, and validation
+scikit-learn = ">=1.5,<2"
+statsmodels = ">=0.14,<0.15"
+matplotlib = ">=3.9,<4"
+seaborn = ">=0.13,<0.14"
+jupyterlab = ">=4,<5"
+httpx = ">=0.27,<1"
+pydantic = ">=2,<3"
+tenacity = ">=9,<10"
+python-dotenv = ">=1,<2"
+pytest = ">=8,<10"
+ruff = ">=0.9,<1"
+
+# R statistics, actuarial analysis, reporting, and tests
+"r-data.table" = ">=1.16"
+r-dplyr = ">=1.1"
+r-ggplot2 = ">=3.5"
+r-jsonlite = ">=1.8"
+r-httr2 = ">=1"
+r-lmtest = ">=0.9"
+r-sandwich = ">=3"
+r-forecast = ">=8"
+r-survival = ">=3"
+r-actuar = ">=3"
+r-extremes = ">=2"
+r-nanoparquet = ">=0.5"
+r-knitr = ">=1"
+r-rmarkdown = ">=2"
+r-renv = ">=1"
+r-testthat = ">=3"
+
+[tasks]
+versions = "java -version && mvn -version && python --version && Rscript --version && quarto --version"
+python-test = "python -m pytest"
+r-session = "Rscript -e \"sessionInfo()\""
+
+[activation.env]
+# R on Windows does not recognize Pixi's generic C.UTF-8 locale name.
+LANG = "English_United States.utf8"
+LC_ALL = "English_United States.utf8"
