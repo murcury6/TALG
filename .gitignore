@@ -18,10 +18,21 @@ __pycache__/
 .RData
 .Ruserdata
 
+# Java and Maven generated files
+target/
+*.class
+
 # Notebook and report intermediates
 .ipynb_checkpoints/
 _freeze/
 _site/
+
+# Local research data and generated reports
+data/raw/
+data/derived/
+data/market/
+work/
+reports/generated/
 
 # IDE and operating-system files
 .idea/

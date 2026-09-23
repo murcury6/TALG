@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "name": "Research Desk",
+  "watchlist": ["AAPL", "MSFT", "NVDA"],
+  "selectedTicker": "AAPL",
+  "viewX": 880,
+  "viewY": 580,
+  "panels": [
+    {
+      "x": 900,
+      "y": 620,
+      "width": 900,
+      "height": 590,
+      "active": {
+        "type": "Stock chart",
+        "portfolioView": "Overview",
+        "period": "3M",
+        "symbol": "AAPL",
+        "chartScript": "ticker AAPL\nstock MSFT\nrange 3M\nbars 1Day\nrefresh off\nlayout overlay\nplot close\noverlay SMA(20)\nstudy Field(volume)\n",
+        "modelFile": ""
+      }
+    },
+    {
+      "x": 1820,
+      "y": 620,
+      "width": 620,
+      "height": 450,
+      "active": {
+        "type": "Portfolio",
+        "portfolioView": "Overview",
+        "period": "3M",
+        "symbol": "",
+        "chartScript": "",
+        "modelFile": ""
+      }
+    },
+    {
+      "x": 1820,
+      "y": 1090,
+      "width": 620,
+      "height": 270,
+      "active": {
+        "type": "Market quote",
+        "portfolioView": "Overview",
+        "period": "3M",
+        "symbol": "NVDA",
+        "chartScript": "",
+        "modelFile": ""
+      }
+    }
+  ]
+}

@@ -37,6 +37,8 @@ ruff = ">=0.9,<1"
 "r-data.table" = ">=1.16"
 r-dplyr = ">=1.1"
 r-ggplot2 = ">=3.5"
+r-shiny = ">=1.10"
+r-scales = ">=1.3"
 r-jsonlite = ">=1.8"
 r-httr2 = ">=1"
 r-lmtest = ">=0.9"
@@ -55,6 +57,7 @@ r-testthat = ">=3"
 versions = "java -version && mvn -version && python --version && Rscript --version && quarto --version"
 python-test = "python -m pytest"
 r-session = "Rscript -e \"sessionInfo()\""
+r-test = "Rscript r/tests/testthat.R"
 
 [activation.env]
 # R on Windows does not recognize Pixi's generic C.UTF-8 locale name.

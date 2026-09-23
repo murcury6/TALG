@@ -1,0 +1,6 @@
+as_of_utc,symbol,company,sector,shares,average_cost,current_price,previous_close
+2026-09-22T20:00:00Z,AAPL,Apple Inc.,Technology,42,171.80,185.42,183.90
+2026-09-22T20:00:00Z,MSFT,Microsoft Corp.,Technology,18,398.25,420.18,417.62
+2026-09-22T20:00:00Z,JPM,JPMorgan Chase & Co.,Financials,25,206.40,218.75,216.18
+2026-09-22T20:00:00Z,JNJ,Johnson & Johnson,Healthcare,28,158.10,164.32,165.04
+2026-09-22T20:00:00Z,SPY,SPDR S&P 500 ETF,ETF,14,548.70,585.24,582.76

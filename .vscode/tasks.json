@@ -38,6 +38,55 @@
         "cwd": "${workspaceFolder}"
       },
       "problemMatcher": []
+    },
+    {
+      "label": "TALG: Build Java backbone",
+      "type": "process",
+      "command": "${workspaceFolder}\\.tools\\pixi\\pixi.exe",
+      "args": [
+        "run",
+        "mvn",
+        "verify"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$javac"
+      ]
+    },
+    {
+      "label": "TALG: Launch market desk",
+      "type": "process",
+      "command": "${workspaceFolder}\\.tools\\pixi\\pixi.exe",
+      "args": [
+        "run",
+        "java",
+        "-jar",
+        "target\\talg-0.1.0-SNAPSHOT.jar"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "dependsOn": "TALG: Build Java backbone",
+      "problemMatcher": []
+    },
+    {
+      "label": "TALG: Launch R portfolio dashboard",
+      "type": "process",
+      "command": "${workspaceFolder}\\.tools\\pixi\\pixi.exe",
+      "args": [
+        "run",
+        "portfolio-dashboard"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
     }
   ]
 }
