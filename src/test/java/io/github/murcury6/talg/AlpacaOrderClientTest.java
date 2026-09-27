@@ -14,6 +14,41 @@ import java.util.UUID;
 import org.junit.jupiter.api.Test;
 
 class AlpacaOrderClientTest {
+    @Test void catalogueIsReadOnlyAndIncludesAllTradableUsEquities() throws Exception {
+        var reader = new AlpacaOrderClient(request -> {
+            assertEquals("GET",request.method());
+            assertEquals("https://paper-api.alpaca.markets/v2/assets?status=active&asset_class=us_equity",request.uri().toString());
+            return new AlpacaOrderClient.Response(200,"""
+                [{"symbol":"AAPL","class":"us_equity","status":"active","tradable":true},
+                 {"symbol":"BRK.B","class":"us_equity","status":"active","tradable":true},
+                 {"symbol":"AAPL","class":"us_equity","status":"active","tradable":true},
+                 {"symbol":"OLD","class":"us_equity","status":"inactive","tradable":true},
+                 {"symbol":"LOCK","class":"us_equity","status":"active","tradable":false},
+                 {"symbol":"BTC/USD","class":"crypto","status":"active","tradable":true}]
+                """);
+        },null);
+        var catalogue = reader.availableAssets(credentials,"paper");
+        assertEquals(2,catalogue.path("assets").size());
+        assertEquals("BRK.B",catalogue.path("assets").get(1).path("symbol").asText());
+        assertEquals("active_tradable_us_equity",catalogue.path("scope").asText());
+        var invalid = new AlpacaOrderClient(request -> new AlpacaOrderClient.Response(200,"{}"),null);
+        assertThrows(IOException.class, () -> invalid.availableAssets(credentials,"paper"));
+    }
+    @Test void loadsActualPositionsWithDecimalQuantitiesAndPercentConversion() throws Exception {
+        var reader = new AlpacaOrderClient(request -> {
+            assertEquals("GET", request.method());
+            assertEquals("https://paper-api.alpaca.markets/v2/positions", request.uri().toString());
+            return new AlpacaOrderClient.Response(200, """
+                    [{"symbol":"AAPL","side":"long","qty":"1.5","avg_entry_price":"100",
+                    "current_price":"110","market_value":"165","unrealized_pl":"15","unrealized_plpc":"0.1"}]
+                    """);
+        }, (symbol, settings) -> { throw new AssertionError("Positions do not need a quote request"); });
+        var position = reader.positions(credentials, "paper").getFirst();
+        assertEquals(new BigDecimal("1.5"), position.quantity());
+        assertEquals(0, new BigDecimal("10").compareTo(position.unrealizedPercent()));
+        var invalid = new AlpacaOrderClient(request -> new AlpacaOrderClient.Response(200, "{}"), null);
+        assertThrows(IOException.class, () -> invalid.positions(credentials, "paper"));
+    }
     private final AlpacaSettings credentials = new AlpacaSettings("test-key", "test-secret", "iex", 30);
     private final AlpacaOrderClient client = new AlpacaOrderClient();
 

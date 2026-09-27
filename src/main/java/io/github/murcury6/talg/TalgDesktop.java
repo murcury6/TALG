@@ -58,7 +58,10 @@ public final class TalgDesktop extends JFrame {
     private final CardLayout cards = new CardLayout();
     private final JPanel cardHost = new JPanel(cards);
     private final NavButton displayNav = new NavButton("DESK");
+    private final NavButton indicatorsNav = new NavButton("INDICATORS");
     private final NavButton tradingNav = new NavButton("TRADE");
+    private final NavButton modelsNav = new NavButton("MODEL");
+    private final NavButton newsNav = new NavButton("NEWS");
     private final NavButton stocksNav = new NavButton("STOCKS");
     private final NavButton settingsNav = new NavButton("SETTINGS");
     private final JLabel sidebarStatus = text("●", 18, MUTED, Font.BOLD);
@@ -84,7 +87,11 @@ public final class TalgDesktop extends JFrame {
     private Timer profileSaveTimer;
     private final List<ConfigurablePanel> displayPanels = new ArrayList<>();
     private ModularWorkspace workspace;
+    private IndicatorStudioPanel indicatorPanel;
     private TradingPanel tradingPanel;
+    private ModelsPanel modelsPanel;
+    private ModelsPanel newsPanel;
+    private StockSelectionPanel stockSelectionPanel;
     private AlpacaSettings settings;
     private Timer refreshTimer;
 
@@ -99,6 +106,10 @@ public final class TalgDesktop extends JFrame {
             @Override public void windowClosed(WindowEvent e) {
                 if (refreshTimer != null) refreshTimer.stop();
                 if (profileSaveTimer != null) profileSaveTimer.stop();
+                if (newsPanel != null) newsPanel.close();
+                if (tradingPanel != null) tradingPanel.closePaperTest();
+                if (modelsPanel != null) modelsPanel.close();
+                if (stockSelectionPanel != null) stockSelectionPanel.close();
             }
         });
 
@@ -155,14 +166,20 @@ public final class TalgDesktop extends JFrame {
         side.add(mark);
         side.add(Box.createVerticalStrut(14));
 
-        for (NavButton nav : new NavButton[]{displayNav, tradingNav, stocksNav, settingsNav}) {
+        indicatorsNav.setToolTipText("Indicators: create, test, and reuse calculation blocks");
+        newsNav.setToolTipText("News / Info: world events, company news, financials, and source coverage");
+        modelsNav.setToolTipText("Trading model");
+        for (NavButton nav : new NavButton[]{displayNav, indicatorsNav, tradingNav, modelsNav, newsNav, stocksNav, settingsNav}) {
             nav.setAlignmentX(CENTER_ALIGNMENT);
             nav.setMaximumSize(new Dimension(56, 40));
             side.add(nav);
             side.add(Box.createVerticalStrut(4));
         }
         displayNav.addActionListener(e -> showTab("display"));
+        indicatorsNav.addActionListener(e -> showTab("indicators"));
         tradingNav.addActionListener(e -> showTab("trading"));
+        modelsNav.addActionListener(e -> showTab("models"));
+        newsNav.addActionListener(e -> showTab("news"));
         stocksNav.addActionListener(e -> showTab("stocks"));
         settingsNav.addActionListener(e -> showTab("settings"));
 
@@ -202,8 +219,20 @@ public final class TalgDesktop extends JFrame {
         cardHost.setBackground(BG);
         cardHost.add(displayTab(), "display");
         tradingPanel = new TradingPanel(() -> settings, this::connectedAccountMode, watchlist::getSelectedValue);
+        indicatorPanel = new IndicatorStudioPanel(() -> settings, this::connectedAccountMode,
+                symbols.isEmpty() ? "" : symbols.get(0),
+                this::openIndicatorChart, this::useIndicatorInTrading);
+        cardHost.add(indicatorPanel, "indicators");
         cardHost.add(tradingPanel, "trading");
-        cardHost.add(stocksTab(), "stocks");
+        modelsPanel = new ModelsPanel(java.nio.file.Path.of(""), tradingPanel);
+        tradingPanel.setTradeNavigator(() -> showTab("trading"));
+        cardHost.add(modelsPanel, "models");
+        newsPanel = new ModelsPanel(java.nio.file.Path.of(""), tradingPanel, true);
+        cardHost.add(newsPanel, "news");
+        stockSelectionPanel = new StockSelectionPanel(java.nio.file.Path.of(""), selected -> {
+            modelsPanel.applyStocks(selected); showTab("models");
+        }, stocksTab(), () -> settings, this::accountMode);
+        cardHost.add(stockSelectionPanel, "stocks");
         cardHost.add(wrapView(settingsTab()), "settings");
         return cardHost;
     }
@@ -335,6 +364,9 @@ public final class TalgDesktop extends JFrame {
     }
 
     private void closeWithProfileSave() {
+        if (modelsPanel != null && !modelsPanel.confirmClose()) return;
+        if (newsPanel != null && !newsPanel.confirmClose()) return;
+        if (stockSelectionPanel != null && !stockSelectionPanel.confirmClose()) return;
         try {
             if (activeProfile == null) throw new IOException("No desk profile was loaded.");
             saveProfile();
@@ -493,8 +525,9 @@ public final class TalgDesktop extends JFrame {
         }
         if ("Watchlist".equals(spec.kind())) return watchlistModule();
         if ("Modeling board".equals(spec.kind())) return new ModelingBoardPanel(spec.modelFile());
-        if ("Analysis studio".equals(spec.kind()))
-            return new AnalysisStudioPanel(() -> settings, watchlist.getSelectedValue());
+        if ("Models".equals(spec.kind()) || "Analysis studio".equals(spec.kind()))
+            return new AnalysisStudioPanel(() -> settings, this::connectedAccountMode,
+                    watchlist.getSelectedValue());
         RPortfolioPanel panel = new RPortfolioPanel(spec.kind(), spec.period(),
                 spec.indicator(), spec.overlays(), spec.symbol(), spec.chart());
         if (settings != null) SwingUtilities.invokeLater(() -> panel.connect(settings, accountMode()));
@@ -654,7 +687,13 @@ public final class TalgDesktop extends JFrame {
     private void showTab(String name) {
         cards.show(cardHost, name);
         displayNav.setActive("display".equals(name));
+        indicatorsNav.setActive("indicators".equals(name));
         tradingNav.setActive("trading".equals(name));
+        if ("trading".equals(name)) tradingPanel.activate();
+        modelsNav.setActive("models".equals(name));
+        if ("models".equals(name)) modelsPanel.activate();
+        newsNav.setActive("news".equals(name));
+        if ("news".equals(name)) newsPanel.activate();
         stocksNav.setActive("stocks".equals(name));
         settingsNav.setActive("settings".equals(name));
     }
@@ -679,6 +718,17 @@ public final class TalgDesktop extends JFrame {
         }
         showTab("display");
         workspace.addPanel().openStockChart(symbol);
+    }
+
+    private void openIndicatorChart(IndicatorStudioPanel.Selection selection) {
+        showTab("display");
+        workspace.addPanel().openIndicatorChart(selection.ticker(), selection.name());
+    }
+
+    private void useIndicatorInTrading(IndicatorStudioPanel.Selection selection) {
+        showTab("models");
+        tradingPanel.addIndicatorInput(selection.name(), selection.ticker());
+        modelsPanel.openRules();
     }
 
     private void openSelectedStockQuote() {

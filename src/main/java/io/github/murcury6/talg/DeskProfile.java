@@ -16,7 +16,7 @@ record DeskProfile(int version, String name, List<String> watchlist, String sele
     private static final ObjectMapper JSON = new ObjectMapper()
             .enable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
     private static final Set<String> TYPES = Set.of("Portfolio", "Stock chart", "Market quote",
-            "Watchlist", "Modeling board", "Analysis studio");
+            "Watchlist", "Modeling board", "Models", "Analysis studio");
     private static final Set<String> VIEWS = Set.of("Overview", "Performance", "Allocation",
             "Risk lens", "Holdings");
     private static final Set<String> PERIODS = Set.of("1M", "3M", "6M", "YTD", "1Y");

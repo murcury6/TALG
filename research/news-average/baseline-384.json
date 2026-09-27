@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "name": "Symbol-related news count average",
+  "status": "unfitted_research_baseline",
+  "encoder": {
+    "model": "Xenova/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "2c4055b12046f11709e9df2c122e59ffbdc2f900",
+    "directory": "work/news-tensor/model",
+    "dimension": 384,
+    "max_tokens": 128,
+    "input": "symbol plus headline and publisher-provided summary",
+    "pooling": "attention_mask_mean",
+    "normalize": true,
+    "cpu_threads": 2
+  },
+  "input_template": "Target stock symbol: {symbol}\nRelated news article:\n{text}",
+  "related_kinds": [
+    "provider_symbol",
+    "ticker_feed",
+    "manual"
+  ],
+  "decay": {
+    "kind": "shock_plus_background",
+    "shock_fraction": 0.8,
+    "shock_half_life_seconds": 300,
+    "background_half_life_seconds": 7200,
+    "parameter_status": "illustrative_only_not_fitted_or_selected_by_performance"
+  },
+  "formula": "X_s(t) = sum_i(x_si / mu(age_i)) / n_s; mu(a) = 1 / d(a)",
+  "decay_formula": "d(a) = shock_fraction * 2**(-a/shock_half_life_seconds) + (1-shock_fraction) * 2**(-a/background_half_life_seconds)",
+  "denominator": "count_of_all_related_articles_in_the_current_source_snapshot",
+  "batch_size": 16,
+  "future_decay_experiment": "WAIT_FOR_EXPLICIT_USER_INSTRUCTION"
+}

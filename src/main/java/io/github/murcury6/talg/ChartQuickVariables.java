@@ -19,7 +19,7 @@ final class ChartQuickVariables {
     private static final Set<String> PRICE_BARS = Set.of("candles", "hollow_candles", "ohlc", "heikin_ashi");
     private static final Set<String> DISPLAYS = Set.of("line", "step", "area", "points", "columns",
             "lollipop", "candles", "hollow_candles", "ohlc", "heikin_ashi");
-    private static final Pattern CUSTOM = Pattern.compile("(?i)^custom\\s*\\(\\s*([a-z][a-z0-9_]{0,39})\\s*\\)$");
+    private static final Pattern CUSTOM = Pattern.compile("(?i)^(?:indicator|custom)\\s*\\(\\s*([a-z][a-z0-9_]{0,39})\\s*\\)$");
     private static final Pattern SINGLE_PERIOD = Pattern.compile("(?i)^(sma|ema|rsi|volatility)\\s*\\(\\s*(-?\\d+)\\s*\\)$");
     private static final Pattern BOLLINGER = Pattern.compile("(?i)^bollinger\\s*\\(\\s*(-?\\d+)\\s*,\\s*(-?[0-9.]+)\\s*\\)$");
     private static final Pattern MACD = Pattern.compile("(?i)^macd\\s*\\(\\s*(-?\\d+)\\s*,\\s*(-?\\d+)\\s*,\\s*(-?\\d+)\\s*\\)$");
@@ -156,7 +156,7 @@ final class ChartQuickVariables {
         if (FIELDS.contains(value)) return value;
         Matcher custom = CUSTOM.matcher(value);
         return custom.matches() && savedIndicator(custom.group(1))
-                ? "Custom(" + custom.group(1) + ")" : null;
+                ? "Indicator(" + custom.group(1) + ")" : null;
     }
 
     private static String study(String raw, ChartScript.Config active, String previous, List<String> notes) {
@@ -196,7 +196,7 @@ final class ChartQuickVariables {
             return "Field(" + field.group(1).toLowerCase(Locale.ROOT) + ")";
         Matcher custom = CUSTOM.matcher(value);
         if (custom.matches() && savedIndicator(custom.group(1)))
-            return "Custom(" + custom.group(1).toLowerCase(Locale.ROOT) + ")";
+            return "Indicator(" + custom.group(1).toLowerCase(Locale.ROOT) + ")";
         notes.add("Kept the prior lower study; the requested study is not available.");
         return previous;
     }
@@ -274,7 +274,7 @@ final class ChartQuickVariables {
         }
         Matcher custom = CUSTOM.matcher(value);
         return custom.matches() && savedIndicator(custom.group(1))
-                ? "Custom(" + custom.group(1).toLowerCase(Locale.ROOT) + ")" : null;
+                ? "Indicator(" + custom.group(1).toLowerCase(Locale.ROOT) + ")" : null;
     }
 
     private static int boundedInteger(String raw) {

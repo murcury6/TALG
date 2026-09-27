@@ -92,8 +92,8 @@ final class ChartScript {
                             plot = value.toLowerCase(Locale.ROOT);
                         } else {
                             Matcher call = call(value);
-                            if (!call.group(1).equalsIgnoreCase("custom"))
-                                throw new IllegalArgumentException("Plot must be open, high, low, close, volume, vwap, trades or Custom(name)");
+                            if (!Set.of("custom", "indicator").contains(call.group(1).toLowerCase(Locale.ROOT)))
+                                throw new IllegalArgumentException("Plot must be open, high, low, close, volume, vwap, trades or Indicator(name)");
                             String[] args = arguments(call);
                             exact(args, 1);
                             plot = "custom:" + customName(args[0]);
@@ -119,7 +119,8 @@ final class ChartScript {
                     case "overlay" -> {
                         Matcher call = call(value);
                         String name = call.group(1).toLowerCase(Locale.ROOT);
-                        unique(seen, "overlay " + name + (name.equals("custom")
+                        unique(seen, "overlay " + (name.equals("custom") ? "indicator" : name)
+                                + (Set.of("custom", "indicator").contains(name)
                                 ? ":" + call.group(2).toLowerCase(Locale.ROOT) : ""));
                         String[] args = arguments(call);
                         switch (name) {
@@ -133,7 +134,7 @@ final class ChartScript {
                                     throw new IllegalArgumentException("Bollinger multiplier must be above 0 and at most 10");
                                 useBollinger = true;
                             }
-                            case "custom" -> {
+                            case "custom", "indicator" -> {
                                 exact(args, 1);
                                 customOverlays.add(customName(args[0]));
                             }
@@ -147,6 +148,7 @@ final class ChartScript {
                         } else {
                             Matcher call = call(value);
                             study = call.group(1).toLowerCase(Locale.ROOT);
+                            if (study.equals("indicator")) study = "custom";
                             String[] args = arguments(call);
                             switch (study) {
                                 case "rsi" -> { exact(args, 1); rsi = period(args[0]); }
@@ -226,7 +228,7 @@ final class ChartScript {
     private static String customName(String value) {
         String name = value.toLowerCase(Locale.ROOT);
         if (!name.matches("[a-z][a-z0-9_]{0,39}"))
-            throw new IllegalArgumentException("Custom name must be 1–40 letters, digits or underscores, starting with a letter");
+            throw new IllegalArgumentException("Indicator name must be 1–40 letters, digits or underscores, starting with a letter");
         return name;
     }
 

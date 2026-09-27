@@ -1,0 +1,62 @@
+[
+  {
+    "case": "direct_earnings",
+    "text": "Apple Inc. reports quarterly earnings as iPhone revenue grows and management raises guidance.",
+    "expected_include": true
+  },
+  {
+    "case": "supplier_outage",
+    "text": "TSMC halts chip production after a power outage at a factory.",
+    "expected_include": true
+  },
+  {
+    "case": "sector_demand",
+    "text": "Global smartphone demand falls as consumer electronics retailers report weaker sales.",
+    "expected_include": true
+  },
+  {
+    "case": "customer_boycott",
+    "text": "Consumer boycott of Apple iPhones threatens smartphone sales in a key market.",
+    "expected_include": true
+  },
+  {
+    "case": "supplier_strike",
+    "text": "Workers at TSMC strike and halt semiconductor production.",
+    "expected_include": true
+  },
+  {
+    "case": "recipe",
+    "text": "How to bake a delicious apple pie with cinnamon for a family picnic.",
+    "expected_include": false
+  },
+  {
+    "case": "animal",
+    "text": "A cat climbed a tree and was rescued by a local family.",
+    "expected_include": false
+  },
+  {
+    "case": "unrelated_company",
+    "text": "Caterpillar reports quarterly earnings as mining equipment orders grow.",
+    "expected_include": false
+  },
+  {
+    "case": "rainforest",
+    "text": "Bird watchers document new wildlife sightings in the Amazon rainforest.",
+    "expected_include": false
+  },
+  {
+    "case": "personal_gossip",
+    "text": "A television celebrity announces a private wedding in an exclusive interview.",
+    "expected_include": false
+  },
+  {
+    "case": "tail_earnings",
+    "text": "The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks. The town newsletter describes community gardening and neighborhood walks.  Apple Inc. reports quarterly earnings and stronger iPhone revenue.",
+    "expected_include": true
+  },
+  {
+    "case": "macro_open_question",
+    "text": "The Federal Reserve raises interest rates as inflation accelerates across the economy.",
+    "expected_include": null
+  }
+]

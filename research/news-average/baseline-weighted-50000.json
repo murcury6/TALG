@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "name": "Symbol-related news count average",
+  "status": "unfitted_research_baseline",
+  "encoder": {
+    "model": "Xenova/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "2c4055b12046f11709e9df2c122e59ffbdc2f900",
+    "directory": "work/news-tensor/model",
+    "dimension": 384,
+    "max_tokens": 128,
+    "input": "symbol plus headline and publisher-provided summary",
+    "pooling": "attention_mask_mean",
+    "normalize": true,
+    "cpu_threads": 2
+  },
+  "input_template": "Target stock symbol: {symbol}\nRelated news article:\n{text}",
+  "related_kinds": [
+    "provider_symbol",
+    "ticker_feed",
+    "manual"
+  ],
+  "decay": {
+    "kind": "shock_plus_background",
+    "shock_fraction": 0.8,
+    "shock_half_life_seconds": 300,
+    "background_half_life_seconds": 7200,
+    "parameter_status": "illustrative_only_not_fitted_or_selected_by_performance"
+  },
+  "formula": "X_s(t) = sum_i(x_si * w_si / mu(age_i)) / n_s; w_si = connection_model(s, article_i); mu(a) = 1 / d(a)",
+  "decay_formula": "d(a) = shock_fraction * 2**(-a/shock_half_life_seconds) + (1-shock_fraction) * 2**(-a/background_half_life_seconds)",
+  "denominator": "count_of_all_related_articles_in_the_current_source_snapshot",
+  "batch_size": 16,
+  "future_decay_experiment": "WAIT_FOR_EXPLICIT_USER_INSTRUCTION",
+  "representation": {
+    "kind": "semantic_word_character_hash_v1",
+    "dimensions": 50000,
+    "word_dimensions": 24576,
+    "character_dimensions": 25040,
+    "word_ngram_range": [
+      1,
+      2
+    ],
+    "character_ngram_range": [
+      3,
+      5
+    ],
+    "hash": "blake2b_64_signed_v1",
+    "normalization": "l2_per_block_then_combined",
+    "status": "unfitted_hybrid_features_not_50000_learned_semantic_dimensions"
+  },
+  "relatedness": {
+    "model_file": "research/news-average/relatedness.json"
+  },
+  "connection_weight": {
+    "model_file": "research/news-average/connection-model.json"
+  }
+}

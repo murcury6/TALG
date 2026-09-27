@@ -1,0 +1,64 @@
+{
+  "sheets": [
+    {
+      "name": "Information",
+      "columns": [
+        {
+          "id": "headline",
+          "path": "/headline",
+          "type": "text"
+        },
+        {
+          "id": "freshness",
+          "path": "/outputs/freshness",
+          "type": "number"
+        },
+        {
+          "id": "sources",
+          "path": "/outputs/coverage",
+          "type": "number"
+        },
+        {
+          "id": "tickers",
+          "path": "/tickers",
+          "type": "json"
+        },
+        {
+          "id": "publisher",
+          "path": "/publisher"
+        },
+        {
+          "id": "state",
+          "path": "/rating_state"
+        },
+        {
+          "id": "rated",
+          "path": "/rated_at"
+        }
+      ]
+    },
+    {
+      "name": "Evidence",
+      "rows": "/associations",
+      "columns": [
+        {
+          "id": "headline",
+          "source": "record",
+          "path": "/headline"
+        },
+        {
+          "id": "ticker",
+          "path": "/ticker"
+        },
+        {
+          "id": "kind",
+          "path": "/kind"
+        },
+        {
+          "id": "evidence",
+          "path": "/evidence"
+        }
+      ]
+    }
+  ]
+}

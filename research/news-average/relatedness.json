@@ -1,0 +1,1780 @@
+{
+  "schema_version": 1,
+  "algorithm": "broad_relatedness_v1",
+  "name": "Broad company, sector and supply-chain relatedness",
+  "reviewed_on": "2026-09-26",
+  "max_hops": 1,
+  "policy": "Include related context before encoding; one article counts once per target regardless of inclusion paths. No directional or probabilistic claim.",
+  "material_event_terms": [
+    "earnings",
+    "revenue",
+    "guidance",
+    "shares",
+    "stock",
+    "supplier",
+    "suppliers",
+    "production",
+    "quarterly",
+    "manufacturing",
+    "sales",
+    "acquisition",
+    "profit",
+    "profits",
+    "loss",
+    "losses",
+    "demand",
+    "supply",
+    "shortage",
+    "outage",
+    "strike",
+    "factory",
+    "factories",
+    "capacity",
+    "exports",
+    "export",
+    "tariff",
+    "tariffs",
+    "sanctions",
+    "recall",
+    "regulation",
+    "regulatory",
+    "lawsuit",
+    "bankruptcy",
+    "orders",
+    "shipments",
+    "layoffs",
+    "merger",
+    "contract",
+    "investment",
+    "forecast",
+    "forecasts",
+    "halt",
+    "halts",
+    "halted",
+    "disruption",
+    "disruptions",
+    "chips",
+    "semiconductors"
+  ],
+  "sectors": {
+    "semiconductors": {
+      "terms": [
+        "semiconductors",
+        "semiconductor",
+        "chipmaker",
+        "chipmakers",
+        "chip production",
+        "AI chips",
+        "chip shortage",
+        "wafer fabrication"
+      ],
+      "rationale": "Declared research exposure to semiconductors. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "technology_hardware": {
+      "terms": [
+        "consumer electronics",
+        "smartphone demand",
+        "smartphone sales",
+        "smartphone market",
+        "electronics manufacturing"
+      ],
+      "rationale": "Declared research exposure to technology hardware. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "cloud_and_software": {
+      "terms": [
+        "cloud computing",
+        "cloud infrastructure",
+        "cloud software",
+        "enterprise software",
+        "software industry",
+        "cybersecurity"
+      ],
+      "rationale": "Declared research exposure to cloud and software. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "ai_infrastructure": {
+      "terms": [
+        "artificial intelligence infrastructure",
+        "AI infrastructure",
+        "data center",
+        "data centres",
+        "data centers",
+        "AI server",
+        "AI servers"
+      ],
+      "rationale": "Declared research exposure to ai infrastructure. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": false
+    },
+    "advertising_and_media": {
+      "terms": [
+        "digital advertising",
+        "advertising market",
+        "streaming industry",
+        "streaming subscribers",
+        "film industry"
+      ],
+      "rationale": "Declared research exposure to advertising and media. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "automotive": {
+      "terms": [
+        "electric vehicles",
+        "electric vehicle",
+        "automotive industry",
+        "auto sales",
+        "vehicle production",
+        "lithium batteries"
+      ],
+      "rationale": "Declared research exposure to automotive. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "mobility": {
+      "terms": [
+        "ride hailing",
+        "ridesharing",
+        "ride-sharing",
+        "gig economy",
+        "taxi industry"
+      ],
+      "rationale": "Declared research exposure to mobility. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "banking_and_finance": {
+      "terms": [
+        "banking sector",
+        "banking industry",
+        "bank earnings",
+        "bank lending",
+        "credit losses",
+        "financial sector",
+        "bank capital",
+        "investment banking"
+      ],
+      "rationale": "Declared research exposure to banking and finance. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "payments": {
+      "terms": [
+        "payment networks",
+        "payment processing",
+        "card spending",
+        "credit card fees",
+        "interchange fees"
+      ],
+      "rationale": "Declared research exposure to payments. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "energy": {
+      "terms": [
+        "crude oil",
+        "oil prices",
+        "natural gas",
+        "oil production",
+        "oil supply",
+        "energy sector",
+        "OPEC"
+      ],
+      "rationale": "Declared research exposure to energy. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "retail": {
+      "terms": [
+        "retail sales",
+        "retail industry",
+        "retailer earnings",
+        "consumer spending",
+        "e-commerce"
+      ],
+      "rationale": "Declared research exposure to retail. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "consumer_staples": {
+      "terms": [
+        "consumer staples",
+        "food and beverage industry",
+        "packaged food",
+        "household products",
+        "grocery prices"
+      ],
+      "rationale": "Declared research exposure to consumer staples. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "healthcare": {
+      "terms": [
+        "healthcare industry",
+        "health care sector",
+        "health insurance",
+        "drug prices",
+        "drug pricing"
+      ],
+      "rationale": "Declared research exposure to healthcare. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "biopharma": {
+      "terms": [
+        "pharmaceutical industry",
+        "biotechnology",
+        "clinical trial",
+        "FDA approval",
+        "drug approval"
+      ],
+      "rationale": "Declared research exposure to biopharma. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "industrials": {
+      "terms": [
+        "industrial production",
+        "manufacturing sector",
+        "capital equipment",
+        "construction equipment"
+      ],
+      "rationale": "Declared research exposure to industrials. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "aerospace": {
+      "terms": [
+        "aircraft production",
+        "jet engines",
+        "commercial aviation",
+        "aircraft deliveries",
+        "aerospace industry"
+      ],
+      "rationale": "Declared research exposure to aerospace. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "utilities": {
+      "terms": [
+        "electric utilities",
+        "electricity demand",
+        "power grid",
+        "utility rates",
+        "power generation"
+      ],
+      "rationale": "Declared research exposure to utilities. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "materials": {
+      "terms": [
+        "materials sector",
+        "industrial metals",
+        "steel prices",
+        "copper prices",
+        "mining industry"
+      ],
+      "rationale": "Declared research exposure to materials. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "real_estate": {
+      "terms": [
+        "commercial real estate",
+        "real estate investment trusts",
+        "REITs",
+        "office vacancy",
+        "property market"
+      ],
+      "rationale": "Declared research exposure to real estate. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": true
+    },
+    "broad_market": {
+      "terms": [
+        "stock market",
+        "equity markets",
+        "US equities",
+        "S&P 500",
+        "Nasdaq composite",
+        "Dow Jones",
+        "Russell 2000"
+      ],
+      "rationale": "Declared research exposure to broad market. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": false
+    },
+    "international": {
+      "terms": [
+        "emerging markets",
+        "European equities",
+        "Asian equities",
+        "international equities"
+      ],
+      "rationale": "Declared research exposure to international. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": false
+    },
+    "precious_metals": {
+      "terms": [
+        "gold prices",
+        "silver prices",
+        "gold bullion",
+        "silver bullion",
+        "precious metals"
+      ],
+      "rationale": "Declared research exposure to precious metals. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": false
+    },
+    "bonds": {
+      "terms": [
+        "Treasury yields",
+        "Treasury bonds",
+        "bond market",
+        "high-yield bonds",
+        "credit spreads",
+        "corporate bonds"
+      ],
+      "rationale": "Declared research exposure to bonds. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": false
+    },
+    "volatility": {
+      "terms": [
+        "VIX futures",
+        "volatility futures",
+        "Cboe volatility index",
+        "market volatility"
+      ],
+      "rationale": "Declared research exposure to volatility. Broad inclusion hypothesis; not a causal effect or certified GICS assignment.",
+      "expand_company_events": false
+    }
+  },
+  "entities": {
+    "AAPL": {
+      "symbol": "AAPL",
+      "name": "Apple Inc. Common Stock",
+      "aliases": [
+        "Apple Inc.",
+        "Apple Inc",
+        "iPhone",
+        "MacBook"
+      ],
+      "sectors": [
+        "technology_hardware"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched",
+      "guarded_aliases": [
+        {
+          "aliases": [
+            "Apple"
+          ],
+          "require_any": [
+            "earnings",
+            "revenue",
+            "guidance",
+            "shares",
+            "stock",
+            "supplier",
+            "suppliers",
+            "production",
+            "quarterly",
+            "manufacturing",
+            "sales",
+            "acquisition"
+          ]
+        }
+      ]
+    },
+    "ABBV": {
+      "symbol": "ABBV",
+      "name": "ABBVIE INC.",
+      "aliases": [
+        "AbbVie"
+      ],
+      "sectors": [
+        "healthcare",
+        "biopharma"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "ADBE": {
+      "symbol": "ADBE",
+      "name": "Adobe Inc. Common Stock",
+      "aliases": [
+        "Adobe"
+      ],
+      "sectors": [
+        "cloud_and_software"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "AMAT": {
+      "symbol": "AMAT",
+      "name": "Applied Materials, Inc. Common Stock",
+      "aliases": [
+        "Applied Materials"
+      ],
+      "sectors": [
+        "semiconductors",
+        "ai_infrastructure"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "AMD": {
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices, Inc. Common Stock",
+      "aliases": [
+        "Advanced Micro Devices"
+      ],
+      "sectors": [
+        "semiconductors",
+        "ai_infrastructure"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "AMKR": {
+      "symbol": "AMKR",
+      "name": "Amkor Technology, Inc. Common Stock",
+      "aliases": [
+        "Amkor"
+      ],
+      "sectors": [
+        "semiconductors"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "AMZN": {
+      "symbol": "AMZN",
+      "name": "Amazon.com, Inc. Common Stock",
+      "aliases": [
+        "Amazon.com",
+        "Amazon Web Services"
+      ],
+      "sectors": [
+        "cloud_and_software",
+        "ai_infrastructure",
+        "retail"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched",
+      "guarded_aliases": [
+        {
+          "aliases": [
+            "Amazon"
+          ],
+          "require_any": [
+            "earnings",
+            "revenue",
+            "guidance",
+            "shares",
+            "stock",
+            "supplier",
+            "suppliers",
+            "production",
+            "quarterly",
+            "manufacturing",
+            "sales",
+            "acquisition"
+          ]
+        }
+      ]
+    },
+    "AVGO": {
+      "symbol": "AVGO",
+      "name": "Broadcom Inc. Common Stock",
+      "aliases": [
+        "Broadcom"
+      ],
+      "sectors": [
+        "semiconductors",
+        "ai_infrastructure"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "BA": {
+      "symbol": "BA",
+      "name": "Boeing Company",
+      "aliases": [
+        "Boeing"
+      ],
+      "sectors": [
+        "industrials",
+        "aerospace"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "BAC": {
+      "symbol": "BAC",
+      "name": "Bank of America Corporation",
+      "aliases": [
+        "Bank of America"
+      ],
+      "sectors": [
+        "banking_and_finance"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "C": {
+      "symbol": "C",
+      "name": "Citigroup Inc.",
+      "aliases": [
+        "Citigroup",
+        "Citibank"
+      ],
+      "sectors": [
+        "banking_and_finance"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "CAT": {
+      "symbol": "CAT",
+      "name": "Caterpillar Inc.",
+      "aliases": [
+        "Caterpillar Inc"
+      ],
+      "sectors": [
+        "industrials"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched",
+      "guarded_aliases": [
+        {
+          "aliases": [
+            "Caterpillar"
+          ],
+          "require_any": [
+            "earnings",
+            "revenue",
+            "guidance",
+            "shares",
+            "stock",
+            "supplier",
+            "suppliers",
+            "production",
+            "quarterly",
+            "manufacturing",
+            "sales",
+            "acquisition"
+          ]
+        }
+      ]
+    },
+    "COHR": {
+      "symbol": "COHR",
+      "name": "Coherent Corp.",
+      "aliases": [
+        "Coherent Corp",
+        "Coherent Corporation"
+      ],
+      "sectors": [],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched",
+      "guarded_aliases": [
+        {
+          "aliases": [
+            "Coherent"
+          ],
+          "require_any": [
+            "earnings",
+            "revenue",
+            "guidance",
+            "shares",
+            "stock",
+            "supplier",
+            "suppliers",
+            "production",
+            "quarterly",
+            "manufacturing",
+            "sales",
+            "acquisition"
+          ]
+        }
+      ]
+    },
+    "COP": {
+      "symbol": "COP",
+      "name": "ConocoPhillips",
+      "aliases": [
+        "ConocoPhillips"
+      ],
+      "sectors": [
+        "energy"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "COST": {
+      "symbol": "COST",
+      "name": "Costco Wholesale Corporation Common Stock",
+      "aliases": [
+        "Costco"
+      ],
+      "sectors": [
+        "retail",
+        "consumer_staples"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "CRM": {
+      "symbol": "CRM",
+      "name": "Salesforce, Inc.",
+      "aliases": [
+        "Salesforce"
+      ],
+      "sectors": [
+        "cloud_and_software"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "CSCO": {
+      "symbol": "CSCO",
+      "name": "Cisco Systems, Inc. Common Stock (DE)",
+      "aliases": [
+        "Cisco"
+      ],
+      "sectors": [
+        "technology_hardware",
+        "ai_infrastructure"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "CVX": {
+      "symbol": "CVX",
+      "name": "Chevron Corporation",
+      "aliases": [
+        "Chevron"
+      ],
+      "sectors": [
+        "energy"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "DIA": {
+      "symbol": "DIA",
+      "name": "State Street SPDR Dow Jones Industrial Average ETF Trust",
+      "aliases": [
+        "State Street SPDR Dow Jones Industrial Average ETF Trust"
+      ],
+      "sectors": [
+        "broad_market"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "DIS": {
+      "symbol": "DIS",
+      "name": "The Walt Disney Company",
+      "aliases": [
+        "Walt Disney"
+      ],
+      "sectors": [
+        "advertising_and_media"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched",
+      "guarded_aliases": [
+        {
+          "aliases": [
+            "Disney"
+          ],
+          "require_any": [
+            "earnings",
+            "revenue",
+            "guidance",
+            "shares",
+            "stock",
+            "supplier",
+            "suppliers",
+            "production",
+            "quarterly",
+            "manufacturing",
+            "sales",
+            "acquisition"
+          ]
+        }
+      ]
+    },
+    "EEM": {
+      "symbol": "EEM",
+      "name": "iShares MSCI Emerging Markets ETF",
+      "aliases": [
+        "iShares MSCI Emerging Markets ETF"
+      ],
+      "sectors": [
+        "international"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "EFA": {
+      "symbol": "EFA",
+      "name": "iShares MSCI EAFE ETF",
+      "aliases": [
+        "iShares MSCI EAFE ETF"
+      ],
+      "sectors": [
+        "international"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "GE": {
+      "symbol": "GE",
+      "name": "GE Aerospace",
+      "aliases": [
+        "GE Aerospace",
+        "General Electric"
+      ],
+      "sectors": [
+        "industrials",
+        "aerospace"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "GFS": {
+      "symbol": "GFS",
+      "name": "GlobalFoundries Inc. Ordinary Shares",
+      "aliases": [
+        "GlobalFoundries",
+        "Global Foundries"
+      ],
+      "sectors": [
+        "semiconductors"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "GLD": {
+      "symbol": "GLD",
+      "name": "SPDR Gold Trust, SPDR Gold Shares",
+      "aliases": [
+        "SPDR Gold Trust, SPDR Gold Shares"
+      ],
+      "sectors": [
+        "precious_metals"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "GLW": {
+      "symbol": "GLW",
+      "name": "Corning Incorporated",
+      "aliases": [
+        "Corning Inc",
+        "Corning Incorporated"
+      ],
+      "sectors": [],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched",
+      "guarded_aliases": [
+        {
+          "aliases": [
+            "Corning"
+          ],
+          "require_any": [
+            "earnings",
+            "revenue",
+            "guidance",
+            "shares",
+            "stock",
+            "supplier",
+            "suppliers",
+            "production",
+            "quarterly",
+            "manufacturing",
+            "sales",
+            "acquisition"
+          ]
+        }
+      ]
+    },
+    "GOOGL": {
+      "symbol": "GOOGL",
+      "name": "Alphabet Inc. Class A Common Stock",
+      "aliases": [
+        "Alphabet Inc",
+        "Google"
+      ],
+      "sectors": [
+        "cloud_and_software",
+        "ai_infrastructure",
+        "advertising_and_media"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "GS": {
+      "symbol": "GS",
+      "name": "Goldman Sachs Group Inc.",
+      "aliases": [
+        "Goldman Sachs"
+      ],
+      "sectors": [
+        "banking_and_finance"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "HYG": {
+      "symbol": "HYG",
+      "name": "iShares iBoxx $ High Yield Corporate Bond ETF",
+      "aliases": [
+        "iShares iBoxx $ High Yield Corporate Bond ETF"
+      ],
+      "sectors": [
+        "bonds"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "IBM": {
+      "symbol": "IBM",
+      "name": "International Business Machines Corporation",
+      "aliases": [
+        "International Business Machines"
+      ],
+      "sectors": [
+        "cloud_and_software"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "INTC": {
+      "symbol": "INTC",
+      "name": "Intel Corporation Common Stock",
+      "aliases": [
+        "Intel"
+      ],
+      "sectors": [
+        "semiconductors"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "IWM": {
+      "symbol": "IWM",
+      "name": "iShares Russell 2000 ETF",
+      "aliases": [
+        "iShares Russell 2000 ETF"
+      ],
+      "sectors": [
+        "broad_market"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "JNJ": {
+      "symbol": "JNJ",
+      "name": "Johnson & Johnson",
+      "aliases": [
+        "Johnson & Johnson",
+        "Johnson and Johnson"
+      ],
+      "sectors": [
+        "healthcare",
+        "biopharma"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "JPM": {
+      "symbol": "JPM",
+      "name": "JPMorgan Chase & Co.",
+      "aliases": [
+        "JPMorgan",
+        "J.P. Morgan",
+        "JP Morgan"
+      ],
+      "sectors": [
+        "banking_and_finance"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "KO": {
+      "symbol": "KO",
+      "name": "Coca-Cola Company",
+      "aliases": [
+        "Coca-Cola",
+        "Coca Cola"
+      ],
+      "sectors": [
+        "consumer_staples"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "KRE": {
+      "symbol": "KRE",
+      "name": "State Street SPDR S&P Regional Banking ETF",
+      "aliases": [
+        "State Street SPDR S&P Regional Banking ETF"
+      ],
+      "sectors": [
+        "banking_and_finance"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "LITE": {
+      "symbol": "LITE",
+      "name": "Lumentum Holdings Inc. Common Stock",
+      "aliases": [
+        "Lumentum"
+      ],
+      "sectors": [],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "LLY": {
+      "symbol": "LLY",
+      "name": "Eli Lilly & Co.",
+      "aliases": [
+        "Eli Lilly"
+      ],
+      "sectors": [
+        "healthcare",
+        "biopharma"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "LRCX": {
+      "symbol": "LRCX",
+      "name": "Lam Research Corporation Common Stock",
+      "aliases": [
+        "Lam Research"
+      ],
+      "sectors": [
+        "semiconductors",
+        "ai_infrastructure"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "MA": {
+      "symbol": "MA",
+      "name": "Mastercard Incorporated",
+      "aliases": [
+        "Mastercard"
+      ],
+      "sectors": [
+        "payments"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "META": {
+      "symbol": "META",
+      "name": "Meta Platforms, Inc. Class A Common Stock",
+      "aliases": [
+        "Meta Platforms",
+        "Facebook",
+        "Instagram"
+      ],
+      "sectors": [
+        "advertising_and_media"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched",
+      "guarded_aliases": [
+        {
+          "aliases": [
+            "Meta"
+          ],
+          "require_any": [
+            "earnings",
+            "revenue",
+            "guidance",
+            "shares",
+            "stock",
+            "supplier",
+            "suppliers",
+            "production",
+            "quarterly",
+            "manufacturing",
+            "sales",
+            "acquisition"
+          ]
+        }
+      ]
+    },
+    "MRK": {
+      "symbol": "MRK",
+      "name": "Merck & Co., Inc.",
+      "aliases": [
+        "Merck"
+      ],
+      "sectors": [
+        "healthcare",
+        "biopharma"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "MS": {
+      "symbol": "MS",
+      "name": "Morgan Stanley",
+      "aliases": [
+        "Morgan Stanley"
+      ],
+      "sectors": [
+        "banking_and_finance"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "MSFT": {
+      "symbol": "MSFT",
+      "name": "Microsoft Corporation Common Stock",
+      "aliases": [
+        "Microsoft"
+      ],
+      "sectors": [
+        "cloud_and_software",
+        "ai_infrastructure"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "MU": {
+      "symbol": "MU",
+      "name": "Micron Technology, Inc. Common Stock",
+      "aliases": [
+        "Micron"
+      ],
+      "sectors": [
+        "semiconductors",
+        "ai_infrastructure"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "NEE": {
+      "symbol": "NEE",
+      "name": "NextEra Energy, Inc.",
+      "aliases": [
+        "NextEra Energy"
+      ],
+      "sectors": [
+        "utilities"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "NFLX": {
+      "symbol": "NFLX",
+      "name": "Netflix, Inc. Common Stock",
+      "aliases": [
+        "Netflix"
+      ],
+      "sectors": [
+        "advertising_and_media"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "NVDA": {
+      "symbol": "NVDA",
+      "name": "NVIDIA Corporation Common Stock",
+      "aliases": [
+        "Nvidia"
+      ],
+      "sectors": [
+        "semiconductors",
+        "ai_infrastructure"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "ORCL": {
+      "symbol": "ORCL",
+      "name": "Oracle Corp",
+      "aliases": [
+        "Oracle Corporation"
+      ],
+      "sectors": [
+        "cloud_and_software",
+        "ai_infrastructure"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched",
+      "guarded_aliases": [
+        {
+          "aliases": [
+            "Oracle"
+          ],
+          "require_any": [
+            "earnings",
+            "revenue",
+            "guidance",
+            "shares",
+            "stock",
+            "supplier",
+            "suppliers",
+            "production",
+            "quarterly",
+            "manufacturing",
+            "sales",
+            "acquisition"
+          ]
+        }
+      ]
+    },
+    "PEP": {
+      "symbol": "PEP",
+      "name": "PepsiCo, Inc. Common Stock",
+      "aliases": [
+        "PepsiCo"
+      ],
+      "sectors": [
+        "consumer_staples"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "PFE": {
+      "symbol": "PFE",
+      "name": "Pfizer Inc.",
+      "aliases": [
+        "Pfizer"
+      ],
+      "sectors": [
+        "healthcare",
+        "biopharma"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "PG": {
+      "symbol": "PG",
+      "name": "Procter & Gamble Company",
+      "aliases": [
+        "Procter & Gamble",
+        "Procter and Gamble"
+      ],
+      "sectors": [
+        "consumer_staples"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "PLTR": {
+      "symbol": "PLTR",
+      "name": "Palantir Technologies Inc. Class A Common Stock",
+      "aliases": [
+        "Palantir"
+      ],
+      "sectors": [
+        "cloud_and_software"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "QCOM": {
+      "symbol": "QCOM",
+      "name": "QUALCOMM Incorporated Common Stock",
+      "aliases": [
+        "Qualcomm"
+      ],
+      "sectors": [
+        "semiconductors"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "QQQ": {
+      "symbol": "QQQ",
+      "name": "Invesco QQQ Trust, Series 1",
+      "aliases": [
+        "Invesco QQQ Trust, Series 1"
+      ],
+      "sectors": [
+        "broad_market"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "QRVO": {
+      "symbol": "QRVO",
+      "name": "Qorvo, Inc. Common Stock",
+      "aliases": [
+        "Qorvo"
+      ],
+      "sectors": [],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "SLV": {
+      "symbol": "SLV",
+      "name": "iShares Silver Trust",
+      "aliases": [
+        "iShares Silver Trust"
+      ],
+      "sectors": [
+        "precious_metals"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "SMH": {
+      "symbol": "SMH",
+      "name": "VanEck Semiconductor ETF",
+      "aliases": [
+        "VanEck Semiconductor ETF"
+      ],
+      "sectors": [
+        "semiconductors"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "SOXX": {
+      "symbol": "SOXX",
+      "name": "iShares Semiconductor ETF",
+      "aliases": [
+        "iShares Semiconductor ETF"
+      ],
+      "sectors": [
+        "semiconductors"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "SPY": {
+      "symbol": "SPY",
+      "name": "State Street SPDR S&P 500 ETF Trust",
+      "aliases": [
+        "State Street SPDR S&P 500 ETF Trust"
+      ],
+      "sectors": [
+        "broad_market"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "SWKS": {
+      "symbol": "SWKS",
+      "name": "Skyworks Solutions, Inc. Common Stock",
+      "aliases": [
+        "Skyworks"
+      ],
+      "sectors": [],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "TLT": {
+      "symbol": "TLT",
+      "name": "iShares 20 Year Treasury Bond ETF",
+      "aliases": [
+        "iShares 20 Year Treasury Bond ETF"
+      ],
+      "sectors": [
+        "bonds"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "TSLA": {
+      "symbol": "TSLA",
+      "name": "Tesla, Inc. Common Stock",
+      "aliases": [
+        "Tesla"
+      ],
+      "sectors": [
+        "automotive"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "TSM": {
+      "symbol": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
+      "aliases": [
+        "TSMC",
+        "Taiwan Semiconductor"
+      ],
+      "sectors": [
+        "semiconductors",
+        "ai_infrastructure"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "TXN": {
+      "symbol": "TXN",
+      "name": "Texas Instruments Incorporated Common Stock",
+      "aliases": [
+        "Texas Instruments"
+      ],
+      "sectors": [
+        "semiconductors"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "UBER": {
+      "symbol": "UBER",
+      "name": "Uber Technologies, Inc.",
+      "aliases": [
+        "Uber Technologies"
+      ],
+      "sectors": [
+        "mobility"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched",
+      "guarded_aliases": [
+        {
+          "aliases": [
+            "Uber"
+          ],
+          "require_any": [
+            "earnings",
+            "revenue",
+            "guidance",
+            "shares",
+            "stock",
+            "supplier",
+            "suppliers",
+            "production",
+            "quarterly",
+            "manufacturing",
+            "sales",
+            "acquisition"
+          ]
+        }
+      ]
+    },
+    "UNH": {
+      "symbol": "UNH",
+      "name": "UNITEDHEALTH GROUP INCORPORATED (Delaware)",
+      "aliases": [
+        "UnitedHealth",
+        "United Health"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "UVXY": {
+      "symbol": "UVXY",
+      "name": "ProShares Ultra VIX Short-Term Futures ETF",
+      "aliases": [
+        "ProShares Ultra VIX Short-Term Futures ETF"
+      ],
+      "sectors": [
+        "volatility"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "V": {
+      "symbol": "V",
+      "name": "VISA Inc.",
+      "aliases": [
+        "Visa Inc"
+      ],
+      "sectors": [
+        "payments"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched",
+      "guarded_aliases": [
+        {
+          "aliases": [
+            "Visa"
+          ],
+          "require_any": [
+            "earnings",
+            "revenue",
+            "guidance",
+            "shares",
+            "stock",
+            "supplier",
+            "suppliers",
+            "production",
+            "quarterly",
+            "manufacturing",
+            "sales",
+            "acquisition"
+          ]
+        }
+      ]
+    },
+    "VTI": {
+      "symbol": "VTI",
+      "name": "Vanguard Morningstar Total Stock Market ETF",
+      "aliases": [
+        "Vanguard Morningstar Total Stock Market ETF"
+      ],
+      "sectors": [
+        "broad_market"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "WFC": {
+      "symbol": "WFC",
+      "name": "Wells Fargo & Co.",
+      "aliases": [
+        "Wells Fargo"
+      ],
+      "sectors": [
+        "banking_and_finance"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "WMT": {
+      "symbol": "WMT",
+      "name": "Walmart Inc. Common Stock",
+      "aliases": [
+        "Walmart"
+      ],
+      "sectors": [
+        "retail",
+        "consumer_staples"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "XBI": {
+      "symbol": "XBI",
+      "name": "State Street SPDR S&P Biotech ETF",
+      "aliases": [
+        "State Street SPDR S&P Biotech ETF"
+      ],
+      "sectors": [
+        "biopharma"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "XLB": {
+      "symbol": "XLB",
+      "name": "State Street Materials Select Sector SPDR ETF",
+      "aliases": [
+        "State Street Materials Select Sector SPDR ETF"
+      ],
+      "sectors": [
+        "materials"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "XLC": {
+      "symbol": "XLC",
+      "name": "State Street Communication Services Select Sector SPDR ETF",
+      "aliases": [
+        "State Street Communication Services Select Sector SPDR ETF"
+      ],
+      "sectors": [
+        "advertising_and_media"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "XLE": {
+      "symbol": "XLE",
+      "name": "State Street Energy Select Sector SPDR ETF",
+      "aliases": [
+        "State Street Energy Select Sector SPDR ETF"
+      ],
+      "sectors": [
+        "energy"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "XLF": {
+      "symbol": "XLF",
+      "name": "State Street Financial Select Sector SPDR ETF",
+      "aliases": [
+        "State Street Financial Select Sector SPDR ETF"
+      ],
+      "sectors": [
+        "banking_and_finance"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "XLI": {
+      "symbol": "XLI",
+      "name": "State Street Industrial Select Sector SPDR ETF",
+      "aliases": [
+        "State Street Industrial Select Sector SPDR ETF"
+      ],
+      "sectors": [
+        "industrials"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "XLK": {
+      "symbol": "XLK",
+      "name": "State Street Technology Select Sector SPDR ETF",
+      "aliases": [
+        "State Street Technology Select Sector SPDR ETF"
+      ],
+      "sectors": [
+        "cloud_and_software"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "XLP": {
+      "symbol": "XLP",
+      "name": "State Street Consumer Staples Select Sector SPDR ETF",
+      "aliases": [
+        "State Street Consumer Staples Select Sector SPDR ETF"
+      ],
+      "sectors": [
+        "consumer_staples"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "XLRE": {
+      "symbol": "XLRE",
+      "name": "State Street Real Estate Select Sector SPDR ETF",
+      "aliases": [
+        "State Street Real Estate Select Sector SPDR ETF"
+      ],
+      "sectors": [
+        "real_estate"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "XLU": {
+      "symbol": "XLU",
+      "name": "State Street Utilities Select Sector SPDR ETF",
+      "aliases": [
+        "State Street Utilities Select Sector SPDR ETF"
+      ],
+      "sectors": [
+        "utilities"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "XLV": {
+      "symbol": "XLV",
+      "name": "State Street Health Care Select Sector SPDR ETF",
+      "aliases": [
+        "State Street Health Care Select Sector SPDR ETF"
+      ],
+      "sectors": [
+        "healthcare"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "XLY": {
+      "symbol": "XLY",
+      "name": "State Street Consumer Discretionary Select Sector SPDR ETF",
+      "aliases": [
+        "State Street Consumer Discretionary Select Sector SPDR ETF"
+      ],
+      "sectors": [
+        "retail"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "XOM": {
+      "symbol": "XOM",
+      "name": "ExxonMobil Holdings Corporation",
+      "aliases": [
+        "ExxonMobil",
+        "Exxon Mobil"
+      ],
+      "sectors": [
+        "energy"
+      ],
+      "classification_basis": "editable_research_exposure_group",
+      "supply_chain_coverage": "partial_or_not_researched"
+    },
+    "FOXCONN": {
+      "symbol": null,
+      "name": "Foxconn",
+      "aliases": [
+        "Foxconn",
+        "Hon Hai"
+      ],
+      "sectors": [],
+      "supply_chain_coverage": "partial"
+    },
+    "WISTRON": {
+      "symbol": null,
+      "name": "Wistron",
+      "aliases": [
+        "Wistron"
+      ],
+      "sectors": [],
+      "supply_chain_coverage": "partial"
+    },
+    "SPIL": {
+      "symbol": null,
+      "name": "Siliconware Precision Industries",
+      "aliases": [
+        "Siliconware Precision Industries"
+      ],
+      "sectors": [],
+      "supply_chain_coverage": "partial"
+    }
+  },
+  "relationships": [
+    {
+      "supplier": "AVGO",
+      "customer": "AAPL",
+      "relationship_type": "component_supplier",
+      "source_url": "https://www.apple.com/newsroom/2026/07/apple-to-increase-spend-with-broadcom-to-produce-billions-more-us-chips/",
+      "evidence": "Apple announced increased Broadcom chip purchasing commitments.",
+      "reviewed_on": "2026-09-26"
+    },
+    {
+      "supplier": "TSM",
+      "customer": "AAPL",
+      "relationship_type": "chip_manufacturing_supplier",
+      "source_url": "https://www.apple.com/newsroom/2025/02/apple-will-spend-more-than-500-billion-usd-in-the-us-over-the-next-four-years/",
+      "evidence": "Apple disclosed a commitment to produce silicon at TSMC Arizona.",
+      "reviewed_on": "2026-09-26"
+    },
+    {
+      "supplier": "AMKR",
+      "customer": "AAPL",
+      "relationship_type": "supply_chain_partner",
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-adds-new-partners-to-its-american-manufacturing-program/",
+      "evidence": "Apple names this company among its American Manufacturing Program partners.",
+      "reviewed_on": "2026-09-26"
+    },
+    {
+      "supplier": "AMAT",
+      "customer": "AAPL",
+      "relationship_type": "supply_chain_partner",
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-adds-new-partners-to-its-american-manufacturing-program/",
+      "evidence": "Apple names this company among its American Manufacturing Program partners.",
+      "reviewed_on": "2026-09-26"
+    },
+    {
+      "supplier": "COHR",
+      "customer": "AAPL",
+      "relationship_type": "supply_chain_partner",
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-adds-new-partners-to-its-american-manufacturing-program/",
+      "evidence": "Apple names this company among its American Manufacturing Program partners.",
+      "reviewed_on": "2026-09-26"
+    },
+    {
+      "supplier": "GLW",
+      "customer": "AAPL",
+      "relationship_type": "supply_chain_partner",
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-adds-new-partners-to-its-american-manufacturing-program/",
+      "evidence": "Apple names this company among its American Manufacturing Program partners.",
+      "reviewed_on": "2026-09-26"
+    },
+    {
+      "supplier": "GFS",
+      "customer": "AAPL",
+      "relationship_type": "supply_chain_partner",
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-adds-new-partners-to-its-american-manufacturing-program/",
+      "evidence": "Apple names this company among its American Manufacturing Program partners.",
+      "reviewed_on": "2026-09-26"
+    },
+    {
+      "supplier": "TXN",
+      "customer": "AAPL",
+      "relationship_type": "supply_chain_partner",
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-adds-new-partners-to-its-american-manufacturing-program/",
+      "evidence": "Apple names this company among its American Manufacturing Program partners.",
+      "reviewed_on": "2026-09-26"
+    },
+    {
+      "supplier": "TSM",
+      "customer": "NVDA",
+      "relationship_type": "supply_chain_partner",
+      "source_url": "https://www.nvidia.com/en-us/made-in-usa/",
+      "evidence": "NVIDIA identifies this company in its US semiconductor or AI-system manufacturing supply chain.",
+      "reviewed_on": "2026-09-26"
+    },
+    {
+      "supplier": "FOXCONN",
+      "customer": "NVDA",
+      "relationship_type": "supply_chain_partner",
+      "source_url": "https://www.nvidia.com/en-us/made-in-usa/",
+      "evidence": "NVIDIA identifies this company in its US semiconductor or AI-system manufacturing supply chain.",
+      "reviewed_on": "2026-09-26"
+    },
+    {
+      "supplier": "WISTRON",
+      "customer": "NVDA",
+      "relationship_type": "supply_chain_partner",
+      "source_url": "https://www.nvidia.com/en-us/made-in-usa/",
+      "evidence": "NVIDIA identifies this company in its US semiconductor or AI-system manufacturing supply chain.",
+      "reviewed_on": "2026-09-26"
+    },
+    {
+      "supplier": "AMKR",
+      "customer": "NVDA",
+      "relationship_type": "supply_chain_partner",
+      "source_url": "https://www.nvidia.com/en-us/made-in-usa/",
+      "evidence": "NVIDIA identifies this company in its US semiconductor or AI-system manufacturing supply chain.",
+      "reviewed_on": "2026-09-26"
+    }
+  ],
+  "macro_rules": [
+    {
+      "id": "rates_policy",
+      "terms": [
+        "Federal Reserve",
+        "interest rate decision",
+        "interest rate cut",
+        "interest rate hike",
+        "monetary policy"
+      ],
+      "sectors": [
+        "banking_and_finance",
+        "bonds",
+        "real_estate",
+        "utilities",
+        "broad_market"
+      ],
+      "rationale": "Declared broad research exposure to financing conditions; effect direction is not assumed."
+    }
+  ],
+  "limitations": [
+    "Supply-chain coverage is explicitly partial; no missing link means no exposure.",
+    "Research sectors are manually declared contexts, not a vendor classification.",
+    "English alias/topic rules can miss paraphrases and other languages.",
+    "Topic and sector matches are broad candidates; their financial effect is left to the model."
+  ],
+  "ai": {
+    "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+    "revision": "a09144355adeed5f58c8ed011d209bf8ee5a1fec",
+    "directory": "work/news-relatedness/model",
+    "sha256": {
+      "config.json": "d827779a72d27ae68cf878a6fc2e954542663fe21ca515d9f4783fc96be2d37e",
+      "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+      "tokenizer_config.json": "0b29c7bfc889e53b36d9dd3e686dd4300f6525110eaa98c76a5dafceb2029f53",
+      "model_quantized.onnx": "e9d8ebf845c413e981c175bfe49a3bfa9b3dcce2a3ba54875ee5df5a58639fbe"
+    },
+    "cpu_threads": 2,
+    "max_tokens": 128,
+    "inference_batch_size": 32,
+    "candidate_scope": "all_articles_for_requested_symbols",
+    "keep_min_score": -4.0,
+    "related_min_score": 0.0,
+    "threshold_status": "provisional_broad_recall_not_calibrated_probability",
+    "fail_on_error": true,
+    "window_stride": 32,
+    "scoring_algorithm": "overlapping_pair_windows_max_v2"
+  },
+  "inclusion_policy": {
+    "retain_explicit_company_reference": true,
+    "retain_supported_counterparty_event": true,
+    "meaning": "Explicit entity or supported economic-link evidence may retain an AI rejection as borderline; provider tags alone do not override AI."
+  }
+}

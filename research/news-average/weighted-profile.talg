@@ -1,0 +1,17 @@
+# Information output only; connection coefficients remain provisional.
+name Learned news v2
+output representation_available = True
+
+symbol
+input vector = news_tensor
+input saved = tensor_reference
+input items = articles
+output tensor = saved
+output dimensions = length(vector)
+output article_count = length(items)
+output information_norm = norm(vector)
+output effect_state = field(saved, "effect_state")
+output effects = field(saved, "effects")
+output effect_tensor = field(saved, "effect_tensor")
+output mean_connection = mean(column(items, "connection_weight.value")) if length(items) else 0
+end symbol

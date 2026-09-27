@@ -1,0 +1,83 @@
+[
+  {
+    "title": "All the News That's Fit to Reprint: Do Investors React to Stale Information?",
+    "authors": "Paul C. Tetlock",
+    "citation_year": 2011,
+    "downloaded_version": "October 2010 author manuscript; journal publication 2011",
+    "filename": "Tetlock-2010-author-manuscript-Fit-to-Reprint.pdf",
+    "landing_url": "https://business.columbia.edu/faculty/research/all-news-thats-fit-reprint-do-investors-react-stale-information",
+    "pdf_url": "https://business.columbia.edu/sites/default/files-efs/pubfiles/3099/Tetlock%20Fit%20to%20Reprint%2010%2010.pdf",
+    "resolved_url": "https://business.columbia.edu/sites/default/files-efs/pubfiles/3099/Tetlock%20Fit%20to%20Reprint%2010%2010.pdf",
+    "bytes": 429930,
+    "sha256": "0a743854ff3328dbd93b75971ace20145ecd82e5a4087a5e8f59267f8f57f98d",
+    "verified_at": "2026-09-26T22:36:20.639877+00:00"
+  },
+  {
+    "title": "News versus Sentiment: Predicting Stock Returns from News Stories",
+    "authors": "Steven L. Heston and Nitish R. Sinha",
+    "citation_year": 2016,
+    "downloaded_version": "Federal Reserve FEDS working paper 2016-048",
+    "filename": "Heston-Sinha-2016-News-versus-Sentiment.pdf",
+    "landing_url": "https://www.federalreserve.gov/econres/feds/news-versus-sentiment-predicting-stock-returns-from-news-stories.htm",
+    "pdf_url": "https://www.federalreserve.gov/econresdata/feds/2016/files/2016048pap.pdf",
+    "resolved_url": "https://www.federalreserve.gov/econresdata/feds/2016/files/2016048pap.pdf",
+    "bytes": 650468,
+    "sha256": "1bba428e22229769eff8cd54f68c4344f08c2517ec34c7994ba818214e2a4551",
+    "verified_at": "2026-09-26T22:36:20.640381+00:00"
+  },
+  {
+    "title": "From Stock Prediction to Financial Relevance: Repurposing Attention Weights to Assess News Relevance Without Manual Annotations",
+    "authors": "Luciano Del Corro and Johannes Hoffart",
+    "citation_year": 2021,
+    "downloaded_version": "ECONLP 2021 proceedings, pages 45-49",
+    "filename": "Del-Corro-Hoffart-2021-Financial-Relevance.pdf",
+    "landing_url": "https://aclanthology.org/2021.econlp-1.6/",
+    "pdf_url": "https://aclanthology.org/2021.econlp-1.6.pdf",
+    "resolved_url": "https://aclanthology.org/2021.econlp-1.6.pdf",
+    "bytes": 255379,
+    "sha256": "834ecba41fe0b31c97c26197d84928ce518f68276a981ad1a226a59e8bc698c7",
+    "verified_at": "2026-09-26T22:36:20.639877+00:00"
+  },
+  {
+    "title": "News-Driven Stock Prediction With Attention-Based Noisy Recurrent State Transition",
+    "authors": "Xiao Liu, Heyan Huang, Yue Zhang and Changsen Yuan",
+    "citation_year": 2020,
+    "downloaded_version": "arXiv:2004.01878v1 preprint; later journal version exists",
+    "filename": "Liu-et-al-2020-News-Driven-State-Transition.pdf",
+    "landing_url": "https://arxiv.org/abs/2004.01878",
+    "pdf_url": "https://arxiv.org/pdf/2004.01878v1",
+    "resolved_url": "https://arxiv.org/pdf/2004.01878v1",
+    "bytes": 838720,
+    "sha256": "4ff990f5ff8697b682c208e6cacf03656fcc40c4e90751c621250c58fbcce931",
+    "verified_at": "2026-09-26T22:36:20.640381+00:00"
+  },
+  {
+    "title": "Listening to Chaotic Whispers: A Deep Learning Framework for News-oriented Stock Trend Prediction",
+    "authors": "Ziniu Hu, Weiqing Liu, Jiang Bian, Xuanzhe Liu and Tie-Yan Liu",
+    "citation_year": 2018,
+    "downloaded_version": "arXiv:1712.02136v3, revised February 2019; WSDM 2018 paper",
+    "filename": "Hu-et-al-2019-preprint-Chaotic-Whispers.html",
+    "landing_url": "https://arxiv.org/abs/1712.02136",
+    "pdf_url": "https://arxiv.org/pdf/1712.02136v3",
+    "download_url": "https://arxiv.org/html/1712.02136v3",
+    "format": "html",
+    "download_note": "Official full-text HTML saved; PDF transfer repeatedly truncated.",
+    "resolved_url": "https://arxiv.org/html/1712.02136v3",
+    "bytes": 171809,
+    "sha256": "7154dd010a9ac6ff46a5a1f11fb1b696485cf6dfcbf5032139d09553e77e7ac9",
+    "verified_at": "2026-09-26T22:36:20.667564+00:00"
+  },
+  {
+    "title": "The relevance of high-frequency news analytics for lower-frequency investment strategies",
+    "authors": "David Happersberger, Harald Lohre, Ingmar Nolte and Carsten Rother",
+    "citation_year": 2020,
+    "downloaded_version": "Author working paper dated January 15, 2020",
+    "filename": "Happersberger-et-al-2020-News-Analytics.pdf",
+    "landing_url": "https://wp.lancs.ac.uk/fofi2020/files/2020/04/FoFI-2020-120-David-Happersberger.pdf",
+    "pdf_url": "https://wp.lancs.ac.uk/fofi2020/files/2020/04/FoFI-2020-120-David-Happersberger.pdf",
+    "resolved_url": "https://wp.lancs.ac.uk/fofi2020/files/2020/04/FoFI-2020-120-David-Happersberger.pdf",
+    "bytes": 1730071,
+    "sha256": "c92385fb0be6dadbaba951054f08956db90f7fdeee090353e7cd8983af58eea3",
+    "verified_at": "2026-09-26T22:36:20.641895+00:00"
+  }
+]

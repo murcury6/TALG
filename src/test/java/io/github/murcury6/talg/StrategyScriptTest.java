@@ -9,6 +9,18 @@ import java.util.Map;
 import org.junit.jupiter.api.Test;
 
 class StrategyScriptTest {
+    @org.junit.jupiter.api.Test void declaresObservedInputsParametersAndNamedOutputs() {
+        String source = "name Custom\nticker AAPL\nrange 1D\nbars 1Min\n"
+                + "input forecast Observed(predicted_return)\nparam threshold = 0.01\n"
+                + "output conviction = clamp(forecast / threshold, -1, 1)\nbuy conviction > 0.5\nsell conviction < 0\nqty 1\n";
+        var parsed = StrategyScript.parse(source, java.util.Set.of("predicted_return"));
+        var result = parsed.evaluate(java.util.Map.of("predicted_return", 0.02));
+        org.junit.jupiter.api.Assertions.assertEquals(1.0, result.values().get("conviction"));
+        org.junit.jupiter.api.Assertions.assertTrue(result.buy());
+        org.junit.jupiter.api.Assertions.assertThrows(IllegalArgumentException.class,
+                () -> StrategyScript.parse(source.replace("Observed(predicted_return)", "Observed(unavailable)"), java.util.Set.of("predicted_return")));
+    }
+
     @Test void evaluatesBooleanRulesAndEquationsFromObservedInputs() {
         StrategyScript.Parsed rule = StrategyScript.parse(StrategyScript.starter());
         assertEquals("AAPL", rule.ticker());
@@ -21,9 +33,12 @@ class StrategyScriptTest {
     }
 
     @Test void supportsModelInputAndRejectsUnsafeOrConflictingRules() {
-        String source = StrategyScript.starter().replace("input pressure Custom(volume_ratio_20)",
+        String source = StrategyScript.starter().replace("input pressure Indicator(volume_ratio_20)",
                 "input pressure Model(alpha_model,expected_return)");
         assertEquals("model", StrategyScript.parse(source).inputs().get(1).kind());
+        assertEquals("custom", StrategyScript.parse(StrategyScript.starter()
+                .replace("Indicator(ema_34)", "Custom(ema_34)"))
+                .inputs().getFirst().kind());
         assertThrows(IllegalArgumentException.class, () -> StrategyScript.parse(
                 StrategyScript.starter().replace("let edge = close / trend - 1", "let edge = system()")));
         assertThrows(IllegalArgumentException.class, () -> StrategyScript.parse(

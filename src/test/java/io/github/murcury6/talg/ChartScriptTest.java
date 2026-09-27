@@ -40,14 +40,16 @@ class ChartScriptTest {
 
     @Test void referencesUserAuthoredIndicatorsBySafeNames() {
         ChartScript.Config chart = ChartScript.parse(ChartScript.template("AAPL")
-                .replace("study RSI(14)", "study Custom(my_oscillator)")
-                + "overlay Custom(my_band)\noverlay Custom(my_signal)\n");
+                .replace("study RSI(14)", "study Indicator(my_oscillator)")
+                + "overlay Indicator(my_band)\noverlay Indicator(my_signal)\n");
         assertEquals("custom", chart.study());
         assertEquals("my_oscillator", chart.customStudy());
         assertEquals("my_band,my_signal", chart.customOverlays());
         assertTrue(assertThrows(IllegalArgumentException.class,
                 () -> ChartScript.parse(ChartScript.template("AAPL")
-                        + "overlay Custom(../bad)\n")).getMessage().contains("Custom name"));
+                        + "overlay Indicator(../bad)\n")).getMessage().contains("Indicator name"));
+        assertEquals("my_oscillator", ChartScript.parse(ChartScript.template("AAPL")
+                .replace("study RSI(14)", "study Custom(my_oscillator)")).customStudy());
     }
 
     @Test void plotsObservedBarFieldsAndUserAuthoredValues() {
@@ -59,7 +61,7 @@ class ChartScriptTest {
         assertEquals("trades", volume.customStudy());
 
         ChartScript.Config custom = ChartScript.parse(ChartScript.template("AAPL")
-                .replace("plot close", "plot Custom(risk_score)"));
+                .replace("plot close", "plot Indicator(risk_score)"));
         assertEquals("custom:risk_score", custom.plot());
         assertTrue(assertThrows(IllegalArgumentException.class,
                 () -> ChartScript.parse(ChartScript.template("AAPL")

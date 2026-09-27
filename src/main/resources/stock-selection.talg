@@ -1,0 +1,45 @@
+# Candidate controls edit this same source. Add your own selection expressions below.
+name Stock selection
+param candidates = ["AAPL", "MSFT"]
+param max_stocks = 120
+input ticker = symbol
+input covered = predictor_covered
+# The starter keeps the candidate list; predictor coverage is shown separately.
+output include = True
+output priority = 0
+output predictor_ready = covered
+
+sheet
+{
+  "sheets": [
+    {
+      "name": "Selection",
+      "columns": [
+        {
+          "id": "ticker",
+          "path": "/ticker"
+        },
+        {
+          "id": "selected",
+          "path": "/selected",
+          "type": "boolean"
+        },
+        {
+          "id": "priority",
+          "path": "/outputs/priority",
+          "type": "number"
+        },
+        {
+          "id": "coverage",
+          "path": "/inputs/predictor_covered",
+          "type": "boolean"
+        },
+        {
+          "id": "error",
+          "path": "/error"
+        }
+      ]
+    }
+  ]
+}
+end sheet

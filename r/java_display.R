@@ -41,9 +41,15 @@ plot_width <- if (length(args) >= 16L) suppressWarnings(as.integer(args[[15L]]))
 plot_height <- if (length(args) >= 16L) suppressWarnings(as.integer(args[[16L]])) else 720L
 selected_display <- if (length(args) >= 17L) args[[17L]] else "line"
 selected_watermark <- if (length(args) >= 18L) args[[18L]] == "on" else FALSE
+display_width <- if (length(args) >= 20L) suppressWarnings(as.integer(args[[19L]])) else plot_width / 2
+display_height <- if (length(args) >= 20L) suppressWarnings(as.integer(args[[20L]])) else plot_height / 2
 if (is.na(plot_width) || is.na(plot_height) || plot_width < 600L || plot_width > 4000L ||
     plot_height < 350L || plot_height > 3000L)
   stop("Invalid chart image dimensions.", call. = FALSE)
+if (is.na(display_width) || is.na(display_height) ||
+    display_width < 1L || display_height < 1L ||
+    display_width > 10000L || display_height > 10000L)
+  stop("Invalid displayed chart dimensions.", call. = FALSE)
 bar_fields <- c("open", "high", "low", "close", "volume", "vwap", "trades")
 if (!selected_plot %in% bar_fields &&
     !grepl("^custom:[a-z][a-z0-9_]{0,39}$", selected_plot))
@@ -61,7 +67,15 @@ ink <- list(
   red = "#f06a79", grey = "#86808f"
 )
 stroke <- list(price = 1.3, overlay = 1.15, study = 1.25,
-               wick = 0.9, body = 0.65, guide = 0.4)
+               wick = 0.9, body = 0.65, guide = 1.0)
+chart_dpi <- 130
+display_scale <- max(0.35, min(display_width / plot_width, display_height / plot_height))
+chart_text_pt <- function(base, minimum_pixels = 12) {
+  max(base, minimum_pixels * 72 / (chart_dpi * display_scale))
+}
+chart_label_mm <- function(base, minimum_pixels = 12) {
+  max(base, minimum_pixels * 25.4 / (chart_dpi * display_scale))
+}
 
 money <- function(x, digits = 2L) {
   if (!is.finite(x)) return("—")
@@ -76,16 +90,16 @@ metric_tone <- function(value) if (!is.finite(value)) ink$muted else
   if (value < 0) ink$red else if (value > 0) ink$green else ink$white
 
 chart_theme <- function() {
-  theme_minimal(base_family = "sans", base_size = 12) + theme(
+  theme_minimal(base_family = "sans", base_size = chart_text_pt(12)) + theme(
     plot.background = element_rect(fill = ink$bg, color = NA),
     panel.background = element_rect(fill = ink$bg, color = NA),
     panel.grid.major = element_line(color = ink$line, linewidth = 0.3),
     panel.grid.minor = element_blank(),
-    axis.text = element_text(color = ink$muted, size = 11),
+    axis.text = element_text(color = ink$muted, size = chart_text_pt(11)),
     axis.title = element_text(color = ink$muted),
-    plot.title = element_text(color = ink$white, face = "bold", size = 13),
-    plot.subtitle = element_text(color = ink$muted, size = 9),
-    plot.caption = element_text(color = ink$muted, size = 8),
+    plot.title = element_text(color = ink$white, face = "bold", size = chart_text_pt(13)),
+    plot.subtitle = element_text(color = ink$muted, size = chart_text_pt(10)),
+    plot.caption = element_text(color = ink$muted, size = chart_text_pt(9)),
     plot.margin = margin(3, 5, 2, 3),
     legend.position = "none"
   )
@@ -95,7 +109,7 @@ stock_future_padding <- function(dates, compact = FALSE) {
   observed <- sort(unique(as.numeric(dates)))
   step <- if (length(observed) > 1L) median(diff(observed)) else 1
   span <- if (length(observed) > 1L) diff(range(observed)) else step
-  max(step * 1.5, span * if (compact) 0.13 else 0.075)
+  max(step * 1.5, span * if (compact) 0.18 else 0.10)
 }
 
 stock_x_scale <- function(dates, compact = FALSE) {
@@ -309,7 +323,7 @@ stock_status <- function(bars, plotted, ticker, comparing = FALSE, compact = FAL
                   tz = "UTC")
   if (comparing) {
     value <- formatC(plotted[[last]], format = "f", digits = 2)
-    return(if (compact) paste(ticker, value, "idx ·", stamp) else
+    return(if (compact) paste(ticker, value, "idx") else
       paste(ticker, "index", value, "(base 100) ·", stamp))
   }
   fields <- c("open", "high", "low", "close")
@@ -317,8 +331,8 @@ stock_status <- function(bars, plotted, ticker, comparing = FALSE, compact = FAL
       all(vapply(bars[fields], function(field) is.finite(field[[last]]), logical(1)))) {
     ohlc <- paste(paste0(c("O", "H", "L", "C"), " ",
                          formatC(unlist(bars[last, fields]), format = "f", digits = 2)),
-                  collapse = "   ")
-    if (compact) return(paste(ohlc, "·", stamp))
+                  collapse = if (compact) "  " else "   ")
+    if (compact) return(ohlc)
     volume <- if ("volume" %in% names(bars))
       paste("Vol", short_volume(bars$volume[[last]])) else ""
     return(paste(c(stamp, ohlc, volume)[nzchar(c(stamp, ohlc, volume))], collapse = "   ·   "))
@@ -327,7 +341,8 @@ stock_status <- function(bars, plotted, ticker, comparing = FALSE, compact = FAL
   label <- if (selected_plot %in% c("open", "high", "low", "close", "vwap"))
     money(value) else if (selected_plot == "volume") short_volume(value) else
       formatC(value, format = "fg", digits = 4)
-  paste(toupper(selected_plot), label, "·", stamp)
+  if (compact) paste(toupper(selected_plot), label) else
+    paste(toupper(selected_plot), label, "·", stamp)
 }
 
 stock_price_plot <- function(bars, ticker, feed, comparison_bars = list(),
@@ -457,7 +472,7 @@ stock_price_plot <- function(bars, ticker, feed, comparison_bars = list(),
     if (!is.null(price_bars))
       marker_tone <- unname(c(gain = ink$green, loss = ink$red,
                               neutral = ink$grey)[price_bars$tone[[last_valid]]])
-    marker_x <- max(bars$date) + stock_future_padding(bars$date, compact) * 0.54
+    marker_x <- max(bars$date) + stock_future_padding(bars$date, compact) * 0.45
     marker_label <- if (comparing) sprintf("%.2f", marker_y) else
       if (selected_plot %in% c("open", "high", "low", "close", "vwap")) money(marker_y) else
         if (selected_plot == "volume") short_volume(marker_y) else
@@ -468,7 +483,8 @@ stock_price_plot <- function(bars, ticker, feed, comparison_bars = list(),
                y = marker_y, yend = marker_y, color = marker_tone,
                linewidth = stroke$wick) +
       annotate("label", x = marker_x, y = marker_y, label = marker_label,
-               fill = marker_tone, color = ink$bg, fontface = "bold", size = 3.1,
+               fill = marker_tone, color = ink$bg, fontface = "bold",
+               size = chart_label_mm(3.1),
                label.padding = unit(0.12, "lines"), label.r = unit(2, "pt"), linewidth = 0)
   }
   status <- stock_status(bars, bars$plotted, ticker, comparing, compact)
@@ -484,7 +500,8 @@ stock_price_plot <- function(bars, ticker, feed, comparison_bars = list(),
          subtitle = subtitle,
          caption = NULL,
          x = NULL, y = NULL) + chart_theme() +
-    theme(plot.subtitle = element_text(color = ink$white, size = 10, lineheight = 0.95))
+    theme(plot.subtitle = element_text(color = ink$white,
+                                       size = chart_text_pt(10), lineheight = 0.95))
   if (!show_time_axis) plot <- plot +
     theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(),
           axis.title.x = element_blank())
@@ -507,7 +524,7 @@ stock_lower_plot <- function(bars, compact = FALSE) {
     column <- paste0("custom_", selected_custom_study)
     ggplot(bars, aes(date, .data[[column]])) +
       geom_line(color = ink$purple, linewidth = stroke$study, na.rm = TRUE) +
-      labs(title = paste("Custom indicator:", selected_custom_study), x = NULL, y = NULL) + chart_theme()
+      labs(title = gsub("_", " ", selected_custom_study, fixed = TRUE), x = NULL, y = NULL) + chart_theme()
   } else if (selected_indicator == "macd") {
     ggplot(bars, aes(date)) +
       geom_line(aes(y = macd), color = ink$purple, linewidth = stroke$study) +
@@ -541,10 +558,10 @@ stock_lower_plot <- function(bars, compact = FALSE) {
   if (!selected_indicator %in% c("field", "return", "volatility"))
     plot <- plot + scale_y_continuous(position = "right",
                                      breaks = if (selected_indicator == "rsi") {
-                                       if (compact) c(0, 50, 100) else c(0, 25, 50, 75, 100)
+                                       if (compact) c(0, 100) else c(0, 25, 50, 75, 100)
                                      } else lower_breaks)
   plot + stock_x_scale(bars$date, compact) +
-    theme(plot.title = element_text(size = if (compact) 10 else 13))
+    theme(plot.title = element_text(size = chart_text_pt(if (compact) 10 else 13)))
 }
 
 render_view <- function(data) {
@@ -559,7 +576,7 @@ render_view <- function(data) {
   count <- nrow(positions)
   unrealized <- if (!count || any(is.finite(positions$unrealized)))
     sum(positions$unrealized[is.finite(positions$unrealized)]) else NA_real_
-  png(output_path, width = plot_width, height = plot_height, res = 130, bg = ink$bg)
+  png(output_path, width = plot_width, height = plot_height, res = chart_dpi, bg = ink$bg)
   on.exit(dev.off(), add = TRUE)
   grid.newpage()
   grid.rect(gp = gpar(fill = ink$bg, col = NA))
@@ -670,11 +687,13 @@ render_view <- function(data) {
         stock_bars <- prepare_stock_chart(bars)
         prepared_extra <- lapply(extra, prepare_stock_chart)
         compact <- plot_width < 1100L
+        lower_rows <- if (selected_indicator == "none") integer() else
+          if (plot_height < 500L) 9:12 else 10:12
         draw_plot(stock_price_plot(stock_bars, selected_stock, data$chart_feed, prepared_extra,
                                    show_time_axis = selected_indicator == "none", compact = compact),
-                  if (selected_indicator == "none") 1:12 else 1:9, 1:12)
+                  if (!length(lower_rows)) 1:12 else head(1:12, -length(lower_rows)), 1:12)
         if (selected_indicator != "none")
-          draw_plot(stock_lower_plot(stock_bars, compact), 10:12, 1:12)
+          draw_plot(stock_lower_plot(stock_bars, compact), lower_rows, 1:12)
       }
     } else {
       draw_message(1:12, 1:12, "Price history unavailable",
@@ -708,7 +727,7 @@ main <- function() {
 }
 
 if (sys.nframe() == 0L) {
-  if (!length(args) %in% c(14L, 16L, 17L, 18L)) stop("Invalid Java display request.", call. = FALSE)
+  if (!length(args) %in% c(14L, 16L, 17L, 18L, 20L)) stop("Invalid Java display request.", call. = FALSE)
   tryCatch(main(), error = function(error) {
     cat("TALG_ERROR:", conditionMessage(error), "\n", sep = "")
     quit(save = "no", status = 1L)

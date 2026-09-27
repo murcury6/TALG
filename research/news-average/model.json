@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "name": "Full-text learned news",
+  "status": "unfitted_research_baseline",
+  "encoder": {
+    "backend": "onnx_chunked_cls_v2",
+    "model": "Xenova/bge-large-en-v1.5",
+    "revision": "dfeef6070b90658e1b391a6940efdb0925c1de6f",
+    "directory": "work/news-encoder-v2/bge-large",
+    "dimension": 1024,
+    "max_tokens": 512,
+    "chunk_batch_size": 4,
+    "chunk_prefix_separator": "\nRelated news article:\n",
+    "pooling": "cls_token_weighted_chunk_mean",
+    "normalize": true,
+    "cpu_threads": 4,
+    "sha256": {
+      "config.json": "7bd757258c7418221da95ff1853bae50ef5d1bee3e8c01a96611243a52aa7299",
+      "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+      "tokenizer_config.json": "9261e7d79b44c8195c1cada2b453e55b00aeb81e907a6664974b4d7776172ab3",
+      "model_quantized.onnx": "4842b56e233be1cc74770f57f63b1ebb6cf357cca3dd73fcdec35c019f8a5d6e"
+    },
+    "input": "company context repeated for every chunk of the complete retained headline and summary",
+    "language": "English; other languages not validated"
+  },
+  "input_template": "Target stock symbol: {symbol}\nCompany context: {company_context}\nRelated news article:\n{text}",
+  "related_kinds": [
+    "provider_symbol",
+    "ticker_feed",
+    "manual"
+  ],
+  "decay": {
+    "kind": "shock_plus_background",
+    "shock_fraction": 0.8,
+    "shock_half_life_seconds": 300,
+    "background_half_life_seconds": 7200,
+    "parameter_status": "illustrative_only_not_fitted_or_selected_by_performance"
+  },
+  "formula": "X_s(t) = sum_i(x_si * w_si / mu(age_i)) / n_s; w_si = connection_model(s, article_i); mu(a) = 1 / d(a)",
+  "decay_formula": "d(a) = shock_fraction * 2**(-a/shock_half_life_seconds) + (1-shock_fraction) * 2**(-a/background_half_life_seconds)",
+  "denominator": "count_of_all_related_articles_in_the_current_source_snapshot",
+  "batch_size": 4,
+  "future_decay_experiment": "WAIT_FOR_EXPLICIT_USER_INSTRUCTION",
+  "relatedness": {
+    "model_file": "research/news-average/relatedness.json"
+  },
+  "connection_weight": {
+    "model_file": "research/news-average/connection-model.json"
+  },
+  "effect_model": {
+    "state": "awaiting_outcome_labels",
+    "training": {
+      "schema_version": 1,
+      "horizons_sessions": [
+        1,
+        5,
+        20
+      ],
+      "benchmark": "SPY",
+      "hidden_dimensions": 4096,
+      "seed": 17,
+      "epochs": 40,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "minimum_dates": {
+        "train": 60,
+        "validation": 20,
+        "test": 20
+      },
+      "targets": [
+        "market_relative_log_return",
+        "positive_relative_return_probability",
+        "relative_daily_variation"
+      ],
+      "target_status": "provisional_horizons_not_tuned",
+      "width_candidates": [
+        1024,
+        4096,
+        50000
+      ]
+    },
+    "artifact": null
+  }
+}

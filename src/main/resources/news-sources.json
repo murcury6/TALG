@@ -1,0 +1,3213 @@
+[
+  {
+    "id": "bbc-world",
+    "publisher": "BBC",
+    "name": "World",
+    "category": "World",
+    "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "enabled": true
+  },
+  {
+    "id": "bbc-business",
+    "publisher": "BBC",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+    "enabled": true
+  },
+  {
+    "id": "bbc-tech",
+    "publisher": "BBC",
+    "name": "Technology",
+    "category": "Technology",
+    "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+    "enabled": true
+  },
+  {
+    "id": "guardian-world",
+    "publisher": "The Guardian",
+    "name": "World",
+    "category": "World",
+    "url": "https://www.theguardian.com/world/rss",
+    "enabled": true
+  },
+  {
+    "id": "guardian-business",
+    "publisher": "The Guardian",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://www.theguardian.com/business/rss",
+    "enabled": true
+  },
+  {
+    "id": "aljazeera",
+    "publisher": "Al Jazeera",
+    "name": "All news",
+    "category": "World",
+    "url": "https://www.aljazeera.com/xml/rss/all.xml",
+    "enabled": true
+  },
+  {
+    "id": "dw",
+    "publisher": "Deutsche Welle",
+    "name": "International",
+    "category": "World",
+    "url": "https://rss.dw.com/rdf/rss-en-all",
+    "enabled": true
+  },
+  {
+    "id": "france24",
+    "publisher": "France 24",
+    "name": "International",
+    "category": "World",
+    "url": "https://www.france24.com/en/rss",
+    "enabled": true
+  },
+  {
+    "id": "npr-world",
+    "publisher": "NPR",
+    "name": "World",
+    "category": "World",
+    "url": "https://feeds.npr.org/1004/rss.xml",
+    "enabled": true
+  },
+  {
+    "id": "pbs-world",
+    "publisher": "PBS News",
+    "name": "World",
+    "category": "World",
+    "url": "https://www.pbs.org/newshour/feeds/rss/world",
+    "enabled": true
+  },
+  {
+    "id": "pbs-politics",
+    "publisher": "PBS News",
+    "name": "Politics",
+    "category": "Politics",
+    "url": "https://www.pbs.org/newshour/feeds/rss/politics",
+    "enabled": true
+  },
+  {
+    "id": "fox-world",
+    "publisher": "Fox News",
+    "name": "World",
+    "category": "World",
+    "url": "https://moxie.foxnews.com/google-publisher/world.xml",
+    "enabled": true
+  },
+  {
+    "id": "cbs-world",
+    "publisher": "CBS News",
+    "name": "World",
+    "category": "World",
+    "url": "https://www.cbsnews.com/latest/rss/world",
+    "enabled": true
+  },
+  {
+    "id": "abc-world",
+    "publisher": "ABC News",
+    "name": "International",
+    "category": "World",
+    "url": "https://abcnews.go.com/abcnews/internationalheadlines",
+    "enabled": true
+  },
+  {
+    "id": "cnbc",
+    "publisher": "CNBC",
+    "name": "Top news",
+    "category": "Business",
+    "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+    "enabled": true
+  },
+  {
+    "id": "cnbc-finance",
+    "publisher": "CNBC",
+    "name": "Finance",
+    "category": "Business",
+    "url": "https://www.cnbc.com/id/10000664/device/rss/rss.html",
+    "enabled": true
+  },
+  {
+    "id": "marketwatch",
+    "publisher": "MarketWatch",
+    "name": "Top stories",
+    "category": "Business",
+    "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+    "enabled": true
+  },
+  {
+    "id": "yahoo-finance",
+    "publisher": "Yahoo Finance",
+    "name": "Market news",
+    "category": "Business",
+    "url": "https://finance.yahoo.com/news/rssindex",
+    "enabled": true
+  },
+  {
+    "id": "lemonde-world",
+    "publisher": "Le Monde",
+    "name": "World (English)",
+    "category": "World",
+    "url": "https://www.lemonde.fr/en/international/rss_full.xml",
+    "enabled": true
+  },
+  {
+    "id": "fed",
+    "publisher": "Federal Reserve",
+    "name": "Press releases",
+    "category": "Official releases",
+    "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+    "enabled": true
+  },
+  {
+    "id": "ecb",
+    "publisher": "European Central Bank",
+    "name": "Press releases",
+    "category": "Official releases",
+    "url": "https://www.ecb.europa.eu/rss/press.html",
+    "enabled": true
+  },
+  {
+    "id": "eia",
+    "publisher": "US Energy Information Administration",
+    "name": "Today in Energy",
+    "category": "Official releases",
+    "url": "https://www.eia.gov/rss/todayinenergy.xml",
+    "enabled": true
+  },
+  {
+    "id": "abc-australia",
+    "publisher": "ABC Australia",
+    "name": "Headlines",
+    "category": "World",
+    "url": "https://www.abc.net.au/news/feed/51120/rss.xml",
+    "enabled": true
+  },
+  {
+    "id": "cna",
+    "publisher": "Channel NewsAsia",
+    "name": "Asia",
+    "category": "World",
+    "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=6511",
+    "enabled": true
+  },
+  {
+    "id": "cna-business",
+    "publisher": "Channel NewsAsia",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=6936",
+    "enabled": true
+  },
+  {
+    "id": "japantimes",
+    "publisher": "The Japan Times",
+    "name": "News",
+    "category": "World",
+    "url": "https://www.japantimes.co.jp/feed/",
+    "enabled": true
+  },
+  {
+    "id": "timesindia",
+    "publisher": "Times of India",
+    "name": "World",
+    "category": "World",
+    "url": "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms",
+    "enabled": true
+  },
+  {
+    "id": "hindu",
+    "publisher": "The Hindu",
+    "name": "International",
+    "category": "World",
+    "url": "https://www.thehindu.com/news/international/feeder/default.rss",
+    "enabled": true
+  },
+  {
+    "id": "scmp",
+    "publisher": "South China Morning Post",
+    "name": "World",
+    "category": "World",
+    "url": "https://www.scmp.com/rss/91/feed/",
+    "enabled": true
+  },
+  {
+    "id": "cbc",
+    "publisher": "CBC",
+    "name": "World",
+    "category": "World",
+    "url": "https://www.cbc.ca/webfeed/rss/rss-world",
+    "enabled": true
+  },
+  {
+    "id": "globalnews",
+    "publisher": "Global News Canada",
+    "name": "World",
+    "category": "World",
+    "url": "https://globalnews.ca/world/feed/",
+    "enabled": true
+  },
+  {
+    "id": "sky",
+    "publisher": "Sky News",
+    "name": "World",
+    "category": "World",
+    "url": "https://feeds.skynews.com/feeds/rss/world.xml",
+    "enabled": true
+  },
+  {
+    "id": "sky-business",
+    "publisher": "Sky News",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://feeds.skynews.com/feeds/rss/business.xml",
+    "enabled": true
+  },
+  {
+    "id": "independent",
+    "publisher": "The Independent",
+    "name": "World",
+    "category": "World",
+    "url": "https://www.independent.co.uk/news/world/rss",
+    "enabled": true
+  },
+  {
+    "id": "nyt-world",
+    "publisher": "The New York Times",
+    "name": "World",
+    "category": "World",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+    "enabled": true
+  },
+  {
+    "id": "nyt-business",
+    "publisher": "The New York Times",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+    "enabled": true
+  },
+  {
+    "id": "wsj-world",
+    "publisher": "The Wall Street Journal",
+    "name": "World",
+    "category": "World",
+    "url": "https://feeds.content.dowjones.io/public/rss/RSSWorldNews",
+    "enabled": true
+  },
+  {
+    "id": "wsj-markets",
+    "publisher": "The Wall Street Journal",
+    "name": "Markets",
+    "category": "Business",
+    "url": "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain",
+    "enabled": true
+  },
+  {
+    "id": "fortune",
+    "publisher": "Fortune",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://fortune.com/feed/",
+    "enabled": true
+  },
+  {
+    "id": "techcrunch",
+    "publisher": "TechCrunch",
+    "name": "Technology",
+    "category": "Technology",
+    "url": "https://techcrunch.com/feed/",
+    "enabled": true
+  },
+  {
+    "id": "ars",
+    "publisher": "Ars Technica",
+    "name": "Technology",
+    "category": "Technology",
+    "url": "https://feeds.arstechnica.com/arstechnica/index",
+    "enabled": true
+  },
+  {
+    "id": "verge",
+    "publisher": "The Verge",
+    "name": "Technology",
+    "category": "Technology",
+    "url": "https://www.theverge.com/rss/index.xml",
+    "enabled": true
+  },
+  {
+    "id": "politico",
+    "publisher": "Politico",
+    "name": "Politics",
+    "category": "Politics",
+    "url": "https://www.politico.com/rss/politicopicks.xml",
+    "enabled": true
+  },
+  {
+    "id": "hill",
+    "publisher": "The Hill",
+    "name": "Politics",
+    "category": "Politics",
+    "url": "https://thehill.com/feed/",
+    "enabled": true
+  },
+  {
+    "id": "un",
+    "publisher": "United Nations",
+    "name": "UN News",
+    "category": "Official releases",
+    "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
+    "enabled": true
+  },
+  {
+    "id": "who",
+    "publisher": "World Health Organization",
+    "name": "News",
+    "category": "Official releases",
+    "url": "https://www.who.int/rss-feeds/news-english.xml",
+    "enabled": true
+  },
+  {
+    "id": "bls",
+    "publisher": "US Bureau of Labor Statistics",
+    "name": "Latest releases",
+    "category": "Official releases",
+    "url": "https://www.bls.gov/feed/bls_latest.rss",
+    "enabled": true
+  },
+  {
+    "id": "bea",
+    "publisher": "US Bureau of Economic Analysis",
+    "name": "Economic releases",
+    "category": "Official releases",
+    "url": "https://apps.bea.gov/rss/rss.xml",
+    "enabled": true
+  },
+  {
+    "id": "google-world",
+    "publisher": "Google News discovery",
+    "name": "World",
+    "category": "World",
+    "url": "https://news.google.com/rss/headlines/section/topic/WORLD?hl=en-US&gl=US&ceid=US:en",
+    "enabled": true
+  },
+  {
+    "id": "google-business",
+    "publisher": "Google News discovery",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en",
+    "enabled": true
+  },
+  {
+    "id": "google-tech",
+    "publisher": "Google News discovery",
+    "name": "Technology",
+    "category": "Technology",
+    "url": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=en-US&gl=US&ceid=US:en",
+    "enabled": true
+  },
+  {
+    "id": "google-us",
+    "publisher": "Google News discovery",
+    "name": "US headlines",
+    "category": "Politics",
+    "url": "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en",
+    "enabled": true
+  },
+  {
+    "id": "google-uk",
+    "publisher": "Google News discovery",
+    "name": "UK headlines",
+    "category": "World",
+    "url": "https://news.google.com/rss?hl=en-GB&gl=GB&ceid=GB:en",
+    "enabled": true
+  },
+  {
+    "id": "google-india",
+    "publisher": "Google News discovery",
+    "name": "India headlines",
+    "category": "World",
+    "url": "https://news.google.com/rss?hl=en-IN&gl=IN&ceid=IN:en",
+    "enabled": true
+  },
+  {
+    "id": "google-australia",
+    "publisher": "Google News discovery",
+    "name": "Australia headlines",
+    "category": "World",
+    "url": "https://news.google.com/rss?hl=en-AU&gl=AU&ceid=AU:en",
+    "enabled": true
+  },
+  {
+    "id": "africanews",
+    "publisher": "Africanews",
+    "name": "Africa",
+    "category": "World",
+    "url": "https://www.africanews.com/feed/rss",
+    "enabled": true
+  },
+  {
+    "id": "rfi",
+    "publisher": "Radio France Internationale",
+    "name": "World (English)",
+    "category": "World",
+    "url": "https://www.rfi.fr/en/rss",
+    "enabled": true
+  },
+  {
+    "id": "mercopress",
+    "publisher": "MercoPress",
+    "name": "South Atlantic / Latin America",
+    "category": "World",
+    "url": "https://en.mercopress.com/rss",
+    "enabled": true
+  },
+  {
+    "id": "jpost",
+    "publisher": "The Jerusalem Post",
+    "name": "Headlines",
+    "category": "World",
+    "url": "https://www.jpost.com/rss/rssfeedsfrontpage.aspx",
+    "enabled": true
+  },
+  {
+    "id": "timesisrael",
+    "publisher": "The Times of Israel",
+    "name": "Headlines",
+    "category": "World",
+    "url": "https://www.timesofisrael.com/feed/",
+    "enabled": true
+  },
+  {
+    "id": "breakingdefense",
+    "publisher": "Breaking Defense",
+    "name": "Defense",
+    "category": "World",
+    "url": "https://breakingdefense.com/feed/",
+    "enabled": true
+  },
+  {
+    "id": "oilprice",
+    "publisher": "Oilprice.com",
+    "name": "Energy",
+    "category": "Business",
+    "url": "https://oilprice.com/rss/main",
+    "enabled": true
+  },
+  {
+    "id": "gcaptain",
+    "publisher": "gCaptain",
+    "name": "Shipping",
+    "category": "Business",
+    "url": "https://gcaptain.com/feed/",
+    "enabled": true
+  },
+  {
+    "id": "google-health",
+    "publisher": "Google News discovery",
+    "name": "Health",
+    "category": "Healthcare",
+    "url": "https://news.google.com/rss/headlines/section/topic/HEALTH?hl=en-US&gl=US&ceid=US:en",
+    "enabled": true
+  },
+  {
+    "id": "google-science",
+    "publisher": "Google News discovery",
+    "name": "Science",
+    "category": "Science",
+    "url": "https://news.google.com/rss/headlines/section/topic/SCIENCE?hl=en-US&gl=US&ceid=US:en",
+    "enabled": true
+  },
+  {
+    "id": "stock-4141504c",
+    "publisher": "Yahoo Finance discovery",
+    "name": "AAPL news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=AAPL&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "AAPL"
+  },
+  {
+    "id": "stock-4d534654",
+    "publisher": "Yahoo Finance discovery",
+    "name": "MSFT news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=MSFT&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "MSFT"
+  },
+  {
+    "id": "stock-4e564441",
+    "publisher": "Yahoo Finance discovery",
+    "name": "NVDA news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=NVDA&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "NVDA"
+  },
+  {
+    "id": "stock-414d5a4e",
+    "publisher": "Yahoo Finance discovery",
+    "name": "AMZN news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=AMZN&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "AMZN"
+  },
+  {
+    "id": "stock-474f4f474c",
+    "publisher": "Yahoo Finance discovery",
+    "name": "GOOGL news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=GOOGL&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "GOOGL"
+  },
+  {
+    "id": "stock-4d455441",
+    "publisher": "Yahoo Finance discovery",
+    "name": "META news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=META&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "META"
+  },
+  {
+    "id": "stock-54534c41",
+    "publisher": "Yahoo Finance discovery",
+    "name": "TSLA news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=TSLA&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "TSLA"
+  },
+  {
+    "id": "stock-414d44",
+    "publisher": "Yahoo Finance discovery",
+    "name": "AMD news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=AMD&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "AMD"
+  },
+  {
+    "id": "stock-4156474f",
+    "publisher": "Yahoo Finance discovery",
+    "name": "AVGO news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=AVGO&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "AVGO"
+  },
+  {
+    "id": "stock-4e464c58",
+    "publisher": "Yahoo Finance discovery",
+    "name": "NFLX news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=NFLX&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "NFLX"
+  },
+  {
+    "id": "stock-494e5443",
+    "publisher": "Yahoo Finance discovery",
+    "name": "INTC news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=INTC&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "INTC"
+  },
+  {
+    "id": "stock-4d55",
+    "publisher": "Yahoo Finance discovery",
+    "name": "MU news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=MU&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "MU"
+  },
+  {
+    "id": "stock-504c5452",
+    "publisher": "Yahoo Finance discovery",
+    "name": "PLTR news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=PLTR&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "PLTR"
+  },
+  {
+    "id": "stock-55424552",
+    "publisher": "Yahoo Finance discovery",
+    "name": "UBER news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=UBER&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "UBER"
+  },
+  {
+    "id": "stock-4a504d",
+    "publisher": "Yahoo Finance discovery",
+    "name": "JPM news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=JPM&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "JPM"
+  },
+  {
+    "id": "stock-424143",
+    "publisher": "Yahoo Finance discovery",
+    "name": "BAC news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=BAC&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "BAC"
+  },
+  {
+    "id": "stock-584f4d",
+    "publisher": "Yahoo Finance discovery",
+    "name": "XOM news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=XOM&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "XOM"
+  },
+  {
+    "id": "stock-435658",
+    "publisher": "Yahoo Finance discovery",
+    "name": "CVX news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=CVX&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "CVX"
+  },
+  {
+    "id": "stock-574d54",
+    "publisher": "Yahoo Finance discovery",
+    "name": "WMT news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=WMT&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "WMT"
+  },
+  {
+    "id": "stock-444953",
+    "publisher": "Yahoo Finance discovery",
+    "name": "DIS news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=DIS&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "DIS"
+  },
+  {
+    "id": "stock-4f52434c",
+    "publisher": "Yahoo Finance discovery",
+    "name": "ORCL news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=ORCL&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "ORCL"
+  },
+  {
+    "id": "stock-43524d",
+    "publisher": "Yahoo Finance discovery",
+    "name": "CRM news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=CRM&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "CRM"
+  },
+  {
+    "id": "stock-41444245",
+    "publisher": "Yahoo Finance discovery",
+    "name": "ADBE news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=ADBE&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "ADBE"
+  },
+  {
+    "id": "stock-4353434f",
+    "publisher": "Yahoo Finance discovery",
+    "name": "CSCO news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=CSCO&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "CSCO"
+  },
+  {
+    "id": "stock-51434f4d",
+    "publisher": "Yahoo Finance discovery",
+    "name": "QCOM news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=QCOM&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "QCOM"
+  },
+  {
+    "id": "stock-54584e",
+    "publisher": "Yahoo Finance discovery",
+    "name": "TXN news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=TXN&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "TXN"
+  },
+  {
+    "id": "stock-414d4154",
+    "publisher": "Yahoo Finance discovery",
+    "name": "AMAT news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=AMAT&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "AMAT"
+  },
+  {
+    "id": "stock-4c524358",
+    "publisher": "Yahoo Finance discovery",
+    "name": "LRCX news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=LRCX&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "LRCX"
+  },
+  {
+    "id": "stock-49424d",
+    "publisher": "Yahoo Finance discovery",
+    "name": "IBM news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=IBM&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "IBM"
+  },
+  {
+    "id": "stock-56",
+    "publisher": "Yahoo Finance discovery",
+    "name": "V news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=V&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "V"
+  },
+  {
+    "id": "stock-4d41",
+    "publisher": "Yahoo Finance discovery",
+    "name": "MA news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=MA&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "MA"
+  },
+  {
+    "id": "stock-574643",
+    "publisher": "Yahoo Finance discovery",
+    "name": "WFC news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=WFC&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "WFC"
+  },
+  {
+    "id": "stock-43",
+    "publisher": "Yahoo Finance discovery",
+    "name": "C news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=C&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "C"
+  },
+  {
+    "id": "stock-4753",
+    "publisher": "Yahoo Finance discovery",
+    "name": "GS news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=GS&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "GS"
+  },
+  {
+    "id": "stock-4d53",
+    "publisher": "Yahoo Finance discovery",
+    "name": "MS news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=MS&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "MS"
+  },
+  {
+    "id": "stock-4a4e4a",
+    "publisher": "Yahoo Finance discovery",
+    "name": "JNJ news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=JNJ&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "JNJ"
+  },
+  {
+    "id": "stock-554e48",
+    "publisher": "Yahoo Finance discovery",
+    "name": "UNH news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=UNH&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "UNH"
+  },
+  {
+    "id": "stock-4c4c59",
+    "publisher": "Yahoo Finance discovery",
+    "name": "LLY news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=LLY&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "LLY"
+  },
+  {
+    "id": "stock-504645",
+    "publisher": "Yahoo Finance discovery",
+    "name": "PFE news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=PFE&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "PFE"
+  },
+  {
+    "id": "stock-41424256",
+    "publisher": "Yahoo Finance discovery",
+    "name": "ABBV news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=ABBV&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "ABBV"
+  },
+  {
+    "id": "stock-4d524b",
+    "publisher": "Yahoo Finance discovery",
+    "name": "MRK news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=MRK&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "MRK"
+  },
+  {
+    "id": "stock-4b4f",
+    "publisher": "Yahoo Finance discovery",
+    "name": "KO news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=KO&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "KO"
+  },
+  {
+    "id": "stock-504550",
+    "publisher": "Yahoo Finance discovery",
+    "name": "PEP news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=PEP&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "PEP"
+  },
+  {
+    "id": "stock-434f5354",
+    "publisher": "Yahoo Finance discovery",
+    "name": "COST news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=COST&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "COST"
+  },
+  {
+    "id": "stock-5047",
+    "publisher": "Yahoo Finance discovery",
+    "name": "PG news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=PG&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "PG"
+  },
+  {
+    "id": "stock-434154",
+    "publisher": "Yahoo Finance discovery",
+    "name": "CAT news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=CAT&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "CAT"
+  },
+  {
+    "id": "stock-4745",
+    "publisher": "Yahoo Finance discovery",
+    "name": "GE news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=GE&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "GE"
+  },
+  {
+    "id": "stock-4241",
+    "publisher": "Yahoo Finance discovery",
+    "name": "BA news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=BA&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "BA"
+  },
+  {
+    "id": "stock-434f50",
+    "publisher": "Yahoo Finance discovery",
+    "name": "COP news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=COP&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "COP"
+  },
+  {
+    "id": "stock-4e4545",
+    "publisher": "Yahoo Finance discovery",
+    "name": "NEE news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=NEE&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "NEE"
+  },
+  {
+    "id": "stock-535059",
+    "publisher": "Yahoo Finance discovery",
+    "name": "SPY news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=SPY&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "SPY"
+  },
+  {
+    "id": "stock-515151",
+    "publisher": "Yahoo Finance discovery",
+    "name": "QQQ news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=QQQ&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "QQQ"
+  },
+  {
+    "id": "stock-49574d",
+    "publisher": "Yahoo Finance discovery",
+    "name": "IWM news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=IWM&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "IWM"
+  },
+  {
+    "id": "stock-444941",
+    "publisher": "Yahoo Finance discovery",
+    "name": "DIA news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=DIA&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "DIA"
+  },
+  {
+    "id": "stock-565449",
+    "publisher": "Yahoo Finance discovery",
+    "name": "VTI news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=VTI&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "VTI"
+  },
+  {
+    "id": "stock-584c4b",
+    "publisher": "Yahoo Finance discovery",
+    "name": "XLK news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=XLK&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "XLK"
+  },
+  {
+    "id": "stock-584c46",
+    "publisher": "Yahoo Finance discovery",
+    "name": "XLF news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=XLF&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "XLF"
+  },
+  {
+    "id": "stock-584c45",
+    "publisher": "Yahoo Finance discovery",
+    "name": "XLE news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=XLE&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "XLE"
+  },
+  {
+    "id": "stock-584c56",
+    "publisher": "Yahoo Finance discovery",
+    "name": "XLV news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=XLV&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "XLV"
+  },
+  {
+    "id": "stock-584c49",
+    "publisher": "Yahoo Finance discovery",
+    "name": "XLI news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=XLI&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "XLI"
+  },
+  {
+    "id": "stock-584c50",
+    "publisher": "Yahoo Finance discovery",
+    "name": "XLP news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=XLP&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "XLP"
+  },
+  {
+    "id": "stock-584c59",
+    "publisher": "Yahoo Finance discovery",
+    "name": "XLY news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=XLY&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "XLY"
+  },
+  {
+    "id": "stock-584c55",
+    "publisher": "Yahoo Finance discovery",
+    "name": "XLU news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=XLU&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "XLU"
+  },
+  {
+    "id": "stock-584c42",
+    "publisher": "Yahoo Finance discovery",
+    "name": "XLB news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=XLB&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "XLB"
+  },
+  {
+    "id": "stock-584c5245",
+    "publisher": "Yahoo Finance discovery",
+    "name": "XLRE news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=XLRE&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "XLRE"
+  },
+  {
+    "id": "stock-584c43",
+    "publisher": "Yahoo Finance discovery",
+    "name": "XLC news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=XLC&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "XLC"
+  },
+  {
+    "id": "stock-534d48",
+    "publisher": "Yahoo Finance discovery",
+    "name": "SMH news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=SMH&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "SMH"
+  },
+  {
+    "id": "stock-534f5858",
+    "publisher": "Yahoo Finance discovery",
+    "name": "SOXX news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=SOXX&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "SOXX"
+  },
+  {
+    "id": "stock-584249",
+    "publisher": "Yahoo Finance discovery",
+    "name": "XBI news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=XBI&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "XBI"
+  },
+  {
+    "id": "stock-4b5245",
+    "publisher": "Yahoo Finance discovery",
+    "name": "KRE news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=KRE&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "KRE"
+  },
+  {
+    "id": "stock-45454d",
+    "publisher": "Yahoo Finance discovery",
+    "name": "EEM news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=EEM&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "EEM"
+  },
+  {
+    "id": "stock-454641",
+    "publisher": "Yahoo Finance discovery",
+    "name": "EFA news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=EFA&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "EFA"
+  },
+  {
+    "id": "stock-474c44",
+    "publisher": "Yahoo Finance discovery",
+    "name": "GLD news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=GLD&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "GLD"
+  },
+  {
+    "id": "stock-534c56",
+    "publisher": "Yahoo Finance discovery",
+    "name": "SLV news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=SLV&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "SLV"
+  },
+  {
+    "id": "stock-544c54",
+    "publisher": "Yahoo Finance discovery",
+    "name": "TLT news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=TLT&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "TLT"
+  },
+  {
+    "id": "stock-485947",
+    "publisher": "Yahoo Finance discovery",
+    "name": "HYG news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=HYG&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "HYG"
+  },
+  {
+    "id": "stock-55565859",
+    "publisher": "Yahoo Finance discovery",
+    "name": "UVXY news",
+    "category": "Stocks & ETFs",
+    "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=UVXY&region=US&lang=en-US",
+    "enabled": true,
+    "symbol": "UVXY"
+  },
+  {
+    "id": "bloomberg-markets",
+    "publisher": "Bloomberg",
+    "name": "Markets",
+    "category": "Business",
+    "url": "https://feeds.bloomberg.com/markets/news.rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "bloomberg-economics",
+    "publisher": "Bloomberg",
+    "name": "Economics",
+    "category": "Business",
+    "url": "https://feeds.bloomberg.com/economics/news.rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "bloomberg-tech",
+    "publisher": "Bloomberg",
+    "name": "Technology",
+    "category": "Technology",
+    "url": "https://feeds.bloomberg.com/technology/news.rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "ft-world",
+    "publisher": "Financial Times",
+    "name": "World",
+    "category": "World",
+    "url": "https://www.ft.com/world?format=rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "ft-markets",
+    "publisher": "Financial Times",
+    "name": "Markets",
+    "category": "Business",
+    "url": "https://www.ft.com/markets?format=rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "ft-companies",
+    "publisher": "Financial Times",
+    "name": "Companies",
+    "category": "Business",
+    "url": "https://www.ft.com/companies?format=rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "economist",
+    "publisher": "The Economist",
+    "name": "Latest",
+    "category": "World",
+    "url": "https://www.economist.com/latest/rss.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "economictimes",
+    "publisher": "The Economic Times",
+    "name": "Markets",
+    "category": "Business",
+    "url": "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "mint",
+    "publisher": "Mint",
+    "name": "Markets",
+    "category": "Business",
+    "url": "https://www.livemint.com/rss/markets",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "businessstandard",
+    "publisher": "Business Standard",
+    "name": "Markets",
+    "category": "Business",
+    "url": "https://www.business-standard.com/rss/markets-106.rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "moneycontrol",
+    "publisher": "Moneycontrol",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://www.moneycontrol.com/rss/business.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "financialexpress",
+    "publisher": "Financial Express",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://www.financialexpress.com/feed/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "investing-news",
+    "publisher": "Investing.com",
+    "name": "News",
+    "category": "Business",
+    "url": "https://www.investing.com/rss/news.rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "investing-stocks",
+    "publisher": "Investing.com",
+    "name": "Stocks",
+    "category": "Business",
+    "url": "https://www.investing.com/rss/news_25.rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "investing-economy",
+    "publisher": "Investing.com",
+    "name": "Economy",
+    "category": "Business",
+    "url": "https://www.investing.com/rss/news_14.rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "seekingalpha",
+    "publisher": "Seeking Alpha",
+    "name": "Market news",
+    "category": "Business",
+    "url": "https://seekingalpha.com/market_currents.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "benzinga",
+    "publisher": "Benzinga",
+    "name": "Markets",
+    "category": "Business",
+    "url": "https://www.benzinga.com/feed",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "zacks",
+    "publisher": "Zacks",
+    "name": "Commentary",
+    "category": "Business",
+    "url": "https://www.zacks.com/feeds/commentary.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "investopedia",
+    "publisher": "Investopedia",
+    "name": "News",
+    "category": "Business",
+    "url": "https://www.investopedia.com/feedbuilder/feed/getfeed/?feedName=rss_headline",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "barrons",
+    "publisher": "Barron's",
+    "name": "Markets",
+    "category": "Business",
+    "url": "https://feeds.content.dowjones.io/public/rss/barrons",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "prnewswire",
+    "publisher": "PR Newswire",
+    "name": "Company releases",
+    "category": "Press releases",
+    "url": "https://www.prnewswire.com/rss/news-releases-list.rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "globenewswire",
+    "publisher": "GlobeNewswire",
+    "name": "Company releases",
+    "category": "Press releases",
+    "url": "https://www.globenewswire.com/RssFeed/subjectcode/1-Corporate%20News/feedTitle/GlobeNewswire%20-%20Corporate%20News",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "businesswire",
+    "publisher": "Business Wire",
+    "name": "Company releases",
+    "category": "Press releases",
+    "url": "https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpRWg==",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "accesswire",
+    "publisher": "ACCESS Newswire",
+    "name": "Company releases",
+    "category": "Press releases",
+    "url": "https://www.accesswire.com/rss.aspx",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "stocktitan",
+    "publisher": "Stock Titan",
+    "name": "Company releases",
+    "category": "Press releases",
+    "url": "https://www.stocktitan.net/rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "sec-press",
+    "publisher": "US Securities and Exchange Commission",
+    "name": "Press releases",
+    "category": "Official releases",
+    "url": "https://www.sec.gov/news/pressreleases.rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "fdic",
+    "publisher": "Federal Deposit Insurance Corporation",
+    "name": "Press releases",
+    "category": "Official releases",
+    "url": "https://www.fdic.gov/news/press-releases/rss.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "imf",
+    "publisher": "International Monetary Fund",
+    "name": "News",
+    "category": "Official releases",
+    "url": "https://www.imf.org/en/News/RSS",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "bankengland",
+    "publisher": "Bank of England",
+    "name": "News",
+    "category": "Official releases",
+    "url": "https://www.bankofengland.co.uk/rss/news",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "rba",
+    "publisher": "Reserve Bank of Australia",
+    "name": "Media releases",
+    "category": "Official releases",
+    "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "bankcanada",
+    "publisher": "Bank of Canada",
+    "name": "Press releases",
+    "category": "Official releases",
+    "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "bis",
+    "publisher": "Bank for International Settlements",
+    "name": "Press releases",
+    "category": "Official releases",
+    "url": "https://www.bis.org/doclist/all_pressrels.rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "fda",
+    "publisher": "US Food and Drug Administration",
+    "name": "Press announcements",
+    "category": "Official releases",
+    "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "fiercebiotech",
+    "publisher": "Fierce Biotech",
+    "name": "Biotechnology",
+    "category": "Healthcare",
+    "url": "https://www.fiercebiotech.com/rss/xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "fiercepharma",
+    "publisher": "Fierce Pharma",
+    "name": "Pharmaceuticals",
+    "category": "Healthcare",
+    "url": "https://www.fiercepharma.com/rss/xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "statnews",
+    "publisher": "STAT",
+    "name": "Health and medicine",
+    "category": "Healthcare",
+    "url": "https://www.statnews.com/feed/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "medicalnewstoday",
+    "publisher": "Medical News Today",
+    "name": "Health",
+    "category": "Healthcare",
+    "url": "https://www.medicalnewstoday.com/newsfeeds/rss/medical_news_today.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "sciencedaily",
+    "publisher": "ScienceDaily",
+    "name": "Research",
+    "category": "Science",
+    "url": "https://www.sciencedaily.com/rss/all.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "nature",
+    "publisher": "Nature",
+    "name": "Research",
+    "category": "Science",
+    "url": "https://www.nature.com/nature.rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "physorg",
+    "publisher": "Phys.org",
+    "name": "Science",
+    "category": "Science",
+    "url": "https://phys.org/rss-feed/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "nasa",
+    "publisher": "NASA",
+    "name": "News",
+    "category": "Science",
+    "url": "https://www.nasa.gov/feed/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "wired",
+    "publisher": "WIRED",
+    "name": "Technology",
+    "category": "Technology",
+    "url": "https://www.wired.com/feed/rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "venturebeat",
+    "publisher": "VentureBeat",
+    "name": "Technology",
+    "category": "Technology",
+    "url": "https://venturebeat.com/feed/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "theregister",
+    "publisher": "The Register",
+    "name": "Technology",
+    "category": "Technology",
+    "url": "https://www.theregister.com/headlines.atom",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "techradar",
+    "publisher": "TechRadar",
+    "name": "Technology",
+    "category": "Technology",
+    "url": "https://www.techradar.com/rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "zdnet",
+    "publisher": "ZDNET",
+    "name": "Technology",
+    "category": "Technology",
+    "url": "https://www.zdnet.com/news/rss.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "bleepingcomputer",
+    "publisher": "BleepingComputer",
+    "name": "Cybersecurity",
+    "category": "Technology",
+    "url": "https://www.bleepingcomputer.com/feed/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "securityweek",
+    "publisher": "SecurityWeek",
+    "name": "Cybersecurity",
+    "category": "Technology",
+    "url": "https://www.securityweek.com/feed/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "tomshardware",
+    "publisher": "Tom's Hardware",
+    "name": "Semiconductors and hardware",
+    "category": "Technology",
+    "url": "https://www.tomshardware.com/feeds/all",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "semiengineering",
+    "publisher": "Semiconductor Engineering",
+    "name": "Semiconductors",
+    "category": "Technology",
+    "url": "https://semiengineering.com/feed/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "eetimes",
+    "publisher": "EE Times",
+    "name": "Electronics",
+    "category": "Technology",
+    "url": "https://www.eetimes.com/feed/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "utilitydive",
+    "publisher": "Utility Dive",
+    "name": "Utilities",
+    "category": "Business",
+    "url": "https://www.utilitydive.com/feeds/news/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "retaildive",
+    "publisher": "Retail Dive",
+    "name": "Retail",
+    "category": "Business",
+    "url": "https://www.retaildive.com/feeds/news/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "bankingdive",
+    "publisher": "Banking Dive",
+    "name": "Banking",
+    "category": "Business",
+    "url": "https://www.bankingdive.com/feeds/news/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "manufacturingdive",
+    "publisher": "Manufacturing Dive",
+    "name": "Manufacturing",
+    "category": "Business",
+    "url": "https://www.manufacturingdive.com/feeds/news/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "supplychaindive",
+    "publisher": "Supply Chain Dive",
+    "name": "Supply chains",
+    "category": "Business",
+    "url": "https://www.supplychaindive.com/feeds/news/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "freightwaves",
+    "publisher": "FreightWaves",
+    "name": "Freight and logistics",
+    "category": "Business",
+    "url": "https://www.freightwaves.com/news/feed",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "maritimeexecutive",
+    "publisher": "The Maritime Executive",
+    "name": "Shipping",
+    "category": "Business",
+    "url": "https://maritime-executive.com/rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "mining",
+    "publisher": "MINING.COM",
+    "name": "Mining",
+    "category": "Business",
+    "url": "https://www.mining.com/feed/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "renewablesnow",
+    "publisher": "Renewables Now",
+    "name": "Energy",
+    "category": "Business",
+    "url": "https://renewablesnow.com/news/rss/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "coindesk",
+    "publisher": "CoinDesk",
+    "name": "Digital assets",
+    "category": "Business",
+    "url": "https://www.coindesk.com/arc/outboundfeeds/rss/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "cointelegraph",
+    "publisher": "Cointelegraph",
+    "name": "Digital assets",
+    "category": "Business",
+    "url": "https://cointelegraph.com/rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "decrypt",
+    "publisher": "Decrypt",
+    "name": "Digital assets",
+    "category": "Business",
+    "url": "https://decrypt.co/feed",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "dw-business",
+    "publisher": "Deutsche Welle",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://rss.dw.com/rdf/rss-en-bus",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "euronews",
+    "publisher": "Euronews",
+    "name": "World",
+    "category": "World",
+    "url": "https://www.euronews.com/rss?level=theme&name=news",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "swissinfo",
+    "publisher": "SWI swissinfo.ch",
+    "name": "Switzerland",
+    "category": "World",
+    "url": "https://www.swissinfo.ch/eng/rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "thelocal",
+    "publisher": "The Local Europe",
+    "name": "Europe",
+    "category": "World",
+    "url": "https://www.thelocal.com/feeds/rss.php",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "ansa",
+    "publisher": "ANSA",
+    "name": "Italy and world",
+    "category": "World",
+    "url": "https://www.ansa.it/english/news/english_rss.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "spiegel",
+    "publisher": "Der Spiegel",
+    "name": "International",
+    "category": "World",
+    "url": "https://www.spiegel.de/international/index.rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "deutschewelle-german",
+    "publisher": "Deutsche Welle",
+    "name": "German news",
+    "category": "World",
+    "url": "https://rss.dw.com/rdf/rss-de-all",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "elpais",
+    "publisher": "El Pais",
+    "name": "International Spanish",
+    "category": "World",
+    "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "lemonde-fr",
+    "publisher": "Le Monde",
+    "name": "French headlines",
+    "category": "World",
+    "url": "https://www.lemonde.fr/rss/une.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "abc-australia-business",
+    "publisher": "ABC Australia",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://www.abc.net.au/news/feed/51892/rss.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "rnz",
+    "publisher": "Radio New Zealand",
+    "name": "International",
+    "category": "World",
+    "url": "https://www.rnz.co.nz/rss/world.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "straitstimes",
+    "publisher": "The Straits Times",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://www.straitstimes.com/news/business/rss.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "bangkokpost",
+    "publisher": "Bangkok Post",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://www.bangkokpost.com/rss/data/business.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "nhk",
+    "publisher": "NHK",
+    "name": "Japan English",
+    "category": "World",
+    "url": "https://www3.nhk.or.jp/rss/news/cat0.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "koreaherald",
+    "publisher": "The Korea Herald",
+    "name": "Headlines",
+    "category": "World",
+    "url": "https://www.koreaherald.com/rss/020000000000.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "koreatimes",
+    "publisher": "The Korea Times",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://www.koreatimes.co.kr/www/rss/biz.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "almonitor",
+    "publisher": "Al-Monitor",
+    "name": "Middle East",
+    "category": "World",
+    "url": "https://www.al-monitor.com/rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "middleeasteye",
+    "publisher": "Middle East Eye",
+    "name": "Middle East",
+    "category": "World",
+    "url": "https://www.middleeasteye.net/rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "arabnews",
+    "publisher": "Arab News",
+    "name": "World",
+    "category": "World",
+    "url": "https://www.arabnews.com/cat/241/rss.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "daily-maverick",
+    "publisher": "Daily Maverick",
+    "name": "South Africa",
+    "category": "World",
+    "url": "https://www.dailymaverick.co.za/dmrss/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "moneyweb",
+    "publisher": "Moneyweb",
+    "name": "African business",
+    "category": "Business",
+    "url": "https://www.moneyweb.co.za/feed/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "businessdailyafrica",
+    "publisher": "Business Daily Africa",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://www.businessdailyafrica.com/bd/rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "premiumtimes",
+    "publisher": "Premium Times",
+    "name": "Nigeria",
+    "category": "World",
+    "url": "https://www.premiumtimesng.com/feed",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "theconversation",
+    "publisher": "The Conversation",
+    "name": "Research and analysis",
+    "category": "World",
+    "url": "https://theconversation.com/global/articles.atom",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "restofworld",
+    "publisher": "Rest of World",
+    "name": "Global technology",
+    "category": "Technology",
+    "url": "https://restofworld.org/feed/latest/",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "nikkei",
+    "publisher": "Nikkei Asia",
+    "name": "Asia",
+    "category": "World",
+    "url": "https://asia.nikkei.com/rss/feed/nar",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "guardian-economics",
+    "publisher": "The Guardian",
+    "name": "Economics",
+    "category": "Business",
+    "url": "https://www.theguardian.com/business/economics/rss",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "pbs-economy",
+    "publisher": "PBS News",
+    "name": "Economy",
+    "category": "Business",
+    "url": "https://www.pbs.org/newshour/feeds/rss/economy",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "npr-business",
+    "publisher": "NPR",
+    "name": "Business",
+    "category": "Business",
+    "url": "https://feeds.npr.org/1006/rss.xml",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-stock-aapl",
+    "publisher": "Google News discovery",
+    "name": "AAPL / Apple Inc",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Apple%20Inc%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "AAPL"
+  },
+  {
+    "id": "google-stock-msft",
+    "publisher": "Google News discovery",
+    "name": "MSFT / Microsoft",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Microsoft%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "MSFT"
+  },
+  {
+    "id": "google-stock-nvda",
+    "publisher": "Google News discovery",
+    "name": "NVDA / Nvidia",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Nvidia%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "NVDA"
+  },
+  {
+    "id": "google-stock-amzn",
+    "publisher": "Google News discovery",
+    "name": "AMZN / Amazon",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Amazon%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "AMZN"
+  },
+  {
+    "id": "google-stock-googl",
+    "publisher": "Google News discovery",
+    "name": "GOOGL / Alphabet Google",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Alphabet%20Google%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "GOOGL"
+  },
+  {
+    "id": "google-stock-meta",
+    "publisher": "Google News discovery",
+    "name": "META / Meta Platforms",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Meta%20Platforms%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "META"
+  },
+  {
+    "id": "google-stock-tsla",
+    "publisher": "Google News discovery",
+    "name": "TSLA / Tesla",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Tesla%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "TSLA"
+  },
+  {
+    "id": "google-stock-amd",
+    "publisher": "Google News discovery",
+    "name": "AMD / Advanced Micro Devices",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Advanced%20Micro%20Devices%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "AMD"
+  },
+  {
+    "id": "google-stock-avgo",
+    "publisher": "Google News discovery",
+    "name": "AVGO / Broadcom",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Broadcom%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "AVGO"
+  },
+  {
+    "id": "google-stock-nflx",
+    "publisher": "Google News discovery",
+    "name": "NFLX / Netflix",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Netflix%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "NFLX"
+  },
+  {
+    "id": "google-stock-intc",
+    "publisher": "Google News discovery",
+    "name": "INTC / Intel",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Intel%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "INTC"
+  },
+  {
+    "id": "google-stock-mu",
+    "publisher": "Google News discovery",
+    "name": "MU / Micron Technology",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Micron%20Technology%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "MU"
+  },
+  {
+    "id": "google-stock-pltr",
+    "publisher": "Google News discovery",
+    "name": "PLTR / Palantir",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Palantir%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "PLTR"
+  },
+  {
+    "id": "google-stock-uber",
+    "publisher": "Google News discovery",
+    "name": "UBER / Uber",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Uber%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "UBER"
+  },
+  {
+    "id": "google-stock-jpm",
+    "publisher": "Google News discovery",
+    "name": "JPM / JPMorgan Chase",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22JPMorgan%20Chase%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "JPM"
+  },
+  {
+    "id": "google-stock-bac",
+    "publisher": "Google News discovery",
+    "name": "BAC / Bank of America",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Bank%20of%20America%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "BAC"
+  },
+  {
+    "id": "google-stock-xom",
+    "publisher": "Google News discovery",
+    "name": "XOM / Exxon Mobil",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Exxon%20Mobil%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "XOM"
+  },
+  {
+    "id": "google-stock-cvx",
+    "publisher": "Google News discovery",
+    "name": "CVX / Chevron",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Chevron%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "CVX"
+  },
+  {
+    "id": "google-stock-wmt",
+    "publisher": "Google News discovery",
+    "name": "WMT / Walmart",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Walmart%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "WMT"
+  },
+  {
+    "id": "google-stock-dis",
+    "publisher": "Google News discovery",
+    "name": "DIS / Walt Disney",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Walt%20Disney%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "DIS"
+  },
+  {
+    "id": "google-stock-orcl",
+    "publisher": "Google News discovery",
+    "name": "ORCL / Oracle",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Oracle%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "ORCL"
+  },
+  {
+    "id": "google-stock-crm",
+    "publisher": "Google News discovery",
+    "name": "CRM / Salesforce",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Salesforce%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "CRM"
+  },
+  {
+    "id": "google-stock-adbe",
+    "publisher": "Google News discovery",
+    "name": "ADBE / Adobe",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Adobe%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "ADBE"
+  },
+  {
+    "id": "google-stock-csco",
+    "publisher": "Google News discovery",
+    "name": "CSCO / Cisco",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Cisco%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "CSCO"
+  },
+  {
+    "id": "google-stock-qcom",
+    "publisher": "Google News discovery",
+    "name": "QCOM / Qualcomm",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Qualcomm%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "QCOM"
+  },
+  {
+    "id": "google-stock-txn",
+    "publisher": "Google News discovery",
+    "name": "TXN / Texas Instruments",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Texas%20Instruments%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "TXN"
+  },
+  {
+    "id": "google-stock-amat",
+    "publisher": "Google News discovery",
+    "name": "AMAT / Applied Materials",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Applied%20Materials%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "AMAT"
+  },
+  {
+    "id": "google-stock-lrcx",
+    "publisher": "Google News discovery",
+    "name": "LRCX / Lam Research",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Lam%20Research%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "LRCX"
+  },
+  {
+    "id": "google-stock-ibm",
+    "publisher": "Google News discovery",
+    "name": "IBM / IBM",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22IBM%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "IBM"
+  },
+  {
+    "id": "google-stock-v",
+    "publisher": "Google News discovery",
+    "name": "V / Visa Inc",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Visa%20Inc%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "V"
+  },
+  {
+    "id": "google-stock-ma",
+    "publisher": "Google News discovery",
+    "name": "MA / Mastercard",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Mastercard%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "MA"
+  },
+  {
+    "id": "google-stock-wfc",
+    "publisher": "Google News discovery",
+    "name": "WFC / Wells Fargo",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Wells%20Fargo%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "WFC"
+  },
+  {
+    "id": "google-stock-c",
+    "publisher": "Google News discovery",
+    "name": "C / Citigroup",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Citigroup%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "C"
+  },
+  {
+    "id": "google-stock-gs",
+    "publisher": "Google News discovery",
+    "name": "GS / Goldman Sachs",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Goldman%20Sachs%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "GS"
+  },
+  {
+    "id": "google-stock-ms",
+    "publisher": "Google News discovery",
+    "name": "MS / Morgan Stanley",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Morgan%20Stanley%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "MS"
+  },
+  {
+    "id": "google-stock-jnj",
+    "publisher": "Google News discovery",
+    "name": "JNJ / Johnson & Johnson",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Johnson%20%26%20Johnson%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "JNJ"
+  },
+  {
+    "id": "google-stock-unh",
+    "publisher": "Google News discovery",
+    "name": "UNH / UnitedHealth",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22UnitedHealth%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "UNH"
+  },
+  {
+    "id": "google-stock-lly",
+    "publisher": "Google News discovery",
+    "name": "LLY / Eli Lilly",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Eli%20Lilly%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "LLY"
+  },
+  {
+    "id": "google-stock-pfe",
+    "publisher": "Google News discovery",
+    "name": "PFE / Pfizer",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Pfizer%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "PFE"
+  },
+  {
+    "id": "google-stock-abbv",
+    "publisher": "Google News discovery",
+    "name": "ABBV / AbbVie",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22AbbVie%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "ABBV"
+  },
+  {
+    "id": "google-stock-mrk",
+    "publisher": "Google News discovery",
+    "name": "MRK / Merck",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Merck%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "MRK"
+  },
+  {
+    "id": "google-stock-ko",
+    "publisher": "Google News discovery",
+    "name": "KO / Coca-Cola",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Coca-Cola%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "KO"
+  },
+  {
+    "id": "google-stock-pep",
+    "publisher": "Google News discovery",
+    "name": "PEP / PepsiCo",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22PepsiCo%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "PEP"
+  },
+  {
+    "id": "google-stock-cost",
+    "publisher": "Google News discovery",
+    "name": "COST / Costco",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Costco%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "COST"
+  },
+  {
+    "id": "google-stock-pg",
+    "publisher": "Google News discovery",
+    "name": "PG / Procter & Gamble",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Procter%20%26%20Gamble%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "PG"
+  },
+  {
+    "id": "google-stock-cat",
+    "publisher": "Google News discovery",
+    "name": "CAT / Caterpillar",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Caterpillar%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "CAT"
+  },
+  {
+    "id": "google-stock-ge",
+    "publisher": "Google News discovery",
+    "name": "GE / GE Aerospace",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22GE%20Aerospace%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "GE"
+  },
+  {
+    "id": "google-stock-ba",
+    "publisher": "Google News discovery",
+    "name": "BA / Boeing",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Boeing%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "BA"
+  },
+  {
+    "id": "google-stock-cop",
+    "publisher": "Google News discovery",
+    "name": "COP / ConocoPhillips",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22ConocoPhillips%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "COP"
+  },
+  {
+    "id": "google-stock-nee",
+    "publisher": "Google News discovery",
+    "name": "NEE / NextEra Energy",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22NextEra%20Energy%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "NEE"
+  },
+  {
+    "id": "google-stock-spy",
+    "publisher": "Google News discovery",
+    "name": "SPY / SPDR S&P 500 ETF",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22SPDR%20S%26P%20500%20ETF%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "SPY"
+  },
+  {
+    "id": "google-stock-qqq",
+    "publisher": "Google News discovery",
+    "name": "QQQ / Invesco QQQ",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Invesco%20QQQ%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "QQQ"
+  },
+  {
+    "id": "google-stock-iwm",
+    "publisher": "Google News discovery",
+    "name": "IWM / iShares Russell 2000 ETF",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22iShares%20Russell%202000%20ETF%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "IWM"
+  },
+  {
+    "id": "google-stock-dia",
+    "publisher": "Google News discovery",
+    "name": "DIA / SPDR Dow Jones Industrial Average ETF",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22SPDR%20Dow%20Jones%20Industrial%20Average%20ETF%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "DIA"
+  },
+  {
+    "id": "google-stock-vti",
+    "publisher": "Google News discovery",
+    "name": "VTI / Vanguard Total Stock Market ETF",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Vanguard%20Total%20Stock%20Market%20ETF%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "VTI"
+  },
+  {
+    "id": "google-stock-xlk",
+    "publisher": "Google News discovery",
+    "name": "XLK / Technology Select Sector SPDR",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Technology%20Select%20Sector%20SPDR%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "XLK"
+  },
+  {
+    "id": "google-stock-xlf",
+    "publisher": "Google News discovery",
+    "name": "XLF / Financial Select Sector SPDR",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Financial%20Select%20Sector%20SPDR%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "XLF"
+  },
+  {
+    "id": "google-stock-xle",
+    "publisher": "Google News discovery",
+    "name": "XLE / Energy Select Sector SPDR",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Energy%20Select%20Sector%20SPDR%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "XLE"
+  },
+  {
+    "id": "google-stock-xlv",
+    "publisher": "Google News discovery",
+    "name": "XLV / Health Care Select Sector SPDR",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Health%20Care%20Select%20Sector%20SPDR%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "XLV"
+  },
+  {
+    "id": "google-stock-xli",
+    "publisher": "Google News discovery",
+    "name": "XLI / Industrial Select Sector SPDR",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Industrial%20Select%20Sector%20SPDR%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "XLI"
+  },
+  {
+    "id": "google-stock-xlp",
+    "publisher": "Google News discovery",
+    "name": "XLP / Consumer Staples Select Sector SPDR",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Consumer%20Staples%20Select%20Sector%20SPDR%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "XLP"
+  },
+  {
+    "id": "google-stock-xly",
+    "publisher": "Google News discovery",
+    "name": "XLY / Consumer Discretionary Select Sector SPDR",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Consumer%20Discretionary%20Select%20Sector%20SPDR%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "XLY"
+  },
+  {
+    "id": "google-stock-xlu",
+    "publisher": "Google News discovery",
+    "name": "XLU / Utilities Select Sector SPDR",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Utilities%20Select%20Sector%20SPDR%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "XLU"
+  },
+  {
+    "id": "google-stock-xlb",
+    "publisher": "Google News discovery",
+    "name": "XLB / Materials Select Sector SPDR",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Materials%20Select%20Sector%20SPDR%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "XLB"
+  },
+  {
+    "id": "google-stock-xlre",
+    "publisher": "Google News discovery",
+    "name": "XLRE / Real Estate Select Sector SPDR",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Real%20Estate%20Select%20Sector%20SPDR%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "XLRE"
+  },
+  {
+    "id": "google-stock-xlc",
+    "publisher": "Google News discovery",
+    "name": "XLC / Communication Services Select Sector SPDR",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22Communication%20Services%20Select%20Sector%20SPDR%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "XLC"
+  },
+  {
+    "id": "google-stock-smh",
+    "publisher": "Google News discovery",
+    "name": "SMH / VanEck Semiconductor ETF",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22VanEck%20Semiconductor%20ETF%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "SMH"
+  },
+  {
+    "id": "google-stock-soxx",
+    "publisher": "Google News discovery",
+    "name": "SOXX / iShares Semiconductor ETF",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22iShares%20Semiconductor%20ETF%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "SOXX"
+  },
+  {
+    "id": "google-stock-xbi",
+    "publisher": "Google News discovery",
+    "name": "XBI / SPDR S&P Biotech ETF",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22SPDR%20S%26P%20Biotech%20ETF%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "XBI"
+  },
+  {
+    "id": "google-stock-kre",
+    "publisher": "Google News discovery",
+    "name": "KRE / SPDR S&P Regional Banking ETF",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22SPDR%20S%26P%20Regional%20Banking%20ETF%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "KRE"
+  },
+  {
+    "id": "google-stock-eem",
+    "publisher": "Google News discovery",
+    "name": "EEM / iShares MSCI Emerging Markets ETF",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22iShares%20MSCI%20Emerging%20Markets%20ETF%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "EEM"
+  },
+  {
+    "id": "google-stock-efa",
+    "publisher": "Google News discovery",
+    "name": "EFA / iShares MSCI EAFE ETF",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22iShares%20MSCI%20EAFE%20ETF%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "EFA"
+  },
+  {
+    "id": "google-stock-gld",
+    "publisher": "Google News discovery",
+    "name": "GLD / SPDR Gold Shares",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22SPDR%20Gold%20Shares%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "GLD"
+  },
+  {
+    "id": "google-stock-slv",
+    "publisher": "Google News discovery",
+    "name": "SLV / iShares Silver Trust",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22iShares%20Silver%20Trust%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "SLV"
+  },
+  {
+    "id": "google-stock-tlt",
+    "publisher": "Google News discovery",
+    "name": "TLT / iShares 20+ Year Treasury Bond ETF",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22iShares%2020%2B%20Year%20Treasury%20Bond%20ETF%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "TLT"
+  },
+  {
+    "id": "google-stock-hyg",
+    "publisher": "Google News discovery",
+    "name": "HYG / iShares iBoxx High Yield Corporate Bond ETF",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22iShares%20iBoxx%20High%20Yield%20Corporate%20Bond%20ETF%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "HYG"
+  },
+  {
+    "id": "google-stock-uvxy",
+    "publisher": "Google News discovery",
+    "name": "UVXY / ProShares Ultra VIX Short-Term Futures ETF",
+    "category": "Stocks & ETFs",
+    "url": "https://news.google.com/rss/search?q=%22ProShares%20Ultra%20VIX%20Short-Term%20Futures%20ETF%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": "UVXY"
+  },
+  {
+    "id": "google-sector-1",
+    "publisher": "Google News discovery",
+    "name": "earnings revenue guidance",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28earnings%20revenue%20guidance%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-2",
+    "publisher": "Google News discovery",
+    "name": "mergers acquisitions",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28mergers%20acquisitions%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-3",
+    "publisher": "Google News discovery",
+    "name": "dividends buybacks",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28dividends%20buybacks%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-4",
+    "publisher": "Google News discovery",
+    "name": "IPO stock offering",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28IPO%20stock%20offering%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-5",
+    "publisher": "Google News discovery",
+    "name": "bankruptcy restructuring",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28bankruptcy%20restructuring%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-6",
+    "publisher": "Google News discovery",
+    "name": "semiconductors",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28semiconductors%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-7",
+    "publisher": "Google News discovery",
+    "name": "artificial intelligence data centers",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28artificial%20intelligence%20data%20centers%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-8",
+    "publisher": "Google News discovery",
+    "name": "cloud software cybersecurity",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28cloud%20software%20cybersecurity%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-9",
+    "publisher": "Google News discovery",
+    "name": "pharmaceutical clinical trial FDA",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28pharmaceutical%20clinical%20trial%20FDA%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-10",
+    "publisher": "Google News discovery",
+    "name": "banks credit lending",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28banks%20credit%20lending%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-11",
+    "publisher": "Google News discovery",
+    "name": "insurance underwriting",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28insurance%20underwriting%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-12",
+    "publisher": "Google News discovery",
+    "name": "real estate REIT housing",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28real%20estate%20REIT%20housing%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-13",
+    "publisher": "Google News discovery",
+    "name": "retail consumer spending",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28retail%20consumer%20spending%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-14",
+    "publisher": "Google News discovery",
+    "name": "automotive electric vehicles",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28automotive%20electric%20vehicles%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-15",
+    "publisher": "Google News discovery",
+    "name": "aerospace defense",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28aerospace%20defense%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-16",
+    "publisher": "Google News discovery",
+    "name": "airlines travel hotels",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28airlines%20travel%20hotels%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-17",
+    "publisher": "Google News discovery",
+    "name": "shipping logistics freight",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28shipping%20logistics%20freight%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-18",
+    "publisher": "Google News discovery",
+    "name": "oil gas energy",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28oil%20gas%20energy%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-19",
+    "publisher": "Google News discovery",
+    "name": "renewable energy utilities",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28renewable%20energy%20utilities%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-20",
+    "publisher": "Google News discovery",
+    "name": "mining metals commodities",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28mining%20metals%20commodities%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-21",
+    "publisher": "Google News discovery",
+    "name": "agriculture food fertilizer",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28agriculture%20food%20fertilizer%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-22",
+    "publisher": "Google News discovery",
+    "name": "telecommunications",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28telecommunications%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-23",
+    "publisher": "Google News discovery",
+    "name": "interest rates inflation employment",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28interest%20rates%20inflation%20employment%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-24",
+    "publisher": "Google News discovery",
+    "name": "tariffs trade sanctions",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28tariffs%20trade%20sanctions%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-sector-25",
+    "publisher": "Google News discovery",
+    "name": "antitrust competition regulation",
+    "category": "Business",
+    "url": "https://news.google.com/rss/search?q=%28antitrust%20competition%20regulation%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-ca",
+    "publisher": "Google News discovery",
+    "name": "CA business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-CA&gl=CA&ceid=CA:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-sg",
+    "publisher": "Google News discovery",
+    "name": "SG business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-SG&gl=SG&ceid=SG:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-nz",
+    "publisher": "Google News discovery",
+    "name": "NZ business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-NZ&gl=NZ&ceid=NZ:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-za",
+    "publisher": "Google News discovery",
+    "name": "ZA business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-ZA&gl=ZA&ceid=ZA:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-ng",
+    "publisher": "Google News discovery",
+    "name": "NG business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-NG&gl=NG&ceid=NG:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-ke",
+    "publisher": "Google News discovery",
+    "name": "KE business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-KE&gl=KE&ceid=KE:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-ph",
+    "publisher": "Google News discovery",
+    "name": "PH business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-PH&gl=PH&ceid=PH:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-my",
+    "publisher": "Google News discovery",
+    "name": "MY business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-MY&gl=MY&ceid=MY:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-ie",
+    "publisher": "Google News discovery",
+    "name": "IE business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-IE&gl=IE&ceid=IE:en",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-fr",
+    "publisher": "Google News discovery",
+    "name": "FR business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=fr&gl=FR&ceid=FR:fr",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-de",
+    "publisher": "Google News discovery",
+    "name": "DE business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=de&gl=DE&ceid=DE:de",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-it",
+    "publisher": "Google News discovery",
+    "name": "IT business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=it&gl=IT&ceid=IT:it",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-es",
+    "publisher": "Google News discovery",
+    "name": "ES business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=es&gl=ES&ceid=ES:es",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-br",
+    "publisher": "Google News discovery",
+    "name": "BR business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pt-BR&gl=BR&ceid=BR:pt-419",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-mx",
+    "publisher": "Google News discovery",
+    "name": "MX business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=es-419&gl=MX&ceid=MX:es-419",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-jp",
+    "publisher": "Google News discovery",
+    "name": "JP business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=ja&gl=JP&ceid=JP:ja",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-kr",
+    "publisher": "Google News discovery",
+    "name": "KR business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=ko&gl=KR&ceid=KR:ko",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-tw",
+    "publisher": "Google News discovery",
+    "name": "TW business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-hk",
+    "publisher": "Google News discovery",
+    "name": "HK business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=zh-HK&gl=HK&ceid=HK:zh-Hant",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-id",
+    "publisher": "Google News discovery",
+    "name": "ID business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=id&gl=ID&ceid=ID:id",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-th",
+    "publisher": "Google News discovery",
+    "name": "TH business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=th&gl=TH&ceid=TH:th",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-tr",
+    "publisher": "Google News discovery",
+    "name": "TR business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=tr&gl=TR&ceid=TR:tr",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-eg",
+    "publisher": "Google News discovery",
+    "name": "EG business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=ar&gl=EG&ceid=EG:ar",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-sa",
+    "publisher": "Google News discovery",
+    "name": "SA business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=ar&gl=SA&ceid=SA:ar",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-il",
+    "publisher": "Google News discovery",
+    "name": "IL business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=he&gl=IL&ceid=IL:he",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-ar",
+    "publisher": "Google News discovery",
+    "name": "AR business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=es-419&gl=AR&ceid=AR:es-419",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-cl",
+    "publisher": "Google News discovery",
+    "name": "CL business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=es-419&gl=CL&ceid=CL:es-419",
+    "enabled": true,
+    "symbol": ""
+  },
+  {
+    "id": "google-region-co",
+    "publisher": "Google News discovery",
+    "name": "CO business headlines",
+    "category": "Business",
+    "url": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=es-419&gl=CO&ceid=CO:es-419",
+    "enabled": true,
+    "symbol": ""
+  }
+]

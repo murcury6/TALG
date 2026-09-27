@@ -61,6 +61,44 @@ final class AlpacaOrderClient {
     record Submitted(UUID orderId, String clientOrderId, String status, String mode) {}
     record OpenOrder(UUID id, String symbol, String side, String quantity,
                      String limitPrice, String status) {}
+    record Position(String symbol, String side, BigDecimal quantity, BigDecimal averagePrice,
+                    BigDecimal currentPrice, BigDecimal marketValue, BigDecimal unrealizedProfit,
+                    BigDecimal unrealizedPercent) {}
+
+    JsonNode availableAssets(AlpacaSettings settings, String mode) throws IOException, InterruptedException {
+        Response response = transport.send(request(endpoint(mode) + "/v2/assets?status=active&asset_class=us_equity", settings).GET().build());
+        if (response.statusCode() != 200) throw new IOException("Asset catalogue returned HTTP " + response.statusCode() + ".");
+        JsonNode result = JSON.readTree(response.body());
+        if (result == null || !result.isArray()) throw new IOException("Invalid asset catalogue response.");
+        var assets = JSON.createArrayNode(); var seen = new java.util.HashSet<String>();
+        for (JsonNode asset : result) {
+            if (!asset.path("status").asText().equals("active") || !asset.path("tradable").asBoolean()
+                    || !asset.path("class").asText().equals("us_equity")) continue;
+            String symbol = asset.path("symbol").asText();
+            if (!symbol.matches("[A-Z][A-Z0-9.\\-]{0,14}")) throw new IOException("Unsupported symbol in asset catalogue: " + symbol);
+            if (seen.add(symbol)) assets.add(asset);
+        }
+        if (assets.isEmpty()) throw new IOException("Broker returned no active tradable US equities.");
+        return JSON.createObjectNode().put("source", "alpaca").put("scope", "active_tradable_us_equity")
+                .put("fetched_at", Instant.now().toString()).put("account_mode", mode).set("assets", assets);
+    }
+
+    List<Position> positions(AlpacaSettings settings, String mode) throws IOException, InterruptedException {
+        Response response = transport.send(request(endpoint(mode) + "/v2/positions", settings).GET().build());
+        if (response.statusCode() != 200) throw new IOException("Positions returned HTTP " + response.statusCode() + ".");
+        JsonNode result = JSON.readTree(response.body());
+        if (result == null || !result.isArray()) throw new IOException("Invalid positions response.");
+        List<Position> positions = new ArrayList<>();
+        for (JsonNode row : result) {
+            String symbol = row.path("symbol").asText(), side = row.path("side").asText();
+            if (symbol.isBlank() || !(side.equals("long") || side.equals("short"))) throw new IOException("Invalid position identity.");
+            positions.add(new Position(symbol, side, decimal(row.path("qty"), "quantity"),
+                    decimal(row.path("avg_entry_price"), "average entry price"), decimal(row.path("current_price"), "current price"),
+                    decimal(row.path("market_value"), "market value"), decimal(row.path("unrealized_pl"), "unrealized P/L"),
+                    decimal(row.path("unrealized_plpc"), "unrealized P/L percent").multiply(BigDecimal.valueOf(100))));
+        }
+        return List.copyOf(positions);
+    }
 
     Preview preview(Intent intent, AlpacaSettings settings, String mode)
             throws IOException, InterruptedException {

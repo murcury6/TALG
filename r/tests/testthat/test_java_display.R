@@ -83,6 +83,11 @@ testthat::test_that("renderer accepts observed-data handoff without Alpaca crede
     stdout = TRUE, stderr = TRUE))
   testthat::expect_null(attr(watermarked, "status"))
   testthat::expect_gt(file.info(output)$size, 0)
+  sized <- suppressWarnings(system2("Rscript",
+    vapply(c(call, "700", "400", "candles", "off", "350", "200"),
+           shQuote, character(1)), stdout = TRUE, stderr = TRUE))
+  testthat::expect_null(attr(sized, "status"))
+  testthat::expect_gt(file.info(output)$size, 0)
 })
 
 testthat::test_that("main chart can plot observed volume and a custom numeric series", {
@@ -206,6 +211,12 @@ testthat::test_that("financial axes and status use observed values without dupli
   testthat::expect_identical(ggplot2::ggplot_build(marked)$data[[watermarks[[1L]]]]$label[[1L]],
                              "AAPL")
   viewer$selected_watermark <- FALSE
+  viewer$display_scale <- 0.4
+  testthat::expect_gte(viewer$chart_text_pt(8) * viewer$chart_dpi / 72 * viewer$display_scale,
+                       12)
+  testthat::expect_gte(viewer$chart_label_mm(2) * viewer$chart_dpi / 25.4 * viewer$display_scale,
+                       12)
+  viewer$display_scale <- 0.5
   viewer$selected_display <- "line"
   viewer$selected_overlays <- c("sma", "ema")
   lines <- Filter(function(layer) inherits(layer$geom, "GeomLine"),

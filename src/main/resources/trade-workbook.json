@@ -1,0 +1,46 @@
+{
+  "sheets": [
+    {
+      "name": "Tickers",
+      "columns": [
+        {
+          "id": "ticker",
+          "path": "/ticker"
+        },
+        {
+          "id": "state",
+          "path": "/state"
+        },
+        {
+          "id": "decision",
+          "path": "/decision"
+        },
+        {
+          "id": "evaluated",
+          "path": "/evaluated_at"
+        },
+        {
+          "id": "values",
+          "path": "/evaluation/values",
+          "type": "json"
+        }
+      ]
+    },
+    {
+      "name": "Retained bars",
+      "rows": "/evaluation/bars",
+      "columns": [
+        {
+          "id": "ticker",
+          "source": "record",
+          "path": "/ticker"
+        },
+        {
+          "id": "bar",
+          "path": "",
+          "type": "json"
+        }
+      ]
+    }
+  ]
+}

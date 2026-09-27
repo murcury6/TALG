@@ -1,0 +1,93 @@
+# These are separate measurements, not a trained price prediction.
+name News information
+param half_life = 1800
+input age = age_seconds
+input vector = embedding
+input sources = source_count
+input links = ticker_count
+output freshness = decay(age, half_life)
+output coverage = sources
+output ticker_links = links
+output vector_length = norm(vector)
+# Controls contribution to the tensor. Must remain between 0 and 1.
+output tensor_weight = 1
+
+# Set notify from your own relevance/importance logic. Routes may be any model-selected tickers.
+input affected = tickers
+output notify = False
+output notify_symbols = affected
+
+# Called with a ticker by News(rating). This example rates freshness, not price direction.
+symbol
+input ticker = symbol
+input items = articles
+output article_count = length(items)
+output rating = mean(column(items, "outputs.freshness")) if length(items) > 0 else 0
+end symbol
+
+sheet
+{
+  "sheets": [
+    {
+      "name": "Information",
+      "columns": [
+        {
+          "id": "headline",
+          "path": "/headline",
+          "type": "text"
+        },
+        {
+          "id": "freshness",
+          "path": "/outputs/freshness",
+          "type": "number"
+        },
+        {
+          "id": "sources",
+          "path": "/outputs/coverage",
+          "type": "number"
+        },
+        {
+          "id": "tickers",
+          "path": "/tickers",
+          "type": "json"
+        },
+        {
+          "id": "publisher",
+          "path": "/publisher"
+        },
+        {
+          "id": "state",
+          "path": "/rating_state"
+        },
+        {
+          "id": "rated",
+          "path": "/rated_at"
+        }
+      ]
+    },
+    {
+      "name": "Evidence",
+      "rows": "/associations",
+      "columns": [
+        {
+          "id": "headline",
+          "source": "record",
+          "path": "/headline"
+        },
+        {
+          "id": "ticker",
+          "path": "/ticker"
+        },
+        {
+          "id": "kind",
+          "path": "/kind"
+        },
+        {
+          "id": "evidence",
+          "path": "/evidence"
+        }
+      ]
+    }
+  ]
+}
+end sheet

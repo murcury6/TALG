@@ -44,7 +44,7 @@ final class ConfigurablePanel extends JPanel {
             new PanelType("Market quote", "Latest Alpaca snapshot for one ticker."),
             new PanelType("Watchlist", "The tickers you added this session."),
             new PanelType("Modeling board", "Inspect your model's validated forecast CSV."),
-            new PanelType("Analysis studio", "Write your own R indicator or statistical model.")
+            new PanelType("Models", "Write and run your own R model on observed Alpaca bars.")
     };
 
     private final Function<Spec, JComponent> createView;
@@ -433,8 +433,9 @@ final class ConfigurablePanel extends JPanel {
     }
 
     private void setFormState(FormState state) {
+        String requestedType = "Analysis studio".equals(state.type()) ? "Models" : state.type();
         for (int i = 0; i < type.getItemCount(); i++) {
-            if (type.getItemAt(i).name().equals(state.type())) type.setSelectedIndex(i);
+            if (type.getItemAt(i).name().equals(requestedType)) type.setSelectedIndex(i);
         }
         portfolioView.setSelectedItem(state.portfolioView());
         for (int i = 0; i < period.getItemCount(); i++) {
@@ -455,6 +456,15 @@ final class ConfigurablePanel extends JPanel {
         type.setSelectedIndex(1);
         symbol.setText(ticker);
         chartScript.setText(ChartScript.template(ticker));
+        lastLoadedScript = chartScript.getText();
+        applyConfiguration();
+    }
+
+    void openIndicatorChart(String ticker, String indicator) {
+        type.setSelectedIndex(1);
+        symbol.setText(ticker);
+        chartScript.setText(ChartScript.template(ticker).replace(
+                "study RSI(14)", "study Indicator(" + IndicatorRepository.name(indicator) + ")"));
         lastLoadedScript = chartScript.getText();
         applyConfiguration();
     }
@@ -696,7 +706,7 @@ final class ConfigurablePanel extends JPanel {
         editor.setBorder(BorderFactory.createLineBorder(BORDER));
         editor.setPreferredSize(new Dimension(370, 235));
         section.add(editor, BorderLayout.CENTER);
-        JLabel help = label("plot volume • study Field(volume) • plot Custom(name)",
+        JLabel help = label("plot volume • study Field(volume) • study Indicator(name)",
                 11, MUTED, Font.PLAIN);
         section.add(help, BorderLayout.SOUTH);
         section.setMaximumSize(new Dimension(Integer.MAX_VALUE, 285));

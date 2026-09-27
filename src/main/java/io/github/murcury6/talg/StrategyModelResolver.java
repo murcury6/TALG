@@ -12,7 +12,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.HexFormat;
 
-/** Reads only validated, recent outputs from the existing Analysis studio model runner. */
+/** Reads only validated, recent outputs from the Models panel runner. */
 final class StrategyModelResolver {
     private static final ObjectMapper JSON = new ObjectMapper();
     private final Path projectRoot;
@@ -32,7 +32,7 @@ final class StrategyModelResolver {
                     && (latest == null || file.getFileName().toString()
                     .compareTo(latest.getFileName().toString()) > 0)) latest = file;
         }
-        if (latest == null) throw new IOException("Run model " + model + " in Analysis studio first.");
+        if (latest == null) throw new IOException("Run model " + model + " in a Models panel first.");
         if (Files.size(latest) > 1_000_000) throw new IOException("Model result is too large.");
         JsonNode result = JSON.readTree(latest.toFile());
         if (result == null || !result.isObject() || !result.path("rows").isArray())
@@ -41,7 +41,7 @@ final class StrategyModelResolver {
                 || !"Alpaca stock bars".equals(result.path("input_source").asText()))
             throw new IOException("Model result source, name, or feed does not match this strategy.");
         if (!md5(source).equalsIgnoreCase(result.path("script_md5").asText()))
-            throw new IOException("Model code changed since this result; rerun it in Analysis studio.");
+            throw new IOException("Model code changed since this result; rerun it in the Models panel.");
         Instant observedThrough = instant(result.path("observed_through_utc").asText(), "model input");
         if (observedThrough.isAfter(now) || Duration.between(observedThrough, now).compareTo(Duration.ofDays(4)) > 0)
             throw new IOException("Model inputs are stale; rerun the model.");

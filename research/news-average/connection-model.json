@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "name": "Symbol-story connection strength",
+  "algorithm": "logistic_connection_v1",
+  "status": "provisional_hand_set_coefficients_not_fitted",
+  "target": "Human-assessed connection strength in [0,1]; not return magnitude, sentiment, or calibrated probability",
+  "features": [
+    "ai_best_score_scaled",
+    "direct_anchor",
+    "supply_chain_link",
+    "sector_link",
+    "macro_link"
+  ],
+  "feature_contract": {
+    "score_divisor": 10.0,
+    "score_clip": 2.0,
+    "missing_ai": "error",
+    "evidence_flags": "binary; repeated evidence does not add weight"
+  },
+  "intercept": -0.5,
+  "coefficients": [
+    2.0,
+    1.0,
+    0.5,
+    0.0,
+    0.0
+  ],
+  "parameter_note": "Transparent engineering priors only. Fit on independent symbol/article connection judgments before trusting strength estimates.",
+  "training": null
+}

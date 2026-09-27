@@ -7,19 +7,15 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -29,7 +25,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -37,7 +32,7 @@ import javax.swing.SwingWorker;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-/** Author local R indicators and models; only an explicit Run executes a model. */
+/** Model authoring on observed Alpaca bars; only an explicit Run executes code. */
 final class AnalysisStudioPanel extends JPanel {
     private static final Color BG = new Color(20, 18, 27);
     private static final Color CARD = new Color(34, 30, 45);
@@ -46,54 +41,41 @@ final class AnalysisStudioPanel extends JPanel {
     private static final Color PURPLE = new Color(177, 146, 245);
     private static final Color RED = new Color(240, 106, 121);
     private final Supplier<AlpacaSettings> settings;
-    private final JComboBox<String> kind = new JComboBox<>(new String[]{"Indicator (R)", "Model (R)"});
+    private final Supplier<String> accountMode;
+    private final JComboBox<String> savedModels = new JComboBox<>();
     private final JTextField name = new JTextField();
     private final JTextField symbols = new JTextField();
     private final JTextArea code = new JTextArea();
-    private final JButton save = button("SAVE", true);
-    private final JButton run = button("RUN MODEL", false);
-    private final JLabel status = label("Local R code is trusted and runs with your user permissions.", MUTED);
+    private final JButton save = button("SAVE MODEL", true);
+    private final JButton run = button("RUN ON ALPACA BARS", false);
+    private final JLabel status = label("Starter = historical return baseline, not a forecast. Save or run only when ready.", MUTED);
+    private final JScrollPane resultScroll;
     private final DefaultTableModel results = new DefaultTableModel(
             new Object[]{"Symbol", "As of (UTC)", "Metric", "Value", "Unit", "Horizon", "Version"}, 0) {
         @Override public boolean isCellEditable(int row, int column) { return false; }
     };
 
-    AnalysisStudioPanel(Supplier<AlpacaSettings> settings, String initialTicker) {
+    AnalysisStudioPanel(Supplier<AlpacaSettings> settings, Supplier<String> accountMode,
+                        String initialTicker) {
         super(new BorderLayout(0, 5));
         this.settings = settings;
+        this.accountMode = accountMode;
         setBackground(BG);
         setBorder(new EmptyBorder(7, 9, 7, 9));
         JPanel fields = new JPanel(new GridLayout(1, 3, 6, 0));
         fields.setOpaque(false);
-        fields.add(field("SCRIPT TYPE", kind));
-        fields.add(field("NAME", name));
-        JPanel symbolsField = field("MODEL INPUT STOCKS", symbols);
-        fields.add(symbolsField);
-        name.setText("my_indicator");
+        fields.add(field("MODEL NAME", name));
+        fields.add(field("INPUT STOCKS", symbols));
+        fields.add(field("SAVED MODELS", savedModels));
         symbols.setText(initialTicker == null ? "" : initialTicker);
-        kind.addActionListener(event -> {
-            boolean modelMode = kind.getSelectedIndex() == 1;
-            run.setVisible(modelMode);
-            if (modelMode && symbolsField.getParent() == null) fields.add(symbolsField);
-            if (!modelMode && symbolsField.getParent() == fields) fields.remove(symbolsField);
-            fields.setLayout(new GridLayout(1, modelMode ? 3 : 2, 6, 0));
-            fields.revalidate();
-            if (modelMode && "my_indicator".equals(name.getText())) name.setText("my_model");
-            if (!modelMode && "my_model".equals(name.getText())) name.setText("my_indicator");
-            if (code.getText().isBlank() || code.getText().equals(indicatorTemplate())
-                    || code.getText().equals(modelTemplate()))
-                code.setText(modelMode ? modelTemplate() : indicatorTemplate());
-        });
-        fields.remove(symbolsField);
-        fields.setLayout(new GridLayout(1, 2, 6, 0));
         JPanel top = new JPanel(new BorderLayout(0, 4));
         top.setOpaque(false);
         top.add(fields, BorderLayout.NORTH);
-        top.add(label("Indicator: save, then use overlay Custom(name) or study Custom(name). Model: save and run on Alpaca bars.", MUTED), BorderLayout.SOUTH);
+        top.add(label("1  Name & write talg_model(series)   →   2  Save syntax   →   3  Run on observed bars   →   4  Inspect output", MUTED), BorderLayout.SOUTH);
         add(top, BorderLayout.NORTH);
 
-        code.setText(indicatorTemplate());
-        code.setFont(new Font("Consolas", Font.PLAIN, 12));
+        code.setText(modelTemplate());
+        code.setFont(new Font("Consolas", Font.PLAIN, 14));
         code.setForeground(TEXT);
         code.setBackground(CARD);
         code.setCaretColor(PURPLE);
@@ -108,21 +90,24 @@ final class AnalysisStudioPanel extends JPanel {
         table.setRowHeight(25);
         table.getTableHeader().setBackground(CARD);
         table.getTableHeader().setForeground(TEXT);
-        JScrollPane resultScroll = new JScrollPane(table);
+        resultScroll = new JScrollPane(table);
         resultScroll.getViewport().setBackground(CARD);
         resultScroll.setBorder(BorderFactory.createLineBorder(new Color(70, 62, 87)));
-        JSplitPane split = new JSplitPane(JSplitPane.VERTICAL_SPLIT, editor, resultScroll);
-        split.setResizeWeight(0.68);
-        split.setDividerSize(5);
-        split.setBorder(null);
-        split.setBackground(BG);
-        add(split, BorderLayout.CENTER);
+        resultScroll.setPreferredSize(new Dimension(0, 175));
+        resultScroll.setVisible(false);
+        JPanel work = new JPanel(new BorderLayout(0, 5));
+        work.setOpaque(false);
+        work.add(editor, BorderLayout.CENTER);
+        work.add(resultScroll, BorderLayout.SOUTH);
+        add(work, BorderLayout.CENTER);
 
         JPanel actions = new JPanel(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 7, 0));
         actions.setOpaque(false);
+        JButton load = button("LOAD MODEL", false);
+        load.addActionListener(event -> loadModel());
+        actions.add(load);
         actions.add(save);
         actions.add(run);
-        run.setVisible(false);
         save.addActionListener(event -> start(false));
         run.addActionListener(event -> start(true));
         JPanel footer = new JPanel(new BorderLayout());
@@ -130,6 +115,7 @@ final class AnalysisStudioPanel extends JPanel {
         footer.add(actions, BorderLayout.WEST);
         footer.add(status, BorderLayout.CENTER);
         add(footer, BorderLayout.SOUTH);
+        refreshModels();
     }
 
     void focusCode() { code.requestFocusInWindow(); }
@@ -144,14 +130,9 @@ final class AnalysisStudioPanel extends JPanel {
             error(error.getMessage());
             return;
         }
-        boolean model = kind.getSelectedIndex() == 1;
-        if (executeModel && !model) return;
-        if (code.getText().equals(indicatorTemplate()) || code.getText().equals(modelTemplate())) {
-            error("Replace the template's stop(...) line with your own calculation before saving.");
-            return;
-        }
-        Path source = sourcePath(model, scriptName);
-        if (Files.exists(source) && JOptionPane.showConfirmDialog(this,
+        Path source = sourcePath(scriptName);
+        if (Files.exists(source) && !sameSource(source, code.getText())
+                && JOptionPane.showConfirmDialog(this,
                 "Replace the existing script " + source.getFileName() + "?", "Replace script",
                 JOptionPane.YES_NO_OPTION) != JOptionPane.YES_OPTION) return;
         AlpacaSettings credentials = executeModel ? settings.get() : null;
@@ -160,13 +141,14 @@ final class AnalysisStudioPanel extends JPanel {
             return;
         }
         String sourceText = code.getText();
+        String selectedMode = executeModel ? accountMode.get() : "";
         save.setEnabled(false);
         run.setEnabled(false);
         status.setForeground(MUTED);
         status.setText(executeModel ? "Fetching observed bars and running your model…" : "Checking R syntax and saving…");
         new SwingWorker<RunResult, Void>() {
             @Override protected RunResult doInBackground() throws Exception {
-                saveSource(source, sourceText);
+                RScriptFiles.save(projectRoot(), source, sourceText);
                 if (!executeModel) return new RunResult(source, null, null);
                 Path resultDir = projectRoot().resolve("work/models/results");
                 Files.createDirectories(resultDir);
@@ -177,14 +159,14 @@ final class AnalysisStudioPanel extends JPanel {
                             observedData.toString(), "Stock lab", "1Y", tickers.getFirst(), "1Day",
                             String.join(",", tickers.subList(1, tickers.size())));
                     fetch.directory(projectRoot().toFile());
-                    AlpacaProcessEnvironment.supply(fetch, credentials, "paper");
-                    runProcess(fetch, 180, credentials);
+                    AlpacaProcessEnvironment.supply(fetch, credentials, selectedMode);
+                    RScriptFiles.run(fetch, 180, credentials);
                     ProcessBuilder builder = RRuntime.builder(projectRoot(), "r/run_user_model.R",
                             scriptName, String.join(",", tickers), output.toString(),
                             observedData.toString());
                     builder.directory(projectRoot().toFile());
                     AlpacaProcessEnvironment.scrub(builder);
-                    runProcess(builder, 180, credentials);
+                    RScriptFiles.run(builder, 180, credentials);
                     JsonNode json = new ObjectMapper().readTree(output.toFile());
                     if (!json.path("rows").isArray() || json.path("rows").isEmpty())
                         throw new IOException("The model returned no validated rows.");
@@ -203,7 +185,10 @@ final class AnalysisStudioPanel extends JPanel {
                 try {
                     RunResult result = get();
                     results.setRowCount(0);
+                    refreshModels();
+                    savedModels.setSelectedItem(scriptName);
                     if (result.json() == null) {
+                        resultScroll.setVisible(false);
                         status.setText("Saved " + result.source() + " • syntax valid; not executed");
                     } else {
                         for (JsonNode row : result.json().path("rows")) {
@@ -215,6 +200,8 @@ final class AnalysisStudioPanel extends JPanel {
                         }
                         status.setText("Model output: " + result.output() + " • "
                                 + result.json().path("rows").size() + " validated rows");
+                        resultScroll.setVisible(true);
+                        resultScroll.revalidate();
                     }
                     status.setForeground(MUTED);
                 } catch (InterruptedException error) {
@@ -228,48 +215,40 @@ final class AnalysisStudioPanel extends JPanel {
         }.execute();
     }
 
-    private static void saveSource(Path destination, String contents) throws Exception {
-        Files.createDirectories(destination.getParent());
-        Path temporary = Files.createTempFile(destination.getParent(), "talg-script-", ".R");
+    private void refreshModels() {
+        String selected = (String) savedModels.getSelectedItem();
+        savedModels.removeAllItems();
+        Path directory = projectRoot().resolve("work/models");
+        if (!Files.isDirectory(directory)) return;
+        try (var files = Files.list(directory)) {
+            files.filter(Files::isRegularFile).map(file -> file.getFileName().toString())
+                    .filter(file -> file.matches("[a-z][a-z0-9_]{0,39}\\.R"))
+                    .map(file -> file.substring(0, file.length() - 2)).sorted()
+                    .forEach(savedModels::addItem);
+            if (selected != null) savedModels.setSelectedItem(selected);
+        } catch (IOException exception) { error("Could not list saved models: " + exception.getMessage()); }
+    }
+
+    private void loadModel() {
+        String selected = (String) savedModels.getSelectedItem();
+        if (selected == null) { error("Choose a saved model first."); return; }
+        if (!code.getText().equals(modelTemplate()) && !sameSource(sourcePath(selected), code.getText())
+                && JOptionPane.showConfirmDialog(this, "Discard current model edits?",
+                "Load model", JOptionPane.YES_NO_OPTION) != JOptionPane.YES_OPTION) return;
         try {
-            Files.writeString(temporary, contents, StandardCharsets.UTF_8);
-            runProcess(RRuntime.builder(projectRoot(), "-e", "parse(file=commandArgs(TRUE)[1])",
-                    temporary.toString()).directory(projectRoot().toFile()), 30);
-            Files.move(temporary, destination, StandardCopyOption.REPLACE_EXISTING);
-        } finally {
-            Files.deleteIfExists(temporary);
-        }
+            code.setText(Files.readString(sourcePath(selected), StandardCharsets.UTF_8));
+            code.setCaretPosition(0);
+            name.setText(selected);
+            results.setRowCount(0);
+            resultScroll.setVisible(false);
+            status.setForeground(MUTED);
+            status.setText("Loaded " + selected + ". Save syntax or run it on observed bars.");
+        } catch (IOException error) { error(error.getMessage()); }
     }
 
-    private static void runProcess(ProcessBuilder builder, int timeoutSeconds) throws Exception {
-        runProcess(builder, timeoutSeconds, null);
-    }
-
-    private static void runProcess(ProcessBuilder builder, int timeoutSeconds,
-                                   AlpacaSettings credentials) throws Exception {
-        builder.redirectErrorStream(true);
-        Process process = builder.start();
-        StringBuilder output = new StringBuilder();
-        Thread reader = Thread.startVirtualThread(() -> {
-            try (BufferedReader lines = new BufferedReader(new InputStreamReader(
-                    process.getInputStream(), StandardCharsets.UTF_8))) {
-                String line;
-                while ((line = lines.readLine()) != null) {
-                    if (output.length() < 6000) output.append(line).append('\n');
-                }
-            } catch (IOException ignored) { /* The process exit code reports failure. */ }
-        });
-        if (!process.waitFor(timeoutSeconds, TimeUnit.SECONDS)) {
-            process.destroyForcibly();
-            throw new IOException("R exceeded the " + timeoutSeconds + " second run limit.");
-        }
-        reader.join(2000);
-        if (process.exitValue() != 0) {
-            String message = output.toString().trim();
-            if (credentials != null) message = message.replace(credentials.apiKey(), "<redacted>")
-                    .replace(credentials.apiSecret(), "<redacted>");
-            throw new IOException(message.isBlank() ? "R exited with code " + process.exitValue() : message);
-        }
+    private static boolean sameSource(Path file, String source) {
+        try { return Files.readString(file, StandardCharsets.UTF_8).equals(source); }
+        catch (IOException error) { return false; }
     }
 
     private static String validName(String raw) {
@@ -292,9 +271,8 @@ final class AnalysisStudioPanel extends JPanel {
         return result;
     }
 
-    private static Path sourcePath(boolean model, String name) {
-        return projectRoot().resolve("work").resolve(model ? "models" : "indicators")
-                .resolve(name + ".R");
+    private static Path sourcePath(String name) {
+        return projectRoot().resolve("work/models").resolve(name + ".R");
     }
 
     private static Path projectRoot() { return Path.of("").toAbsolutePath().normalize(); }
@@ -334,17 +312,13 @@ final class AnalysisStudioPanel extends JPanel {
         return label;
     }
 
-    private static String indicatorTemplate() {
-        return "talg_indicator <- function(bars) {\n"
-                + "  # bars: observed date (UTC), close, volume; return one numeric value per bar.\n"
-                + "  stop(\"Replace this line with your indicator calculation\")\n}\n";
-    }
-
     private static String modelTemplate() {
-        return "talg_model <- function(series) {\n"
-                + "  # series: named list of observed Alpaca bar data frames.\n"
-                + "  # Return symbol, as_of_utc, metric, value, unit, horizon, model_version.\n"
-                + "  stop(\"Replace this line with your model calculation\")\n}\n";
+        try {
+            return Files.readString(projectRoot().resolve("r/model_starters/observed_return_baseline.R"),
+                    StandardCharsets.UTF_8);
+        } catch (IOException error) {
+            throw new IllegalStateException("The bundled model starter could not be read.", error);
+        }
     }
 
     private record RunResult(Path source, Path output, JsonNode json) {}

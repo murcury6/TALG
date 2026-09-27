@@ -203,6 +203,8 @@ final class RPortfolioPanel extends JPanel {
         Dimension renderSize = renderDimensions(canvas.getWidth(), canvas.getHeight());
         int requestedWidth = renderSize.width;
         int requestedHeight = renderSize.height;
+        int displayWidth = canvas.getWidth() > 0 ? canvas.getWidth() : requestedWidth / 2;
+        int displayHeight = canvas.getHeight() > 0 ? canvas.getHeight() : requestedHeight / 2;
         rendering = true;
         String selectedView = String.valueOf(view.getSelectedItem());
         Choice selectedPeriod = (Choice) period.getSelectedItem();
@@ -243,7 +245,8 @@ final class RPortfolioPanel extends JPanel {
                             dataFile.toString(),
                             Integer.toString(requestedWidth), Integer.toString(requestedHeight),
                             stockPanel ? chartConfig.display() : "line",
-                            stockPanel && chartConfig.watermark() ? "on" : "off");
+                            stockPanel && chartConfig.watermark() ? "on" : "off",
+                            Integer.toString(displayWidth), Integer.toString(displayHeight));
                     display.directory(projectRoot().toFile());
                     AlpacaProcessEnvironment.scrub(display);
                     List<String> output = runR(display, "render", requestSettings);

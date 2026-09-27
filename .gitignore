@@ -31,6 +31,8 @@ _site/
 data/raw/
 data/derived/
 data/market/
+data/news/
+data/financials/
 work/
 reports/generated/
 
@@ -38,3 +40,9 @@ reports/generated/
 .idea/
 .DS_Store
 Thumbs.db
+
+data/news-stream/
+
+research/news-average/papers/*.pdf
+
+research/news-average/papers/*.html
