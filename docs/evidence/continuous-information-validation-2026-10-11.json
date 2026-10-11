@@ -1,0 +1,447 @@
+{
+  "schema_version": 1,
+  "document_status": "publication_snapshot",
+  "assembled_at_utc": "2026-10-11T20:03:31.501288+00:00",
+  "scope": "Existing engineering evidence and a dated preparation snapshot; not proof of trading performance.",
+  "synthetic_training_check": {
+    "scope": "Two 40-second synthetic regular sessions; full saved architecture and all 15 lanes",
+    "kind": "synthetic_training_smoke",
+    "state": "PASSED",
+    "synthetic": true,
+    "real_data_training": false,
+    "state_dim": 512,
+    "hand_dim": 512,
+    "symbols": [
+      "QQQ",
+      "TQQQ",
+      "SPY",
+      "DIA",
+      "IWM",
+      "AAPL",
+      "MSFT",
+      "NVDA",
+      "AMZN",
+      "GOOGL",
+      "JPM",
+      "XOM",
+      "WMT",
+      "JNJ",
+      "CAT"
+    ],
+    "optimizer_updates": 2,
+    "completed_synthetic_days": 2,
+    "all_gradients_finite": true,
+    "all_information_blocks_updated": true,
+    "checkpoint_roundtrip_exact": true,
+    "gradient_blocks": {
+      "reader.asset_encoder": {
+        "all_gradients_finite": true,
+        "changed_parameter_tensors": 2,
+        "nonzero_gradient_tensors": 2,
+        "parameter_tensors": 2
+      },
+      "reader.attention": {
+        "all_gradients_finite": true,
+        "changed_parameter_tensors": 4,
+        "nonzero_gradient_tensors": 4,
+        "parameter_tensors": 4
+      },
+      "reader.cash_encoder": {
+        "all_gradients_finite": true,
+        "changed_parameter_tensors": 2,
+        "nonzero_gradient_tensors": 2,
+        "parameter_tensors": 2
+      },
+      "reader.normalization": {
+        "all_gradients_finite": true,
+        "changed_parameter_tensors": 2,
+        "nonzero_gradient_tensors": 2,
+        "parameter_tensors": 2
+      },
+      "reader.score": {
+        "all_gradients_finite": true,
+        "changed_parameter_tensors": 4,
+        "nonzero_gradient_tensors": 4,
+        "parameter_tensors": 4
+      },
+      "representation.encoder": {
+        "all_gradients_finite": true,
+        "changed_parameter_tensors": 39,
+        "nonzero_gradient_tensors": 39,
+        "parameter_tensors": 39
+      },
+      "representation.gap_updater": {
+        "all_gradients_finite": true,
+        "changed_parameter_tensors": 9,
+        "nonzero_gradient_tensors": 9,
+        "parameter_tensors": 9
+      },
+      "representation.hands": {
+        "all_gradients_finite": true,
+        "changed_parameter_tensors": 39,
+        "nonzero_gradient_tensors": 39,
+        "parameter_tensors": 39
+      },
+      "representation.state_initializer": {
+        "all_gradients_finite": true,
+        "changed_parameter_tensors": 13,
+        "nonzero_gradient_tensors": 13,
+        "parameter_tensors": 13
+      },
+      "representation.time_encoder": {
+        "all_gradients_finite": true,
+        "changed_parameter_tensors": 6,
+        "nonzero_gradient_tensors": 6,
+        "parameter_tensors": 6
+      },
+      "representation.updater": {
+        "all_gradients_finite": true,
+        "changed_parameter_tensors": 27,
+        "nonzero_gradient_tensors": 27,
+        "parameter_tensors": 27
+      }
+    },
+    "limitations": [
+      "Synthetic evidence and prices; no claim about real market performance",
+      "Does not test a full trading day or five-minute preopen gradient span",
+      "Sparse 10-token evidence; does not benchmark maximum packet size"
+    ]
+  },
+  "packet_construction_benchmark": {
+    "source_scope": "Actual archived quotes and trades; no news, SEC, preopen or overnight",
+    "seconds": 120,
+    "symbols": [
+      "QQQ",
+      "TQQQ",
+      "SPY",
+      "DIA"
+    ],
+    "network_requests": 0,
+    "training_invoked": false,
+    "measured_implementation": {
+      "core": {
+        "continuous_model": "76388886d1958f73e5797fe9514213dcc25f65a0e61ae2c53805c9adcd3570ab",
+        "continuous_state": "18b6bec14f8627aa1d706e9591733fb6bc911c10979f61b8e9baeee59cad197b",
+        "continuous_state_v2": "2cfb0490979256d464836ea897b3c6ff47cafb3b6594b3e42e06ec814073555c",
+        "continuous_training": "456c67217a5912e67f5d05f60adaee7160fd676970ad52d256d1360c9c2c6690",
+        "evidence_packages": "3d2f7268ab3ac7575bce968bfbaeeb4db201b660c6dfd6f2cef4b19aeb0680ed",
+        "evidence_quality": "9808a0d69182fcefa43ed92a3b88b25b931d97272db80deae2c898169dfc1516",
+        "evidence_sources": "35f0f1d750b7a1b09b22a22bfaf3d39cf56373f1995fa6f216276aa4649e6abb",
+        "hand_evidence": "f0f40a1eb234708f866b4ec79bdb6eb1a6319af9d2d7e76a40ea23bda6bc76f9",
+        "hand_maker": "5ad9834d10beb59b0228037b736488b5373a6f0327283b0803b99f425117da3c",
+        "historical_data_source": "a7a085aaa4bc93d28c1cd25858a3c0b6098c8654a4770eacdf430652c99f2b65",
+        "historical_model": "d7b2ea40b96ea866b0912d66cb0840e5bc4aa01934b916b541316b6c8b8b52fa",
+        "historical_packets": "ed851ad364a754c5828ac814945686c7ef17be235615e9946a9fd892f966f98e",
+        "historical_sec_source": "82db2cc8a0a8ae6c44861221af2a7dbe324c1add2d094979dd37f657f591e8a5",
+        "historical_training": "2c16269dcdb272d689dce0cda13ffe427ad40b562549406d90268279bdc1ab55",
+        "historical_training_job": "5fe3efda131158d399d55baba5ce75a5020e9b9f2bf504bef2e60004cfbb2f07",
+        "information_cycle": "0e9395d2bb0d15b4be7cf18e781d66ab5de47d29daf4fcc0237a0a4675668794",
+        "information_day": "3acb98187da197e471277d9c81f41465ae7ea2142cad96ab391127ddb585cf45",
+        "information_model": "29fdfda41cd5b407bad3dfce69330501d6b251a52f6a5c0798a75c70e7fe2c54",
+        "information_run": "af115d3cfddbba52c3c15de3ef7539bb6d9db15f185ecbf8c41a27c11c4e644a",
+        "information_training": "990ce1366465cafb3124189756633d06dabb49d8a0dd7c5770f04e7c018c6611",
+        "joint_run": "2a0447db6d70ac11d3008a0bbf8df77a20d611046f648e3535fc8d575494b711",
+        "joint_training": "1a4a3fd8061b159bc9610ad4240962cc736c4edbb642e6b63cd1591b20edfe4f",
+        "representation_model": "c1a4cdabce8180f12a3890ae03b93d4dbc9732801a66efe232b6115b10f7bff7"
+      },
+      "parallel_preparation": "b8e748c2780331d2dfeb861164390ac83872b5d3c60b4dbbdf4a39c79d80c100"
+    },
+    "modes": [
+      {
+        "mode": "serial",
+        "workers": 1,
+        "build_seconds": 92.37657930000569,
+        "raw_rows_and_packet_ids_match_serial": true,
+        "symbols": {
+          "DIA": {
+            "database_bytes": 174014464,
+            "packet_ids_sha256": "6a34183c95e1039259480aaaa6c36ac220638d2aa48eccb5f63b6ceefe161f65",
+            "packets": 24,
+            "receipt_rows": 61927,
+            "receipt_rows_sha256": "289a5ba37004e281f7276d12db178664a26ee85a34ee3f4a2efbb4370fbe164d"
+          },
+          "QQQ": {
+            "database_bytes": 124850176,
+            "packet_ids_sha256": "0c66a2345b3e723f252079eda64d6b43266bb4b31a6d71aeea35d1c24c5a75b8",
+            "packets": 24,
+            "receipt_rows": 50063,
+            "receipt_rows_sha256": "415918657e5fe329a04b5c3d61442246a9260e4aaa82ab3cd505bd96616ef602"
+          },
+          "SPY": {
+            "database_bytes": 133214208,
+            "packet_ids_sha256": "9c6966476072e0c77bc4adedec24bf6d2ececf91f0d5bf488360e4aeccdb29eb",
+            "packets": 24,
+            "receipt_rows": 50171,
+            "receipt_rows_sha256": "f4ee1343b7a0ab27599c364710134df46256162d01ab279f6847fd010c9c0dc6"
+          },
+          "TQQQ": {
+            "database_bytes": 199553024,
+            "packet_ids_sha256": "e7d8b6e86f602a2791a74639b8c5d7d6cde6f750b902440a073914f3bc3b0760",
+            "packets": 24,
+            "receipt_rows": 72008,
+            "receipt_rows_sha256": "348843e6c1ce7bf8e887fad4477add635fdf504e3405e4214cd4fb0cf8da4dd5"
+          }
+        }
+      },
+      {
+        "mode": "parallel-4",
+        "workers": 4,
+        "build_seconds": 32.794253000000026,
+        "raw_rows_and_packet_ids_match_serial": true,
+        "symbols": {
+          "DIA": {
+            "database_bytes": 174014464,
+            "packet_ids_sha256": "6a34183c95e1039259480aaaa6c36ac220638d2aa48eccb5f63b6ceefe161f65",
+            "packets": 24,
+            "receipt_rows": 61927,
+            "receipt_rows_sha256": "289a5ba37004e281f7276d12db178664a26ee85a34ee3f4a2efbb4370fbe164d"
+          },
+          "QQQ": {
+            "database_bytes": 124850176,
+            "packet_ids_sha256": "0c66a2345b3e723f252079eda64d6b43266bb4b31a6d71aeea35d1c24c5a75b8",
+            "packets": 24,
+            "receipt_rows": 50063,
+            "receipt_rows_sha256": "415918657e5fe329a04b5c3d61442246a9260e4aaa82ab3cd505bd96616ef602"
+          },
+          "SPY": {
+            "database_bytes": 133214208,
+            "packet_ids_sha256": "9c6966476072e0c77bc4adedec24bf6d2ececf91f0d5bf488360e4aeccdb29eb",
+            "packets": 24,
+            "receipt_rows": 50171,
+            "receipt_rows_sha256": "f4ee1343b7a0ab27599c364710134df46256162d01ab279f6847fd010c9c0dc6"
+          },
+          "TQQQ": {
+            "database_bytes": 199553024,
+            "packet_ids_sha256": "e7d8b6e86f602a2791a74639b8c5d7d6cde6f750b902440a073914f3bc3b0760",
+            "packets": 24,
+            "receipt_rows": 72008,
+            "receipt_rows_sha256": "348843e6c1ce7bf8e887fad4477add635fdf504e3405e4214cd4fb0cf8da4dd5"
+          }
+        }
+      }
+    ],
+    "speedup_vs_serial": 2.8168526753759453,
+    "limitations": [
+      "One truncated 120-second archived-data slice, four symbols.",
+      "No news, SEC, preopen or overnight intervals.",
+      "Concurrent machine workload; not a full-year runtime forecast."
+    ]
+  },
+  "regression_checks": {
+    "python": [
+      {
+        "artifact": "target/parallel-verification/backend-tests.xml",
+        "tests": 20,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "artifact": "target/parallel-verification/probe-tests.xml",
+        "tests": 15,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ],
+    "java_selected": [
+      {
+        "artifact": "target/surefire-reports/TEST-io.github.murcury6.talg.PacketPreparationPanelTest.xml",
+        "tests": 17,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "artifact": "target/surefire-reports/TEST-io.github.murcury6.talg.HistoricalTrainingPanelTest.xml",
+        "tests": 14,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "artifact": "target/surefire-reports/TEST-io.github.murcury6.talg.CollectionStorageEstimateTest.xml",
+        "tests": 12,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "artifact": "target/surefire-reports/TEST-io.github.murcury6.talg.PacketProgressSummaryTest.xml",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "artifact": "target/surefire-reports/TEST-io.github.murcury6.talg.PacketLearningProgressTest.xml",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "artifact": "target/surefire-reports/TEST-io.github.murcury6.talg.PacketTimeCoverageTest.xml",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ],
+    "java_selected_total": 69
+  },
+  "selected_model_configuration": {
+    "hand_maker": {
+      "state_dim": 512,
+      "hand_dim": 512,
+      "hand_count": 8,
+      "token_dim": 128,
+      "attention_heads": 4,
+      "attention_layers": 2,
+      "encoder": {
+        "max_events_per_section": 128,
+        "max_text_bytes": 512
+      }
+    },
+    "reader": {
+      "symbols": [
+        "QQQ",
+        "TQQQ",
+        "SPY",
+        "DIA",
+        "IWM",
+        "AAPL",
+        "MSFT",
+        "NVDA",
+        "AMZN",
+        "GOOGL",
+        "JPM",
+        "XOM",
+        "WMT",
+        "JNJ",
+        "CAT"
+      ],
+      "allocation": {
+        "max_asset_weight": 0.35,
+        "max_invested": 1.0
+      },
+      "execution": {
+        "end_flatten": true,
+        "fill_delay_packets": 1,
+        "same_regular_session": true
+      },
+      "objective": {
+        "cost_assumption": "hypothetical_one_way_notional_costs",
+        "drawdown_penalty": 0.0,
+        "fee_bps": 0.0,
+        "slippage_bps": 0.0,
+        "turnover_penalty": 0.0
+      },
+      "information_gradients": "joint",
+      "routing": "offline_only"
+    },
+    "training": {
+      "chunk_packets": 64,
+      "device": "cpu",
+      "epochs": 1,
+      "evaluation": "prequential",
+      "feedback": "realized_delayed_offline_portfolio",
+      "forecast_objectives": false,
+      "learning_rate": 0.0001,
+      "max_gradient_norm": 1.0,
+      "missing_mark_policy": "hold_positions_cancel_pending_until_observed",
+      "optimizer": "adamw",
+      "portfolio_start": "cash_each_session",
+      "price_coverage": "all_configured_symbols_observed",
+      "schedule": "date_then_joint_symbols",
+      "schema_version": 1,
+      "seed": 1729,
+      "weight_decay": 0.0
+    }
+  },
+  "preparation_snapshot": {
+    "worker_heartbeat_utc": "2026-10-11T20:03:30.633607+00:00",
+    "state": "RUNNING",
+    "action": "BUILDING",
+    "session": "2025-10-14",
+    "sessions": 251,
+    "completed_sessions": 0,
+    "training_invoked": false,
+    "max_resident_days": 3,
+    "routing": "offline_only",
+    "complete_resident_dates": [
+      {
+        "date": "2025-10-10",
+        "target_mode": "none",
+        "symbol_count": 15,
+        "symbol_packets": 71115
+      },
+      {
+        "date": "2025-10-13",
+        "target_mode": "none",
+        "symbol_count": 15,
+        "symbol_packets": 71115
+      }
+    ],
+    "note": "Read from coordinator progress and saved completion receipts; no training job was changed or launched for documentation."
+  },
+  "source_artifacts": [
+    {
+      "path": "target/training-check-batch/validation.json",
+      "sha256": "e6d92345ab70f981980f56f05d387704406a3549ff8c562564db5e9f0e80a588"
+    },
+    {
+      "path": "target/parallel-verification/benchmark-results.json",
+      "sha256": "9fdf1dbe2e5c1ea4077b9d146e902f07153b0ef46e4469534eb6e2e97de9fd8d"
+    },
+    {
+      "path": "work/historical-v3/jobs/<job-revision>/joint/config.json",
+      "sha256": "92d830c13ef2d2f83ae2d95083d327111a2ae397e0219bd0137dadbe7fc6a14c"
+    },
+    {
+      "path": "work/historical-v3/jobs/<job-revision>/rolling/progress.json",
+      "sha256": "2a7fab213dce15c53e54e27a38048c7420e568d9a111af579246194d8462e665"
+    },
+    {
+      "path": "work/historical-v3/jobs/<job-revision>/sessions/2025-10-10/complete.json",
+      "sha256": "02b0ddc6a111ee3fccf064230cdf5994b5d070a005704ddce8f4a7c0f8c5a70a"
+    },
+    {
+      "path": "work/historical-v3/jobs/<job-revision>/sessions/2025-10-13/complete.json",
+      "sha256": "d4fb187875d67cde28e0e0c066484502c2548e2b110cf44c5019f886948700ba"
+    },
+    {
+      "path": "target/parallel-verification/backend-tests.xml",
+      "sha256": "a261921112afc3fa17ad0987a5cca1a77fe34bd7c27846ddaa5b1164bb95b7d7"
+    },
+    {
+      "path": "target/parallel-verification/probe-tests.xml",
+      "sha256": "84428341e54e7818ec5ecf3eb8735f9bb1336798ccd516d43d67322ee0f33e3c"
+    },
+    {
+      "path": "target/surefire-reports/TEST-io.github.murcury6.talg.PacketPreparationPanelTest.xml",
+      "sha256": "0ddc7454d588bf4a26b7e9d7f9c58865239ab94eb41da536ecf62add55f28228"
+    },
+    {
+      "path": "target/surefire-reports/TEST-io.github.murcury6.talg.HistoricalTrainingPanelTest.xml",
+      "sha256": "5d52a1e614c81b0c4a24dfb01d188af663eec06058c8b34d0a14b6fc382685df"
+    },
+    {
+      "path": "target/surefire-reports/TEST-io.github.murcury6.talg.CollectionStorageEstimateTest.xml",
+      "sha256": "6aa9a8005f51239ab5f7c0c47c25df5b9515050d44198e091c23c49f5d239fd1"
+    },
+    {
+      "path": "target/surefire-reports/TEST-io.github.murcury6.talg.PacketProgressSummaryTest.xml",
+      "sha256": "b8feb786696b81298c5446e9c2ff1d5d1a4695c1ed94ee27fb4b64e04ce4b117"
+    },
+    {
+      "path": "target/surefire-reports/TEST-io.github.murcury6.talg.PacketLearningProgressTest.xml",
+      "sha256": "b66b9245adddfc2656a50b61222182a4003aa7ed485932991da77ab6fc760528"
+    },
+    {
+      "path": "target/surefire-reports/TEST-io.github.murcury6.talg.PacketTimeCoverageTest.xml",
+      "sha256": "53fa522235dc7c7ed72d904ee0e70a7d7c1f39b4e2ecbf889801245e670f8195"
+    }
+  ],
+  "artifact_note": "Paths are relative to the project root that produced each artifact. Some original artifacts are local runtime/test outputs, not distributable source files. SHA-256 identifies the exact captured bytes. Job-directory content identities are replaced with <job-revision>; artifact SHA-256 values are unchanged."
+}

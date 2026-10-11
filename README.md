@@ -1,5 +1,11 @@
 # TALG
 
+## Current research: evidence preparation and continuous information
+
+The [preparation and model-design write-up](docs/CONTINUOUS_INFORMATION.md) describes TALG's newer local research system: timestamped evidence packets, persistent symbol memory, learned update proposals, and a portfolio reader trained jointly with the information model. It focuses on preparing the data and explaining how learning will work. [Supporting engineering checks](docs/evidence/continuous-information-validation-2026-10-11.json) record their measured scope; trading effectiveness has not yet been established.
+
+This update publishes documentation and summarized engineering evidence. The newer implementation and its runtime artifacts are not included in this documentation release. The existing public source and the workflow below describe the earlier research desk and forecasting experiments.
+
 **A research-first trading algorithm laboratory.** Java owns the desk, rule evaluation, and explicitly confirmed Alpaca order ticket; Python collects market observations and annotates supplied text with the Llama API; R renders analytics and runs trusted local indicators/models. The Trade tab's manual paper/live tickets require a preview and separate confirmation. Its separate **Paper strategy** runs a bounded, explicitly armed [20-stock statistical paper experiment](docs/RAPID_PAPER.md) with replaceable model bricks. The fitted regression has no demonstrated profitable edge; the default model-ranked mode tests order volume. Model coefficients, validation, observations and execution records are saved as files.
 
 ## Research workflow
